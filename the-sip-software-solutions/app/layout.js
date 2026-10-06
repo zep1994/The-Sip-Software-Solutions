@@ -13,7 +13,7 @@ const geistMono = Geist_Mono({
 
 export const metadata = {
   title: "The Sip Web Studio",
-  description: "Welcome to The Sip Web Studio, your trusted partner for innovative web solutions. We specialize in creating custom websites that elevate your online presence and drive business growth. Our team of experts is dedicated to delivering high-quality, user-friendly websites tailored to your unique needs. Contact us today to start your digital journey with The Sip Web Studio.",
+  description: "Welcome to The Sip Web Studio, your trusted partner for innovative web solutions. We specialize in creating custom websites that elevate your online presence and drive business growth. Our team of experts is dedicated to delivering high-quality, user-friendly websites tailored to your unique needs. Contact me today to start your digital journey with The Sip Web Studio.",
 };
 
 export default function RootLayout({ children }) {
