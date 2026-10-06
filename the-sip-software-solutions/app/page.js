@@ -202,7 +202,7 @@ export default function Home() {
           </h2>
 
           <p className="text-slate-300 text-lg mt-8">
-            I&apos;m the founder of The Sip Software Solutions.
+            I&apos;m the founder of The Sip Web Studio.
             I help businesses throughout Mississippi build
             professional websites that look great, rank
             better on Google, and convert visitors into
@@ -521,7 +521,7 @@ export default function Home() {
       <section id="contact" className="py-24 scroll-mt-8">
         <div className="max-w-3xl mx-auto px-6">
           <h2 className="text-4xl font-bold text-center">
-            Contact The Sip Software Solutions
+            Contact The Sip Web Studio
           </h2>
 
           <p className="text-slate-400 text-center mt-4">
