@@ -1,3 +1,7 @@
+import Image from "next/image";
+
+import ContactForm from "./ContactForm";
+
 export default function Home() {
   return (
     <main className="bg-slate-950 text-white min-h-screen">
@@ -29,13 +33,13 @@ export default function Home() {
               </p>
 
               <div className="flex flex-wrap gap-4 mt-10">
-                <button className="bg-blue-600 hover:bg-blue-700 px-8 py-4 rounded-lg font-semibold">
+                <a href="#contact" className="bg-blue-600 hover:bg-blue-700 px-8 py-4 rounded-lg font-semibold">
                   Free Consultation
-                </button>
+                </a>
 
-                <button className="border border-slate-700 px-8 py-4 rounded-lg font-semibold hover:bg-slate-900">
+                <a href="#portfolio" className="border border-slate-700 px-8 py-4 rounded-lg font-semibold hover:bg-slate-900">
                   View My Work
-                </button>
+                </a>
               </div>
             </div>
           </div>
@@ -102,59 +106,90 @@ export default function Home() {
       </section>
 
       {/* PORTFOLIO */}
-      <section className="py-24 bg-slate-900">
+      <section id="portfolio" className="py-24 bg-slate-900 scroll-mt-8">
         <div className="max-w-7xl mx-auto px-6">
           <h2 className="text-4xl font-bold text-center">
-            Recent Projects
+            Featured Project
           </h2>
 
           <p className="text-center text-slate-400 mt-4">
-            Replace these placeholders with screenshots
-            from your previous work.
+            A custom website for Magnolia Mergers & Acquisitions, designed around
+            the provided reference and hosted on Cloudflare.
+          </p>
+          <p className="text-center mt-4">
+            <a
+              className="text-blue-400 hover:text-blue-300 underline underline-offset-4"
+              href="https://magnolia-ma.com"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Visit magnolia-ma.com
+            </a>
           </p>
 
           <div className="grid md:grid-cols-3 gap-8 mt-16">
-            <div className="bg-slate-950 rounded-xl overflow-hidden">
-              <div className="h-56 bg-slate-800"></div>
+            <article className="bg-slate-950 rounded-xl overflow-hidden">
+              <div className="relative aspect-[16/9]">
+                <Image
+                  className="object-cover"
+                  src="/images/magnolia1.png"
+                  alt="Magnolia Mergers & Acquisitions homepage"
+                  fill
+                  sizes="(min-width: 768px) 33vw, 100vw"
+                />
+              </div>
               <div className="p-6">
                 <h3 className="font-bold text-xl">
-                  Contractor Website
+                  Magnolia M&A Homepage
                 </h3>
-
                 <p className="text-slate-400 mt-3">
-                  Custom website focused on generating
-                  calls and quote requests.
+                  A polished first impression introducing Magnolia&apos;s
+                  confidential business sale and acquisition advisory services.
                 </p>
               </div>
-            </div>
+            </article>
 
-            <div className="bg-slate-950 rounded-xl overflow-hidden">
-              <div className="h-56 bg-slate-800"></div>
+            <article className="bg-slate-950 rounded-xl overflow-hidden">
+              <div className="relative aspect-[16/9]">
+                <Image
+                  className="object-cover"
+                  src="/images/magnolia2.png"
+                  alt="Magnolia website services page with four advisory offerings"
+                  fill
+                  sizes="(min-width: 768px) 33vw, 100vw"
+                />
+              </div>
               <div className="p-6">
                 <h3 className="font-bold text-xl">
-                  Restaurant Website
+                  Advisory Services
                 </h3>
-
                 <p className="text-slate-400 mt-3">
-                  Modern responsive website with menu,
-                  gallery, and online inquiries.
+                  Clear service details help business owners explore pre-sale
+                  advisory, M&A, valuations, and buy-side searches.
                 </p>
               </div>
-            </div>
+            </article>
 
-            <div className="bg-slate-950 rounded-xl overflow-hidden">
-              <div className="h-56 bg-slate-800"></div>
+            <article className="bg-slate-950 rounded-xl overflow-hidden">
+              <div className="relative aspect-[16/9]">
+                <Image
+                  className="object-cover"
+                  src="/images/magnolia3.png"
+                  alt="Magnolia website process page describing a disciplined transaction process"
+                  fill
+                  sizes="(min-width: 768px) 33vw, 100vw"
+                />
+              </div>
               <div className="p-6">
                 <h3 className="font-bold text-xl">
-                  Local Service Business
+                  A Guided Transaction Process
                 </h3>
-
                 <p className="text-slate-400 mt-3">
-                  SEO-focused redesign built to improve
-                  local search rankings.
+                  A step-by-step overview gives clients a clear path from
+                  discovery and preparation through closing.
                 </p>
               </div>
-            </div>
+            </article>
           </div>
         </div>
       </section>
@@ -167,7 +202,7 @@ export default function Home() {
           </h2>
 
           <p className="text-slate-300 text-lg mt-8">
-            I'm the founder of The Sip Software Solutions.
+            I&apos;m the founder of The Sip Software Solutions.
             I help businesses throughout Mississippi build
             professional websites that look great, rank
             better on Google, and convert visitors into
@@ -193,24 +228,25 @@ export default function Home() {
           <div className="mt-16 space-y-8">
             <div className="bg-slate-950 p-8 rounded-xl">
               <p className="text-slate-300">
-                "The Sip Software Solutions completely
-                transformed our website and helped us
-                establish a professional online presence."
+                &ldquo;Thanks for making the final changes and getting the website live. 
+                This certainly exceeded my expectations, 
+                so thank you very much for completing in short order during your 
+                busy schedule.&rdquo;
               </p>
 
               <p className="mt-4 font-semibold">
-                John Smith | ABC Roofing
+                Chadwick Word | Magnolia Mergers & Acquisitions
               </p>
             </div>
 
             <div className="bg-slate-950 p-8 rounded-xl">
               <p className="text-slate-300">
-                "Professional, responsive, and incredibly
-                easy to work with."
+                &ldquo;This look fantastic, and certainly exceeded my expectations as well. 
+                Thank you, Wes! &rdquo;
               </p>
 
               <p className="mt-4 font-semibold">
-                Sarah Jones | Local Business Owner
+                Charles Word | Magnolia Mergers & Acquisitions
               </p>
             </div>
           </div>
@@ -218,65 +254,247 @@ export default function Home() {
       </section>
 
       {/* PRICING */}
-      <section className="py-24">
+      <section className="py-24 bg-slate-950">
         <div className="max-w-7xl mx-auto px-6">
-          <h2 className="text-4xl font-bold text-center">
-            Website Care Plans
-          </h2>
 
-          <div className="grid lg:grid-cols-3 gap-8 mt-16">
-
-            <div className="bg-slate-900 p-8 rounded-xl">
-              <h3 className="text-2xl font-bold">
-                Starter
-              </h3>
-
-              <p className="text-4xl font-bold mt-4">
-                $79<span className="text-lg">/mo</span>
+          {/* Website Packages */}
+          <div>
+            <div className="text-center">
+              <p className="text-blue-400 font-semibold uppercase tracking-wider">
+                Website Packages
               </p>
 
-              <ul className="mt-6 space-y-2 text-slate-300">
-                <li>Hosting</li>
-                <li>Security Updates</li>
-                <li>Weekly Backups</li>
-              </ul>
-            </div>
+              <h2 className="text-4xl md:text-5xl font-bold mt-3">
+                Websites Built to Grow Your Business
+              </h2>
 
-            <div className="bg-blue-950 border border-blue-500 p-8 rounded-xl">
-              <h3 className="text-2xl font-bold">
-                Growth
-              </h3>
-
-              <p className="text-4xl font-bold mt-4">
-                $149<span className="text-lg">/mo</span>
+              <p className="text-slate-400 mt-4 max-w-2xl mx-auto">
+                Professional websites designed around your business, your customers,
+                and your goals.
               </p>
-
-              <ul className="mt-6 space-y-2 text-slate-300">
-                <li>Everything in Starter</li>
-                <li>Content Updates</li>
-                <li>SEO Monitoring</li>
-                <li>Monthly Reports</li>
-              </ul>
             </div>
 
-            <div className="bg-slate-900 p-8 rounded-xl">
-              <h3 className="text-2xl font-bold">
-                Premium
-              </h3>
+            <div className="grid lg:grid-cols-3 gap-8 mt-16">
 
-              <p className="text-4xl font-bold mt-4">
-                $299<span className="text-lg">/mo</span>
-              </p>
+              {/* Starter Website */}
+              <div className="bg-slate-900 border border-slate-800 p-8 rounded-2xl">
+                <h3 className="text-2xl font-bold">
+                  Starter Website
+                </h3>
 
-              <ul className="mt-6 space-y-2 text-slate-300">
-                <li>Everything in Growth</li>
-                <li>Priority Support</li>
-                <li>Landing Pages</li>
-                <li>Performance Optimization</li>
-              </ul>
+                <p className="text-slate-400 mt-2">
+                  A professional online presence for businesses getting started.
+                </p>
+
+                <p className="text-4xl font-bold mt-6">
+                  $1,500
+                  <span className="text-lg text-slate-400">+</span>
+                </p>
+
+                <p className="text-sm text-slate-500 mt-1">
+                  Starting price
+                </p>
+
+                <ul className="mt-8 space-y-3 text-slate-300">
+                  <li>✓ Professional website design</li>
+                  <li>✓ Mobile responsive design</li>
+                  <li>✓ Essential business pages</li>
+                  <li>✓ Contact form</li>
+                  <li>✓ Basic SEO setup</li>
+                  <li>✓ Fast, modern performance</li>
+                </ul>
+
+                <a href="#contact" className="block text-center w-full mt-8 py-3 rounded-lg border border-slate-700 hover:bg-slate-800 transition">
+                  Get Started
+                </a>
+              </div>
+
+              {/* Business Growth Website */}
+              <div className="bg-blue-950 border border-blue-500 p-8 rounded-2xl relative">
+
+                <div className="absolute -top-4 left-1/2 -translate-x-1/2">
+                  <span className="bg-blue-600 text-white px-4 py-1 rounded-full text-sm font-semibold">
+                    Most Popular
+                  </span>
+                </div>
+
+                <h3 className="text-2xl font-bold">
+                  Business Growth Website
+                </h3>
+
+                <p className="text-slate-300 mt-2">
+                  A powerful website built to generate leads and grow your business.
+                </p>
+
+                <p className="text-4xl font-bold mt-6">
+                  $3,000
+                  <span className="text-lg text-slate-300">+</span>
+                </p>
+
+                <p className="text-sm text-slate-400 mt-1">
+                  Starting price
+                </p>
+
+                <ul className="mt-8 space-y-3 text-slate-200">
+                  <li>✓ Everything in Starter</li>
+                  <li>✓ Custom website design</li>
+                  <li>✓ Conversion-focused layouts</li>
+                  <li>✓ Lead generation features</li>
+                  <li>✓ Advanced SEO setup</li>
+                  <li>✓ Analytics integration</li>
+                  <li>✓ Performance optimization</li>
+                </ul>
+
+                <a href="#contact" className="block text-center w-full mt-8 py-3 rounded-lg bg-blue-600 hover:bg-blue-500 transition font-semibold">
+                  Build My Website
+                </a>
+              </div>
+
+              {/* Custom Website Solution */}
+              <div className="bg-slate-900 border border-slate-800 p-8 rounded-2xl">
+                <h3 className="text-2xl font-bold">
+                  Custom Website Solution
+                </h3>
+
+                <p className="text-slate-400 mt-2">
+                  Advanced custom solutions for businesses with unique requirements.
+                </p>
+
+                <p className="text-4xl font-bold mt-6">
+                  $5,000
+                  <span className="text-lg text-slate-400">+</span>
+                </p>
+
+                <p className="text-sm text-slate-500 mt-1">
+                  Starting price
+                </p>
+
+                <ul className="mt-8 space-y-3 text-slate-300">
+                  <li>✓ Everything in Business Growth</li>
+                  <li>✓ Fully custom functionality</li>
+                  <li>✓ Advanced integrations</li>
+                  <li>✓ Custom applications & features</li>
+                  <li>✓ Advanced SEO strategy</li>
+                  <li>✓ Custom animations & interactions</li>
+                  <li>✓ Scalable architecture</li>
+                </ul>
+
+                <a href="#contact" className="block text-center w-full mt-8 py-3 rounded-lg border border-slate-700 hover:bg-slate-800 transition">
+                  Request a Quote
+                </a>
+              </div>
+
             </div>
-
           </div>
+
+
+          {/* Monthly Care Plans */}
+          <div className="mt-32">
+
+            <div className="text-center">
+              <p className="text-blue-400 font-semibold uppercase tracking-wider">
+                Monthly Care Plans
+              </p>
+
+              <h2 className="text-4xl md:text-5xl font-bold mt-3">
+                Keep Your Website Working for You
+              </h2>
+
+              <p className="text-slate-400 mt-4 max-w-2xl mx-auto">
+                Ongoing maintenance, updates, security, and SEO support to keep
+                your website fast, secure, and growing.
+              </p>
+            </div>
+
+            <div className="grid lg:grid-cols-3 gap-8 mt-16">
+
+              {/* Essential Care */}
+              <div className="bg-slate-900 border border-slate-800 p-8 rounded-2xl">
+                <h3 className="text-2xl font-bold">
+                  Essential Care
+                </h3>
+
+                <p className="text-4xl font-bold mt-6">
+                  $99
+                  <span className="text-lg text-slate-400">/month</span>
+                </p>
+
+                <ul className="mt-8 space-y-3 text-slate-300">
+                  <li>✓ Website maintenance</li>
+                  <li>✓ Hosting & security</li>
+                  <li>✓ Software updates</li>
+                  <li>✓ Backups</li>
+                  <li>✓ Minor content updates</li>
+                </ul>
+
+                <a href="#contact" className="block text-center w-full mt-8 py-3 rounded-lg border border-slate-700 hover:bg-slate-800 transition">
+                  Choose Essential
+                </a>
+              </div>
+
+
+              {/* Growth Care */}
+              <div className="bg-blue-950 border border-blue-500 p-8 rounded-2xl relative">
+
+                <div className="absolute -top-4 left-1/2 -translate-x-1/2">
+                  <span className="bg-blue-600 text-white px-4 py-1 rounded-full text-sm font-semibold">
+                    Recommended
+                  </span>
+                </div>
+
+                <h3 className="text-2xl font-bold">
+                  Growth Care
+                </h3>
+
+                <p className="text-4xl font-bold mt-6">
+                  $199
+                  <span className="text-lg text-slate-300">/month</span>
+                </p>
+
+                <ul className="mt-8 space-y-3 text-slate-200">
+                  <li>✓ Everything in Essential</li>
+                  <li>✓ Ongoing website updates</li>
+                  <li>✓ Performance optimization</li>
+                  <li>✓ Basic SEO</li>
+                  <li>✓ Analytics monitoring</li>
+                  <li>✓ Priority support</li>
+                </ul>
+
+                <a href="#contact" className="block text-center w-full mt-8 py-3 rounded-lg bg-blue-600 hover:bg-blue-500 transition font-semibold">
+                  Choose Growth
+                </a>
+              </div>
+
+
+              {/* SEO Growth */}
+              <div className="bg-slate-900 border border-slate-800 p-8 rounded-2xl">
+                <h3 className="text-2xl font-bold">
+                  SEO Growth
+                </h3>
+
+                <p className="text-4xl font-bold mt-6">
+                  $499
+                  <span className="text-lg text-slate-400">/month</span>
+                </p>
+
+                <ul className="mt-8 space-y-3 text-slate-300">
+                  <li>✓ Everything in Growth Care</li>
+                  <li>✓ Ongoing SEO optimization</li>
+                  <li>✓ Keyword strategy</li>
+                  <li>✓ Content updates</li>
+                  <li>✓ Search performance monitoring</li>
+                  <li>✓ Monthly SEO reporting</li>
+                  <li>✓ Growth recommendations</li>
+                </ul>
+
+                <a href="#contact" className="block text-center w-full mt-8 py-3 rounded-lg border border-slate-700 hover:bg-slate-800 transition">
+                  Choose SEO Growth
+                </a>
+              </div>
+
+            </div>
+          </div>
+
         </div>
       </section>
 
@@ -288,53 +506,29 @@ export default function Home() {
           </h2>
 
           <p className="mt-6 text-xl text-slate-300">
-            Let's build a website that earns trust,
+            Let&apos;s build a website that earns trust,
             attracts customers, and helps your company
             stand out online.
           </p>
 
-          <button className="bg-white text-black font-semibold px-8 py-4 rounded-lg mt-10">
+          <a href="#contact" className="inline-block bg-white text-black font-semibold px-8 py-4 rounded-lg mt-10">
             Schedule A Free Consultation
-          </button>
+          </a>
         </div>
       </section>
 
       {/* CONTACT */}
-      <section className="py-24">
+      <section id="contact" className="py-24 scroll-mt-8">
         <div className="max-w-3xl mx-auto px-6">
           <h2 className="text-4xl font-bold text-center">
             Contact The Sip Software Solutions
           </h2>
 
-          <form className="space-y-4 mt-10">
-            <input
-              className="w-full p-4 rounded-lg bg-slate-900"
-              placeholder="Name"
-            />
+          <p className="text-slate-400 text-center mt-4">
+            Tell us about your project and we'll get back to you.
+          </p>
 
-            <input
-              className="w-full p-4 rounded-lg bg-slate-900"
-              placeholder="Email"
-            />
-
-            <input
-              className="w-full p-4 rounded-lg bg-slate-900"
-              placeholder="Business Name"
-            />
-
-            <textarea
-              className="w-full p-4 rounded-lg bg-slate-900"
-              rows="5"
-              placeholder="Tell me about your project..."
-            />
-
-            <button
-              type="submit"
-              className="bg-blue-600 px-8 py-4 rounded-lg"
-            >
-              Send Message
-            </button>
-          </form>
+          <ContactForm />
         </div>
       </section>
     </main>
