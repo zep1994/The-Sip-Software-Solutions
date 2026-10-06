@@ -525,7 +525,7 @@ export default function Home() {
           </h2>
 
           <p className="text-slate-400 text-center mt-4">
-            Tell us about your project and we'll get back to you.
+            Tell us about your project and we&apos;ll get back to you.
           </p>
 
           <ContactForm />
