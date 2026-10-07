@@ -1,83 +1,77 @@
 "use client";
-
+import { useState } from "react";
 export default function ContactForm() {
-  const handleSubmit = (e) => {
+  const [opened, setOpened] = useState(false);
+  function handleSubmit(e) {
     e.preventDefault();
-
-    const formData = new FormData(e.currentTarget);
-
-    const name = formData.get("name");
-    const email = formData.get("email");
-    const business = formData.get("business");
-    const message = formData.get("message");
-
+    const data = new FormData(e.currentTarget);
     const subject = encodeURIComponent(
-      `New Website Inquiry from ${name}`
+      `Website inquiry from ${data.get("name")}`,
     );
-
     const body = encodeURIComponent(
-      `Hello The Sip Software Solutions,
-
-I have a new website project inquiry.
-
-Name: ${name}
-Email: ${email}
-Business Name: ${business}
-
-Project Details:
-${message}
-
---------------------------------
-Sent from The Sip Software Solutions website`
+      `Hello The Sip Web Studio,\n\nName: ${data.get("name")}\nEmail: ${data.get("email")}\nBusiness: ${data.get("business")}\n\nProject details:\n${data.get("message")}`,
     );
-
-    window.location.href =
-      `mailto:thesipsoftwaresolutions@gmail.com?subject=${subject}&body=${body}`;
-  };
-
+    window.location.href = `mailto:thesipsoftwaresolutions@gmail.com?subject=${subject}&body=${body}`;
+    setOpened(true);
+  }
   return (
-    <form
-      onSubmit={handleSubmit}
-      className="space-y-4 mt-10"
-    >
-      <input
-        type="text"
-        name="name"
-        required
-        className="w-full p-4 rounded-lg bg-slate-900 border border-slate-800 focus:border-blue-500 focus:outline-none"
-        placeholder="Name"
-      />
-
-      <input
-        type="email"
-        name="email"
-        required
-        className="w-full p-4 rounded-lg bg-slate-900 border border-slate-800 focus:border-blue-500 focus:outline-none"
-        placeholder="Email"
-      />
-
-      <input
-        type="text"
-        name="business"
-        required
-        className="w-full p-4 rounded-lg bg-slate-900 border border-slate-800 focus:border-blue-500 focus:outline-none"
-        placeholder="Business Name"
-      />
-
-      <textarea
-        name="message"
-        required
-        rows="5"
-        className="w-full p-4 rounded-lg bg-slate-900 border border-slate-800 focus:border-blue-500 focus:outline-none"
-        placeholder="Tell me about your project..."
-      />
-
-      <button
-        type="submit"
-        className="w-full bg-blue-600 hover:bg-blue-500 px-8 py-4 rounded-lg font-semibold transition"
-      >
-        Send Message
+    <form onSubmit={handleSubmit} className="contact-form">
+      <div className="form-row">
+        <label>
+          Your name
+          <input
+            name="name"
+            autoComplete="name"
+            required
+            placeholder="First and last name"
+            maxLength={120}
+          />
+        </label>
+        <label>
+          Email address
+          <input
+            type="email"
+            name="email"
+            autoComplete="email"
+            required
+            placeholder="you@yourbusiness.com"
+            maxLength={254}
+          />
+        </label>
+      </div>
+      <label>
+        Business name
+        <input
+          name="business"
+          autoComplete="organization"
+          required
+          placeholder="What’s your business called?"
+          maxLength={180}
+        />
+      </label>
+      <label>
+        What do you have in mind?
+        <textarea
+          name="message"
+          required
+          rows={4}
+          placeholder="A new website, a fresh look, a little ongoing support…"
+          maxLength={3000}
+        />
+      </label>
+      <button className="button" type="submit">
+        Start the conversation ↗
       </button>
+      <p className="small">
+        This opens a draft in your email app. Send it there to complete your
+        inquiry. You can also email me directly.
+      </p>
+      {opened && (
+        <p role="status">
+          Your email draft is ready in your email app. If it didn’t open, use
+          the email link beside this form.
+        </p>
+      )}
     </form>
   );
 }

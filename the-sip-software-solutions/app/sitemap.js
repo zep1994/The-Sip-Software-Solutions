@@ -1,0 +1,1 @@
+export default function sitemap() { return [{ url: "https://thesipwebstudio.com", changeFrequency: "monthly", priority: 1 }, { url: "https://thesipwebstudio.com/work/magnolia-mergers-acquisitions", changeFrequency: "monthly", priority: 0.8 }]; }
