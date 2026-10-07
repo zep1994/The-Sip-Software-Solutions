@@ -218,7 +218,7 @@ export default function Home() {
           <p>
             I help Mississippi businesses turn what makes them special into a
             clear, professional online presence. You work directly with the
-            person designing and building your website—from the first
+            person designing and building your website, from the first
             conversation to the finishing touches.
           </p>
           <p>
@@ -239,7 +239,7 @@ export default function Home() {
             completing in short order during your busy schedule.”
           </blockquote>
           <p>
-            Chadwick Word <span>— Magnolia Mergers & Acquisitions</span>
+            Chadwick Word <span>- Magnolia Mergers & Acquisitions</span>
           </p>
         </div>
       </section>
