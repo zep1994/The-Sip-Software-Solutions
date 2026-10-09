@@ -339,6 +339,58 @@ em {
   font-size: 13px;
   margin-top: 10px;
 }
+.example-showcase {
+  margin-top: 75px;
+  padding-top: 65px;
+  border-top: 1px solid #c7cec0;
+}
+.example-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+}
+.example-card {
+  display: flex;
+  flex-direction: column;
+  background: var(--cream);
+  border: 1px solid #c7cec0;
+}
+.example-cover {
+  display: block;
+  overflow: hidden;
+  border-bottom: 1px solid #c7cec0;
+}
+.example-cover img {
+  width: 100%;
+  aspect-ratio: 1.85;
+  object-fit: contain;
+  transition: transform 0.2s;
+}
+.example-cover:hover img {
+  transform: scale(1.025);
+}
+.example-details {
+  padding: 28px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.example-details .eyebrow {
+  margin-bottom: 12px;
+  font-size: 10px;
+}
+.example-details h3 {
+  font-size: 27px;
+}
+.example-details > p:not(.eyebrow) {
+  color: var(--muted);
+  font-size: 14px;
+  margin: 18px 0 25px;
+}
+.example-details .text-link {
+  margin-top: auto;
+}
 .about-grid,
 .local-grid {
   display: grid;
@@ -705,6 +757,13 @@ em {
   }
   .project-caption .button {
     margin-top: 22px;
+  }
+  .example-grid {
+    grid-template-columns: 1fr;
+  }
+  .example-showcase {
+    margin-top: 45px;
+    padding-top: 45px;
   }
   .about-grid,
   .local-grid,

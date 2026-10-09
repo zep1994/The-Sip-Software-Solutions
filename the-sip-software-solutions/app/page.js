@@ -2,6 +2,39 @@ import Image from "next/image";
 import Link from "next/link";
 import ContactForm from "./ContactForm";
 
+const exampleSites = [
+  {
+    name: "Southern Shine",
+    category: "Pressure washing",
+    url: "https://southern-shine.thomasmatlockbba.workers.dev/",
+    image: "/images/southern-shine-example.png",
+    width: 1825,
+    height: 988,
+    alt: "Southern Shine website with a blue exterior cleaning headline and a pressure washing photo",
+    description: "A fresh direction for a pressure washing business. Explore the example and imagine your own services in the spotlight.",
+  },
+  {
+    name: "Magnolia Landscaping",
+    category: "Landscaping",
+    url: "https://magnolia-landscaping.pages.dev/",
+    image: "/images/magnolia-landscaping-example.png",
+    width: 1836,
+    height: 991,
+    alt: "Magnolia Lawn and Landscape website with green branding and a lawn photograph behind the headline Good things grow here",
+    description: "An online home for a landscaping business. Take a look at an example built around work that makes a first impression.",
+  },
+  {
+    name: "Red Clay Handyman Service",
+    category: "Handyman services",
+    url: "https://redclayhandymanservice.pages.dev/",
+    image: "/images/red-clay-example.png",
+    width: 1822,
+    height: 981,
+    alt: "Red Clay Home Services website with a home repair headline, orange accents, and a handyman working with a saw",
+    description: "A website direction for a handyman business. See an example of how local services can have a presence worth sharing.",
+  },
+];
+
 const services = [
   [
     "01",
@@ -166,7 +199,7 @@ export default function Home() {
         <div className="wrap">
           <div className="section-heading">
             <div>
-              <p className="eyebrow">Selected work / 01</p>
+              <p className="eyebrow">Selected work / Client project</p>
               <h2>
                 Serious business.
                 <br />
@@ -199,6 +232,58 @@ export default function Home() {
             <Link className="button" href="/work/magnolia-mergers-acquisitions">
               Read the case study ↗
             </Link>
+          </div>
+          <div className="example-showcase">
+            <div className="section-heading">
+              <div>
+                <p className="eyebrow">Explore the examples</p>
+                <h2>
+                  Local services.
+                  <br />
+                  <em>Plenty of possibilities.</em>
+                </h2>
+              </div>
+              <p>
+                Three example websites for businesses that keep homes and
+                outdoor spaces at their best. Browse them for inspiration
+                for your own website.
+              </p>
+            </div>
+            <div className="example-grid">
+              {exampleSites.map((site) => (
+                <article className="example-card" key={site.url}>
+                  <a
+                    className="example-cover"
+                    href={site.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={`Explore ${site.name} example website (opens in a new tab)`}
+                  >
+                    <Image
+                      src={site.image}
+                      width={site.width}
+                      height={site.height}
+                      alt={site.alt}
+                      sizes="(max-width: 750px) 90vw, 33vw"
+                    />
+                  </a>
+                  <div className="example-details">
+                    <p className="eyebrow">Example / {site.category}</p>
+                    <h3>{site.name}</h3>
+                    <p>{site.description}</p>
+                    <a
+                      className="text-link"
+                      href={site.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label={`Explore ${site.name} example website (opens in a new tab)`}
+                    >
+                      Explore the example ↗
+                    </a>
+                  </div>
+                </article>
+              ))}
+            </div>
           </div>
         </div>
       </section>
