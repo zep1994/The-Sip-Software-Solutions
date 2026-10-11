@@ -850,6 +850,31 @@ em {
 .pricing-grid article { display: flex; flex-direction: column; align-items: flex-start; }
 .pricing-grid article > .button { margin-top: auto; }
 .package-details { margin-top: 20px; }
+.home-service-links { list-style: none; padding: 0; margin: 0; font-size: 13px; }
+.home-service-links li + li { margin-top: 10px; }
+.home-service-links a { text-decoration: underline; text-underline-offset: 4px; }
+.home-service-links a:hover, .price-directory a:hover { color: var(--copper); }
+.service-jump-links { display: flex; flex-wrap: wrap; gap: 12px 24px; padding: 30px 0; margin-top: 25px; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); font-size: 13px; }
+.service-jump-links a { text-decoration: underline; text-underline-offset: 4px; }
+.service-price-overview { padding-top: 65px; }
+.service-price-overview > p:not(.eyebrow) { margin-top: 20px; color: var(--muted); }
+.price-directory { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 35px 45px; margin-top: 40px; }
+.price-directory h3 { font-size: 27px; }
+.price-directory ul { list-style: none; padding: 0; margin: 18px 0 0; }
+.price-directory li { border-bottom: 1px solid var(--line); }
+.price-directory li a { display: grid; grid-template-columns: 1fr auto; gap: 18px; padding: 16px 0; font-size: 14px; }
+.price-directory li a > span:last-child { text-align: right; max-width: 165px; }
+.price-directory strong { font-size: 17px; white-space: nowrap; }
+.price-directory small { display: block; font-size: 11px; color: var(--muted); }
+.service-catalog article > .catalog-price { margin: 20px 0 0; color: var(--ink); }
+.catalog-price strong { display: block; font: 34px Georgia, serif; }
+.catalog-price span { display: block; font-size: 12px; margin-top: 5px; color: var(--muted); }
+.care-plan-comparison { padding: 45px 0; border-bottom: 1px solid var(--line); }
+.care-plan-comparison h2 { margin-bottom: 30px; }
+@media (max-width: 750px) {
+  .price-directory { grid-template-columns: 1fr; gap: 30px; }
+  .price-directory li a { grid-template-columns: 1fr minmax(90px, 115px); gap: 15px; }
+}
 @media (max-width: 1050px) {
   .service-catalog { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .service-hero { gap: 30px; }

@@ -2,7 +2,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import ContactForm from "../../ContactForm";
 import LeadDemo from "../../LeadDemo";
-import { services, serviceGroups } from "../data";
+import { services, serviceGroups, carePlans, serviceHref } from "../data";
 
 export const dynamicParams = false;
 export function generateStaticParams() { return services.map(({ slug }) => ({ slug })); }
@@ -25,6 +25,15 @@ export default async function ServicePage({ params }) {
       <nav aria-label="Breadcrumb" className="breadcrumb"><Link href="/">Home</Link><span>/</span><Link href="/services">Services</Link><span>/</span><span>{service.title}</span></nav>
       <div className="service-hero"><div><p className="eyebrow">{service.title} · Jackson, MS</p><h1>{service.tagline}</h1><p className="lead">{service.description}</p><div className="actions"><a className="button" href="#service-contact">Get a free business growth review ↗</a></div></div><aside className="service-price"><p className="eyebrow">Your starting point</p><p className="price">{service.price}</p><p>{service.unit}</p><p>{service.timing}</p><a className="text-link" href="#included">See what’s included ↓</a></aside></div>
       <div className="case-grid"><h2>Is this a good fit?</h2><p>{service.fit}</p></div>
+      {slug === "website-care" && <section className="care-plan-comparison" aria-labelledby="care-plans-title">
+        <h2 id="care-plans-title">Choose your <em>monthly plan.</em></h2>
+        <div className="service-catalog">{carePlans.map(plan => <article key={plan.slug}>
+          <h3><Link href={serviceHref(plan.slug)}>{plan.title}</Link></h3>
+          <p className="catalog-price"><strong>{plan.price}</strong><span>{plan.unit}</span></p>
+          <p>{plan.description}</p>
+          <Link className="text-link" href={serviceHref(plan.slug)}>View {plan.title} details ↗</Link>
+        </article>)}</div>
+      </section>}
       <div id="included" className="case-grid"><h2>What you get</h2><ul className="deliverables">{service.includes.map(item => <li key={item}>{item}</li>)}</ul></div>
       <div className="case-grid"><h2>In everyday terms</h2><div><p className="eyebrow">Illustrative example</p><p>{service.example}</p></div></div>
       <div className="case-grid"><h2>A clear scope</h2><div><p>{service.scope}</p><p>Before work begins, you receive a written scope covering deliverables, account access, revisions, payment milestones, and support. You keep ownership of your domain and business accounts.</p></div></div>

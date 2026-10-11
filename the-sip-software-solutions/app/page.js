@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import ContactForm from "./ContactForm";
 import LeadDemo from "./LeadDemo";
-import { serviceGroups } from "./services/data";
+import { services, serviceGroups, serviceHref } from "./services/data";
 
 const exampleSites = [
   {
@@ -166,11 +166,14 @@ export default function Home() {
           {serviceGroups.map(({ title: t, description: d, slugs }, index) => (
             <article key={t}>
               <span className="eyebrow">0{index + 1} /</span>
-              <h3>{t}</h3>
+              <h3><Link href={serviceHref(slugs[0])}>{t}</Link></h3>
               <p>{d}</p>
-              <Link className="text-link" href={`/services#${slugs[0]}`}>
-                Explore services & pricing ↗
-              </Link>
+              <ul className="home-service-links">
+                {slugs.filter(slug => !["essential-care", "business-care", "local-growth"].includes(slug)).map(slug => {
+                  const service = services.find(item => item.slug === slug);
+                  return <li key={slug}><Link href={serviceHref(slug)}>{service.title} ↗</Link></li>;
+                })}
+              </ul>
             </article>
           ))}
         </div>

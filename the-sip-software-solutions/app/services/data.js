@@ -2,12 +2,99 @@ export const serviceGroups = [
   { title: "Website design & development", description: "Earn trust with a clear, fast website that makes your next customer’s decision easier.", slugs: ["website-design", "business-growth-system", "custom-business-systems"] },
   { title: "Google presence & local SEO", description: "Help nearby customers understand what you do, where you work, and how to reach you.", slugs: ["google-business-profile", "local-seo"] },
   { title: "Lead capture & customer follow-up", description: "Give every inquiry a place to land and make the next step clear for your team.", slugs: ["lead-capture", "review-request-system"] },
-  { title: "Business automation", description: "Connect bookings, customer records, and everyday tasks so you spend less time moving information around.", slugs: ["appointment-automation", "business-automation"] },
-  { title: "Practical AI solutions", description: "Answer common questions and support your team with tools built around approved business information.", slugs: ["ai-solutions"] },
-  { title: "Website care & performance", description: "Keep your online presence useful, current, and ready for customers after launch.", slugs: ["website-care", "hosting-performance"] },
+  { title: "Business automation", description: "Connect bookings, customer records, and everyday tasks so you spend less time moving information around.", slugs: ["appointment-automation", "business-automation", "crm-integrations", "customer-portals", "reporting-dashboards"] },
+  { title: "Practical AI solutions", description: "Answer common questions and support your team with tools built around approved business information.", slugs: ["ai-solutions", "ai-document-tools"] },
+  { title: "Website care & performance", description: "Keep your online presence useful, current, and ready for customers after launch.", slugs: ["website-care", "essential-care", "business-care", "local-growth", "hosting-performance"] },
 ];
 
-export const services = [
+export const carePlans = [
+  {
+    slug: "essential-care", title: "Essential Care", price: "$99", unit: "per month",
+    tagline: "A dependable foundation after launch.",
+    description: "Monthly website oversight and small content updates for Mississippi businesses that need a current, working website.",
+    fit: "For a stable website that needs routine oversight and occasional changes to hours, contact information, or existing content.",
+    includes: ["Hosting oversight and uptime checks", "Technical maintenance appropriate to your website stack", "30 minutes of content updates per month", "Basic contact form checks", "A direct point of contact for website requests"],
+    example: "Update your seasonal hours and a service description while routine checks keep an eye on website availability.",
+    timing: "Month-to-month. Start date, billing, cancellation, and response expectations are confirmed in your agreement.",
+    scope: "Includes 30 minutes of content updates each month. Hosting bills, domain renewals, paid tools, major repairs, new pages, and automation support are separate unless expressly included. Additional work is quoted before it begins.",
+    faqs: [["Does $99 include the hosting provider’s bill?", "The plan includes oversight. Provider charges are separate unless your agreement explicitly includes them."], ["Can I request a redesign?", "A redesign or new functionality is a separate project. This plan covers routine maintenance and small updates."]],
+  },
+  {
+    slug: "business-care", title: "Business Care", price: "$199", unit: "per month",
+    tagline: "More room for updates. A clearer view of activity.",
+    description: "Website care with more content update time, monthly form testing, and analytics reporting for growing businesses.",
+    fit: "For a business that regularly updates its services or project information and wants a monthly view of website activity.",
+    includes: ["Hosting oversight, uptime checks, and technical maintenance", "90 minutes total of content updates per month", "Monthly contact form testing", "Monthly analytics report", "A direct point of contact for website requests"],
+    example: "Add recent work photos, refresh service information, and review website activity while your estimate form is tested each month.",
+    timing: "Month-to-month, with billing and cancellation terms agreed in writing.",
+    scope: "Includes 90 minutes total of monthly content updates, not 90 minutes in addition to Essential Care. Hosting, software costs, new features, and automation maintenance are separate. Reports depend on available tracking and access.",
+    faqs: [["Does this include ongoing SEO campaigns?", "Business Care includes reporting and website support. Monthly local SEO work is available in Local Growth."], ["What if my updates exceed the included time?", "We agree on the additional scope and cost before starting that work."]],
+  },
+  {
+    slug: "local-growth", title: "Local Growth", price: "$499", unit: "per month",
+    tagline: "Consistent attention to your local presence.",
+    description: "Monthly local SEO, Google Business Profile management, content improvements, and website care for Jackson-area businesses.",
+    fit: "For businesses ready to make steady improvements to their website and eligible business profile, with defined monthly work and reporting.",
+    includes: ["All Business Care benefits, including 90 minutes total of content updates", "Management of one eligible Google Business Profile", "Monthly local SEO improvements", "One monthly content improvement", "Monthly analytics reporting", "Quarterly strategy review"],
+    example: "A landscaper’s profile stays current while one service page receives a useful content improvement and the quarterly review guides the next priorities.",
+    timing: "Minimum three-month commitment. Your agreement defines the billing cycle, deliverables, and cancellation terms.",
+    scope: "For one website and one eligible business profile unless otherwise scoped. Advertising, additional locations, major new pages, hosting, and paid tools are separate. Google Business Profile is free; fees cover SIP’s management work. You retain ownership. No rankings, leads, or revenue guarantees.",
+    faqs: [["Why a three-month minimum?", "Local search improvements need consistent work and time to assess. The commitment establishes an initial period of defined deliverables, not a promise of results."], ["Is this the $499 Local Visibility Boost?", "No. The Visibility Boost is a one-time audit and setup service. Local Growth provides ongoing monthly improvements and care."]],
+  },
+];
+
+const additionalServices = [
+  {
+    slug: "crm-integrations", title: "CRM & Software Integrations", price: "Custom quote", unit: "based on tools and connections",
+    tagline: "Connect your tools. Keep your team in sync.",
+    description: "Connect website inquiries, scheduling tools, and customer records so your team can spend less time retyping information.",
+    fit: "For teams already using a CRM or scheduling platform that need customer information to move reliably between supported tools.",
+    includes: ["Compatibility review of your existing tools", "Mapping of the agreed customer fields", "Scoped form, CRM, or scheduling connections", "Duplicate handling and approval rules where supported", "Testing of successful and failed transfers", "Documentation and team handoff"],
+    example: "A website estimate request creates or updates a customer record in your CRM and notifies the right staff member.",
+    timing: "After discovery, your proposal defines the supported platforms, data fields, and timeline.",
+    scope: "Integration price depends on platform access, available APIs, fields, and workflow complexity. Subscriptions, API usage, migrations, and ongoing monitoring are separate. We verify compatibility before committing to a connection.",
+    faqs: [["Can you connect any software?", "We first verify whether your tools support a suitable integration and whether your account has the required access."], ["Can you move my old customer data?", "Data migration can be scoped separately after reviewing the records, formats, and permissions."]],
+  },
+  {
+    slug: "customer-portals", title: "Customer Portals & Dashboards", price: "Custom quote", unit: "based on features and access requirements",
+    tagline: "Give customers a clear place to check in.",
+    description: "Custom customer portals and team dashboards for businesses that need a shared view of jobs, requests, or approved documents.",
+    fit: "For a business answering repeated status questions or sharing job information through disconnected messages and files.",
+    includes: ["Discovery of customer and staff needs", "Defined user roles and access rules", "Custom portal layouts and agreed features", "Connections to scoped business data", "Access and workflow testing", "Training and documented handoff"],
+    example: "Customers can view the status of their service request while staff update progress from an internal dashboard.",
+    timing: "Feature scope, account roles, integrations, and launch milestones are established after discovery.",
+    scope: "Quoted by features, user roles, integrations, and data requirements. Hosting, authentication services, third-party licenses, and ongoing support are disclosed separately. A complete connected custom system starts at $4,500; a portal’s individual scope is quoted separately.",
+    faqs: [["Can each customer see only their own information?", "Access rules are part of discovery and testing. We define what each role can view or change before building."], ["Can it use data from my current system?", "If your system supports the required connection, we can scope it. We review access and compatibility first."]],
+  },
+  {
+    slug: "reporting-dashboards", title: "Custom Reporting & Notifications", price: "Custom quote", unit: "based on data sources and reports",
+    tagline: "See what needs attention, in one place.",
+    description: "Practical reports, dashboards, and notifications that help small businesses track inquiries and everyday operations.",
+    fit: "For owners compiling the same spreadsheet or checking several tools to understand what the team needs to do next.",
+    includes: ["Review of your reporting questions and available data", "Agreed metrics and data sources", "Custom report or dashboard layout", "Scheduled summaries or event notifications where scoped", "Checks against source records", "Documentation explaining the report and its limits"],
+    example: "A weekly summary shows new inquiries, assigned owners, and requests awaiting a response using your existing lead records.",
+    timing: "Your quote follows a review of data access, report frequency, and the metrics you need.",
+    scope: "Each quote identifies the reports, metrics, refresh intervals, and notification channels included. Platform fees, additional data sources, historical cleanup, and ongoing maintenance are separate.",
+    faqs: [["Can this replace monthly website analytics?", "Monthly analytics are included in Business Care and Local Growth. Custom reporting is for additional business data or tailored workflows."], ["Can you report on data we do not currently collect?", "We can plan collection separately. Reports can only reflect information your systems make available."]],
+  },
+  {
+    slug: "ai-document-tools", title: "AI Document & Internal Workflow Tools", price: "Custom quote", unit: "based on documents and workflow",
+    tagline: "Make approved information easier to use.",
+    description: "AI-assisted document summaries, internal knowledge tools, and business workflows designed around your team’s approved information.",
+    fit: "For teams repeatedly searching approved manuals, summarizing routine documents, or drafting work that still needs human review.",
+    includes: ["Review of your task and approved source documents", "Defined access, data handling, and tool boundaries", "A scoped document or internal knowledge workflow", "Human review steps and source references where appropriate", "Testing against representative documents", "Training and instructions for maintaining source material"],
+    example: "Staff use an internal assistant to locate an answer in approved service documentation, then check the source before sharing it with a customer.",
+    timing: "We assess the documents, permissions, and desired workflow before quoting a build and test period.",
+    scope: "Priced separately from the $799 website FAQ assistant. AI subscriptions, usage, document preparation, integrations, and ongoing maintenance are extra unless specified. Outputs require review; the tool does not replace professional judgment.",
+    faqs: [["Does this use private documents automatically?", "No. We agree on approved materials, access, and handling before connecting business information."], ["Can it send answers without review?", "We define human approval and handoff steps based on the task. Important decisions remain with your team."]],
+  },
+];
+
+export function serviceHref(slug) {
+  return `/services/${slug}`;
+}
+
+const coreServices = [
   {
     slug: "website-design", title: "Website Design & Development", price: "$1,500+", unit: "one-time project", tagline: "A professional presence. A clear next step.",
     description: "Custom websites for Jackson, MS businesses that need to look credible, explain their services, and make it easy for customers to call or request an estimate.",
@@ -129,3 +216,5 @@ export const services = [
     faqs: [["Can I keep my domain?", "Yes. We plan domain changes with you and preserve your ownership and account access."], ["Will performance work guarantee a perfect score?", "No. Results depend on the platform, integrations, and content. We identify the improvements that matter for your visitors."]],
   },
 ];
+
+export const services = [...coreServices, ...additionalServices, ...carePlans];
