@@ -1,15 +1,16 @@
 "use client";
 import { useState } from "react";
-export default function ContactForm() {
+import { services } from "./services/data";
+export default function ContactForm({ initialService = "Not sure — free growth review" }) {
   const [opened, setOpened] = useState(false);
   function handleSubmit(e) {
     e.preventDefault();
     const data = new FormData(e.currentTarget);
     const subject = encodeURIComponent(
-      `Website inquiry from ${data.get("name")}`,
+      `Business growth inquiry from ${data.get("name")}`,
     );
     const body = encodeURIComponent(
-      `Hello The Sip Web Studio,\n\nName: ${data.get("name")}\nEmail: ${data.get("email")}\nBusiness: ${data.get("business")}\n\nProject details:\n${data.get("message")}`,
+      `Hello The Sip Web Studio,\n\nName: ${data.get("name")}\nEmail: ${data.get("email")}\nBusiness: ${data.get("business")}\nService: ${data.get("service")}\nWebsite: ${data.get("website")}\n\nProject details:\n${data.get("message")}`,
     );
     window.location.href = `mailto:thesipsoftwaresolutions@gmail.com?subject=${subject}&body=${body}`;
     setOpened(true);
@@ -49,18 +50,20 @@ export default function ContactForm() {
           maxLength={180}
         />
       </label>
+      <label>Service of interest<select name="service" defaultValue={initialService}><option>Not sure — free growth review</option>{services.map(service => <option key={service.slug}>{service.title}</option>)}</select></label>
+      <label>Current website (optional)<input name="website" maxLength={500} placeholder="Your website or business profile link" /></label>
       <label>
-        What do you have in mind?
+        What would you like to improve?
         <textarea
           name="message"
           required
           rows={4}
-          placeholder="A new website, a fresh look, a little ongoing support…"
+          placeholder="Tell me about your services, where you work, and what you want to make easier."
           maxLength={3000}
         />
       </label>
       <button className="button" type="submit">
-        Start the conversation ↗
+        Draft my free review request ↗
       </button>
       <p className="small">
         This opens a draft in your email app. Send it there to complete your
