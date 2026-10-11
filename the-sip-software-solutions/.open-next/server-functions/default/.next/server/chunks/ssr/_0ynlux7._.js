@@ -1,0 +1,10 @@
+module.exports=[28628,a=>{"use strict";var b=a.i(87924),c=a.i(72131);a.s(["default",0,function(){let[a,d]=(0,c.useState)(!1);return(0,b.jsxs)("form",{onSubmit:function(a){a.preventDefault();let b=new FormData(a.currentTarget),c=encodeURIComponent(`Website inquiry from ${b.get("name")}`),e=encodeURIComponent(`Hello The Sip Web Studio,
+
+Name: ${b.get("name")}
+Email: ${b.get("email")}
+Business: ${b.get("business")}
+
+Project details:
+${b.get("message")}`);window.location.href=`mailto:thesipsoftwaresolutions@gmail.com?subject=${c}&body=${e}`,d(!0)},className:"contact-form",children:[(0,b.jsxs)("div",{className:"form-row",children:[(0,b.jsxs)("label",{children:["Your name",(0,b.jsx)("input",{name:"name",autoComplete:"name",required:!0,placeholder:"First and last name",maxLength:120})]}),(0,b.jsxs)("label",{children:["Email address",(0,b.jsx)("input",{type:"email",name:"email",autoComplete:"email",required:!0,placeholder:"you@yourbusiness.com",maxLength:254})]})]}),(0,b.jsxs)("label",{children:["Business name",(0,b.jsx)("input",{name:"business",autoComplete:"organization",required:!0,placeholder:"What’s your business called?",maxLength:180})]}),(0,b.jsxs)("label",{children:["What do you have in mind?",(0,b.jsx)("textarea",{name:"message",required:!0,rows:4,placeholder:"A new website, a fresh look, a little ongoing support…",maxLength:3e3})]}),(0,b.jsx)("button",{className:"button",type:"submit",children:"Start the conversation ↗"}),(0,b.jsx)("p",{className:"small",children:"This opens a draft in your email app. Send it there to complete your inquiry. You can also email me directly."}),a&&(0,b.jsx)("p",{role:"status",children:"Your email draft is ready in your email app. If it didn’t open, use the email link beside this form."})]})}])},33354,(a,b,c)=>{"use strict";c._=function(a){return a&&a.__esModule?a:{default:a}}}];
+
+//# sourceMappingURL=_0ynlux7._.js.map

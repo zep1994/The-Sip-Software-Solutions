@@ -3,20 +3,20 @@ import Link from "next/link";
 export const metadata = {
   metadataBase: new URL("https://thesipwebstudio.com"),
   title: {
-    default: "Web Developer in Jackson, MS | The Sip Web Studio",
+    default: "Web Design, Local SEO & Automation in Jackson, MS | The Sip Web Studio",
     template: "%s | The Sip Web Studio",
   },
   description:
-    "Custom web design and development in Jackson, MS. The Sip Web Studio builds professional websites for Mississippi businesses, with local SEO and ongoing website care.",
+    "Websites, Google Business Profile optimization, local SEO, lead capture, business automation, and AI for Jackson, MS small businesses. Clear prices and personal support.",
   alternates: { canonical: "/" },
   openGraph: {
     type: "website",
     locale: "en_US",
     url: "/",
     siteName: "The Sip Web Studio",
-    title: "Web Design with Southern Soul | The Sip Web Studio",
+    title: "Small Business Growth | The Sip Web Studio",
     description:
-      "Custom websites, local SEO, and personal support for businesses in Jackson, Mississippi.",
+      "Websites, local SEO, business automation, and AI for businesses in Jackson, Mississippi.",
     images: [
       {
         url: "/social-card.png",
@@ -29,7 +29,7 @@ export const metadata = {
   twitter: {
     card: "summary_large_image",
     title: "The Sip Web Studio | Jackson, MS Web Design",
-    description: "Thoughtful websites for Mississippi businesses.",
+    description: "Practical websites and business technology for Mississippi businesses.",
     images: ["/social-card.png"],
   },
   icons: { icon: "/studio-icon.svg" },
@@ -54,15 +54,22 @@ const schema = {
         "Clinton, Mississippi",
       ],
       description:
-        "Independent web design and development studio serving Jackson and Mississippi businesses.",
+        "Independent website and business technology studio serving Jackson and Mississippi businesses.",
       hasOfferCatalog: {
         "@type": "OfferCatalog",
-        name: "Website services",
+        name: "Small business technology services",
         itemListElement: [
           "Web design and development",
           "Local SEO",
           "Website maintenance",
           "Hosting",
+          "Google Business Profile optimization",
+          "Lead capture and follow-up",
+          "Review request systems",
+          "Appointment automation",
+          "Business workflow automation",
+          "AI website assistants",
+          "Custom business systems",
         ].map((name) => ({ "@type": "OfferCatalog", name })),
       },
     },
@@ -93,12 +100,12 @@ export default function RootLayout({ children }) {
               the sip<span>WEB STUDIO</span>
             </Link>
             <nav aria-label="Main navigation">
-              <Link href="/#services">Services</Link>
+              <Link href="/services">Services</Link>
               <Link href="/#portfolio">Work</Link>
               <Link href="/#about">About</Link>
               <Link href="/#pricing">Pricing</Link>
               <Link className="nav-cta" href="/#contact">
-                Let’s talk ↗
+                Free growth review ↗
               </Link>
             </nav>
           </div>
@@ -108,7 +115,7 @@ export default function RootLayout({ children }) {
           <Link href="/" className="wordmark">
             the sip<span>WEB STUDIO</span>
           </Link>
-          <p>Thoughtfully built in Mississippi.</p>
+          <p>Thoughtfully built in Mississippi.<br /><Link href="/services">Explore services</Link> · <Link href="/services/google-business-profile#disclosure">Google profile disclosure</Link></p>
           <p>© {new Date().getFullYear()} The Sip Web Studio</p>
         </footer>
         <script
