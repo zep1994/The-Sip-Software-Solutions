@@ -4,6 +4,8 @@
   "/favicon.ico/route": "/favicon.ico",
   "/page": "/",
   "/robots.txt/route": "/robots.txt",
+  "/services/[slug]/page": "/services/[slug]",
+  "/services/page": "/services",
   "/sitemap.xml/route": "/sitemap.xml",
   "/work/magnolia-mergers-acquisitions/page": "/work/magnolia-mergers-acquisitions"
 }

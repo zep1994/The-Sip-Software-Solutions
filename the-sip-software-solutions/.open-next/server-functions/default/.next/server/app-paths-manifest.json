@@ -4,6 +4,8 @@
   "/favicon.ico/route": "app/favicon.ico/route.js",
   "/page": "app/page.js",
   "/robots.txt/route": "app/robots.txt/route.js",
+  "/services/[slug]/page": "app/services/[slug]/page.js",
+  "/services/page": "app/services/page.js",
   "/sitemap.xml/route": "app/sitemap.xml/route.js",
   "/work/magnolia-mergers-acquisitions/page": "app/work/magnolia-mergers-acquisitions/page.js"
 }
