@@ -1,20 +1,16 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import ContactForm from "../../ContactForm";
-import LeadDemo from "../../LeadDemo";
-import { services, serviceGroups, carePlans, serviceHref } from "../data";
+import ContactForm from "../ContactForm";
+import LeadDemo from "../LeadDemo";
+import { services, serviceGroups, carePlans, serviceHref } from "./data";
 
-export const dynamicParams = false;
-export function generateStaticParams() { return services.map(({ slug }) => ({ slug })); }
-export async function generateMetadata({ params }) {
-  const { slug } = await params;
+export function serviceMetadata(slug) {
   const service = services.find(item => item.slug === slug);
   if (!service) return {};
   return { title: `${service.title} in Jackson, MS`, description: service.description, alternates: { canonical: `/services/${slug}` }, openGraph: { title: `${service.title} | The Sip Web Studio`, description: service.description, url: `/services/${slug}` } };
 }
 
-export default async function ServicePage({ params }) {
-  const { slug } = await params;
+export default function ServicePage({ slug }) {
   const service = services.find(item => item.slug === slug);
   if (!service) notFound();
   const group = serviceGroups.find(item => item.slugs.includes(slug));
