@@ -1,6 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
 import ContactForm from "./ContactForm";
+import LeadDemo from "./LeadDemo";
+import { serviceGroups } from "./services/data";
 
 const exampleSites = [
   {
@@ -35,60 +37,42 @@ const exampleSites = [
   },
 ];
 
-const services = [
-  [
-    "01",
-    "Web design & development",
-    "A custom website that feels like your business. Clear messaging, thoughtful design, and layouts that work beautifully on phones and desktops.",
-  ],
-  [
-    "02",
-    "Local SEO",
-    "Help search engines understand what you do and where you work with useful service content, page metadata, and a sound technical foundation.",
-  ],
-  [
-    "03",
-    "Website care",
-    "Keep your website current with content updates, software maintenance, backups, and practical support as your business grows.",
-  ],
-  [
-    "04",
-    "Hosting & performance",
-    "Fast, secure hosting and performance improvements that make it easier for customers to explore your website and get in touch.",
-  ],
-];
 const packages = [
   [
-    "Starter",
+    "Professional Presence",
     "$1,500",
     "A considered first step online.",
     [
       "Professional website design",
       "Mobile responsive layouts",
-      "Essential business pages",
-      "Contact form & basic SEO",
+      "Up to 5 pages & service-area content",
+      "Contact form, basic SEO & analytics",
+      "Launch training · typically 2–3 weeks",
     ],
   ],
   [
-    "Business Growth",
-    "$3,000",
-    "More room to tell your story.",
+    "Business Growth System",
+    "$2,750",
+    "A website with a better inquiry process.",
     [
-      "Custom design & lead generation",
-      "Expanded SEO setup",
-      "Analytics integration",
-      "Performance optimization",
+      "Everything in Professional Presence",
+      "Up to 10 pages, including service pages",
+      "Local SEO & eligible Google Profile setup",
+      "Estimate form & inquiry acknowledgment",
+      "Owner notifications & basic lead tracking",
+      "Conversion tracking · typically 3–5 weeks",
     ],
   ],
   [
-    "Custom",
-    "$5,000",
+    "Custom Business Systems",
+    "$4,500",
     "Built around your next big idea.",
     [
-      "Custom functionality",
+      "Custom websites, applications & portals",
       "Advanced integrations",
-      "Applications & interactive features",
-      "Scalable architecture",
+      "Customer dashboards & approved AI tools",
+      "Workflow automation & reporting",
+      "Training & documented handoff",
     ],
   ],
 ];
@@ -98,30 +82,27 @@ export default function Home() {
       <section className="hero wrap">
         <div className="hero-copy">
           <p className="eyebrow">
-            Independent web studio · Jackson, Mississippi
+            Small business technology · Jackson, Mississippi
           </p>
           <h1>
-            Web design with
-            <br />a little <em>Southern soul.</em>
+            Get found.<br />Get customers.<br /><em>Grow your business.</em>
           </h1>
           <p className="lead">
-            Your business has a story. Let’s give it a website worth sharing.
+            Web design, local SEO, automation, and AI for Mississippi businesses.
           </p>
           <p>
-            Custom web design, development, and local SEO for businesses in
-            Jackson, MS and across Mississippi. Thoughtfully built. Easy to use.
-            Ready for what’s next.
+            From a $299 Google Business Profile setup to a complete website and inquiry system, get practical help that fits your business. Serving Jackson and the surrounding communities with personal attention and clear starting prices.
           </p>
           <div className="actions">
             <a className="button" href="#contact">
-              Let’s talk about your website <span>↗</span>
+              Get a free business growth review <span>↗</span>
             </a>
-            <a className="text-link" href="#portfolio">
-              Explore the work ↓
-            </a>
+            <Link className="text-link" href="/services">
+              Explore our services ↗
+            </Link>
           </div>
           <div className="hero-note">
-            <span className="dot" /> Local perspective. Personal attention.
+            <span className="dot" /> Mississippi roots. A little Southern soul.
           </div>
         </div>
         <div
@@ -172,29 +153,29 @@ export default function Home() {
           <div>
             <p className="eyebrow">What I do</p>
             <h2>
-              Good design.
+              Smart solutions.
               <br />
-              <em>Real purpose.</em>
+              <em>Real business growth.</em>
             </h2>
           </div>
           <p>
-            A website should do more than look the part. It should explain your
-            business, earn trust, and give people a clear next step.
+            Get a professional presence, make customer inquiries easier to manage, and simplify the work behind the scenes. Start small or build a connected system.
           </p>
         </div>
         <div className="services-grid">
-          {services.map(([n, t, d]) => (
-            <article key={n}>
-              <span className="eyebrow">{n} /</span>
+          {serviceGroups.map(({ title: t, description: d, slugs }, index) => (
+            <article key={t}>
+              <span className="eyebrow">0{index + 1} /</span>
               <h3>{t}</h3>
               <p>{d}</p>
-              <a className="text-link" href="#contact">
-                Let’s discuss it ↗
-              </a>
+              <Link className="text-link" href={`/services#${slugs[0]}`}>
+                Explore services & pricing ↗
+              </Link>
             </article>
           ))}
         </div>
       </section>
+      <section className="quick-start section wrap"><div className="section-heading"><div><p className="eyebrow">Start with one improvement</p><h2>Small step.<br /><em>Useful change.</em></h2></div><p>You do not need a full website project to get started. These one-time services solve a specific problem.</p></div><div className="pricing-grid">{[["Google Business Profile", "$299", "Accurate details, services, photos, and verification guidance.", "google-business-profile"], ["Lead capture & follow-up", "$399", "One estimate form, a lead log, owner email, and customer acknowledgment.", "lead-capture"], ["Local Visibility Boost", "$499", "An SEO audit, eligible profile optimization, and improvements to 2 pages.", "local-seo"]].map(([title, price, description, slug]) => <article key={slug}><p className="eyebrow">One-time setup</p><h3>{title}</h3><p className="price">{price}</p><p>{description}</p><div className="actions"><Link className="text-link" href={`/services/${slug}`}>See what’s included ↗</Link></div></article>)}</div><p className="small service-intro">External software and larger integrations are additional. <Link className="text-link" href="/services">Browse all services, including reviews, booking, and AI ↗</Link></p></section>
       <section id="portfolio" className="work-section section">
         <div className="wrap">
           <div className="section-heading">
@@ -287,6 +268,7 @@ export default function Home() {
           </div>
         </div>
       </section>
+      <div className="wrap"><LeadDemo /></div>
       <section id="about" className="section wrap about-grid">
         <div>
           <p className="eyebrow">Meet your developer</p>
@@ -303,13 +285,12 @@ export default function Home() {
           <p>
             I help Mississippi businesses turn what makes them special into a
             clear, professional online presence. You work directly with the
-            person designing and building your website, from the first
+            person planning and building your solution, from the first
             conversation to the finishing touches.
           </p>
           <p>
             Whether you’re starting fresh or ready to improve an existing site,
-            we’ll focus on your customers, your goals, and a website you’re
-            proud to put your name on.
+            we’ll focus on your customers, your goals, and technology that makes your everyday work easier.
           </p>
           <a className="text-link" href="#contact">
             Let’s get acquainted ↗
@@ -340,7 +321,7 @@ export default function Home() {
           </div>
           <p>
             Clear steps, direct communication, and a shared understanding of
-            what your website needs to do.
+            what your website or business system needs to do.
           </p>
         </div>
         <div className="process-grid">
@@ -353,12 +334,12 @@ export default function Home() {
             [
               "02",
               "Design & build",
-              "Your story becomes a thoughtful design, then a responsive, working website.",
+              "We agree on a clear scope, build your solution, and test the customer experience together.",
             ],
             [
               "03",
               "Launch & care",
-              "We review the details together, launch your site, and plan for ongoing support.",
+              "We review the details, launch your solution, and hand it over with training and a support plan.",
             ],
           ].map(([n, t, d]) => (
             <article key={n}>
@@ -389,7 +370,7 @@ export default function Home() {
             {packages.map(([t, p, d, items], i) => (
               <article className={i === 1 ? "featured" : ""} key={t}>
                 <p className="eyebrow">
-                  {i === 1 ? "For growing businesses" : "Website package"}
+                  {i === 1 ? "For growing businesses" : "Business package"}
                 </p>
                 <h3>{t}</h3>
                 <p>{d}</p>
@@ -404,22 +385,25 @@ export default function Home() {
                   ))}
                 </ul>
                 <a className="button" href="#contact">
-                  Discuss your project ↗
+                  Request a free growth review ↗
                 </a>
+                <Link className="text-link package-details" href={`/services/${["website-design", "business-growth-system", "custom-business-systems"][i]}`}>
+                  Read the full package details ↗
+                </Link>
               </article>
             ))}
           </div>
+          <p className="small service-intro">Starting prices reflect a defined scope, not a fixed quote for every project. Hosting, messaging, CRM, and AI usage costs are separate. No guaranteed leads or rankings. A written scope and upfront payment are required before development.</p>
           <div className="care-row">
             <div>
               <h3>A little care goes a long way.</h3>
               <p>
-                Monthly support: Essential Care $99/month · Growth Care
-                $199/month · SEO Growth $499/month.
+                Monthly support: Essential Care $99/month · Business Care $199/month · Local Growth $499/month. Defined update time and clear monthly deliverables.
               </p>
             </div>
-            <a className="text-link" href="#contact">
-              Find your care plan ↗
-            </a>
+            <Link className="text-link" href="/services/website-care">
+              Compare care plans ↗
+            </Link>
           </div>
         </div>
       </section>
@@ -427,15 +411,14 @@ export default function Home() {
         <div>
           <p className="eyebrow">Made for Mississippi businesses</p>
           <h2>
-            Your web developer
+            Your technology partner
             <br />
             in <em>Jackson, MS.</em>
           </h2>
           <p>
             Serving Jackson and the surrounding metro, including Ridgeland,
             Madison, Brandon, Flowood, Pearl, and Clinton. From professional
-            services to local small businesses, I build websites that make your
-            expertise easier to find and understand.
+            services to local small businesses, I build websites and workflows that make your expertise easier to find and your customer inquiries easier to manage.
           </p>
         </div>
         <div className="faq">
@@ -475,8 +458,7 @@ export default function Home() {
               <em>starts here.</em>
             </h2>
             <p>
-              Tell me a little about your business and what you have in mind.
-              Let’s start with a free consultation.
+              Get a free business growth review. Share your website or the task that is slowing you down. I’ll suggest a practical next step and the service that fits, with no obligation to buy.
             </p>
             <a
               className="text-link email-link"
