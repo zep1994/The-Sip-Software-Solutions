@@ -61,7 +61,7 @@ const schema = {
       name: "The Sip Web Studio",
       url: "https://thesipwebstudio.com",
       image: "https://thesipwebstudio.com/social-card.png",
-      email: "thesipsoftwaresolutions@gmail.com",
+      email: "wes@thesipwebstudio.com",
       areaServed: [
         "Jackson, Mississippi",
         "Ridgeland, Mississippi",

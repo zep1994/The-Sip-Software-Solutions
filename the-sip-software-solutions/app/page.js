@@ -476,9 +476,9 @@ export default function Home() {
             </p>
             <a
               className="text-link email-link"
-              href="mailto:thesipsoftwaresolutions@gmail.com"
+              href="mailto:wes@thesipwebstudio.com"
             >
-              thesipsoftwaresolutions@gmail.com ↗
+              wes@thesipwebstudio.com ↗
             </a>
             <p className="small">Serving Jackson, Mississippi & beyond.</p>
           </div>
