@@ -1,48 +1,66 @@
 import "./globals.css";
 import Link from "next/link";
+
 export const metadata = {
   metadataBase: new URL("https://thesipwebstudio.com"),
+
   title: {
-    default: "Web Design, Local SEO & Automation in Jackson, MS | The Sip Web Studio",
+    default: "Web Design Jackson MS | The Sip Web Studio",
     template: "%s | The Sip Web Studio",
   },
+
   description:
-    "Websites, Google Business Profile optimization, local SEO, lead capture, business automation, and AI for Jackson, MS small businesses. Clear prices and personal support.",
-  alternates: { canonical: "/" },
+    "Professional web design in Jackson, MS for small businesses. Custom websites, local SEO, Google Business Profile optimization, and business automation.",
+
+
   openGraph: {
     type: "website",
     locale: "en_US",
     url: "/",
     siteName: "The Sip Web Studio",
-    title: "Small Business Growth | The Sip Web Studio",
+    title: "Web Design in Jackson, MS | The Sip Web Studio",
     description:
-      "Websites, local SEO, business automation, and AI for businesses in Jackson, Mississippi.",
+      "Custom websites and local SEO for small businesses in Jackson, Madison, Ridgeland, Brandon, and surrounding Mississippi communities.",
     images: [
       {
         url: "/social-card.png",
         width: 1200,
         height: 630,
-        alt: "The Sip Web Studio — web design with Southern soul",
+        alt: "The Sip Web Studio — Jackson MS Web Design",
       },
     ],
   },
+
   twitter: {
     card: "summary_large_image",
-    title: "The Sip Web Studio | Jackson, MS Web Design",
-    description: "Practical websites and business technology for Mississippi businesses.",
+    title: "Web Design Jackson MS | The Sip Web Studio",
+    description:
+      "Professional websites and business technology for Mississippi small businesses.",
     images: ["/social-card.png"],
   },
-  icons: { icon: "/studio-icon.svg" },
-  robots: { index: true, follow: true },
+
+  icons: {
+    icon: "/studio-icon.svg",
+  },
+
+  verification: {
+    google: process.env.GOOGLE_SITE_VERIFICATION || undefined,
+  },
+
+  robots: {
+    index: true,
+    follow: true,
+  },
 };
 const schema = {
   "@context": "https://schema.org",
   "@graph": [
     {
-      "@type": "Organization",
+      "@type": "ProfessionalService",
       "@id": "https://thesipwebstudio.com/#studio",
       name: "The Sip Web Studio",
       url: "https://thesipwebstudio.com",
+      image: "https://thesipwebstudio.com/social-card.png",
       email: "thesipsoftwaresolutions@gmail.com",
       areaServed: [
         "Jackson, Mississippi",
@@ -115,7 +133,7 @@ export default function RootLayout({ children }) {
           <Link href="/" className="wordmark">
             the sip<span>WEB STUDIO</span>
           </Link>
-          <p>Thoughtfully built in Mississippi.<br /><Link href="/services">Explore services</Link> · <Link href="/services/google-business-profile#disclosure">Google profile disclosure</Link></p>
+          <p>Web design for Jackson and surrounding Mississippi communities.<br /><Link href="/services/website-design">Website design</Link> · <Link href="/services/local-seo">Local SEO</Link> · <Link href="/services">Explore services</Link> · <Link href="/services/google-business-profile#disclosure">Google profile disclosure</Link></p>
           <p>© {new Date().getFullYear()} The Sip Web Studio</p>
         </footer>
         <script

@@ -76,6 +76,8 @@ const packages = [
     ],
   ],
 ];
+export const metadata = { alternates: { canonical: "/" } };
+
 export default function Home() {
   return (
     <main id="main-content">
@@ -85,10 +87,10 @@ export default function Home() {
             Small business technology · Jackson, Mississippi
           </p>
           <h1>
-            Get found.<br />Get customers.<br /><em>Grow your business.</em>
+            Professional Web Design<br />for <em>Jackson, MS Businesses.</em>
           </h1>
           <p className="lead">
-            Web design, local SEO, automation, and AI for Mississippi businesses.
+            Custom websites, local SEO, and smart business technology that help Mississippi businesses get found, earn trust, and grow.
           </p>
           <p>
             From a $299 Google Business Profile setup to a complete website and inquiry system, get practical help that fits your business. Serving Jackson and the surrounding communities with personal attention and clear starting prices.
@@ -142,6 +144,15 @@ export default function Home() {
           </div>
         </div>
       </section>
+      <section className="section wrap" aria-labelledby="local-web-design">
+        <div className="section-heading">
+          <div><p className="eyebrow">Jackson, Mississippi Web Design</p><h2 id="local-web-design">Websites built for<br /><em>local business growth.</em></h2></div>
+          <p>The Sip Web Studio designs professional, mobile-friendly websites for small businesses in Jackson, Madison, Ridgeland, Brandon, Flowood, Pearl, Clinton, and surrounding Mississippi communities.</p>
+        </div>
+        <p>Whether you are starting your first website or updating an outdated one, we create an online presence that clearly explains your services and makes it easier for customers to contact you.</p>
+        <Link className="text-link" href="/services/website-design">Explore website design services ↗</Link>
+      </section>
+
       <div className="service-strip">
         <div className="wrap">
           Mississippi roots. Digital possibilities.

@@ -1,4 +1,4 @@
-import { services } from "./services/data";
+import { services } from "./services/data.js";
 export default function sitemap() {
   const base = "https://thesipwebstudio.com";
   return [
@@ -8,3 +8,4 @@ export default function sitemap() {
     { url: `${base}/work/magnolia-mergers-acquisitions`, changeFrequency: "monthly", priority: 0.8 },
   ];
 }
+

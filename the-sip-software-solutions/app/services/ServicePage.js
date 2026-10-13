@@ -7,7 +7,14 @@ import { services, serviceGroups, carePlans, serviceHref } from "./data";
 export function serviceMetadata(slug) {
   const service = services.find(item => item.slug === slug);
   if (!service) return {};
-  return { title: `${service.title} in Jackson, MS`, description: service.description, alternates: { canonical: `/services/${slug}` }, openGraph: { title: `${service.title} | The Sip Web Studio`, description: service.description, url: `/services/${slug}` } };
+  const title = slug === "website-design" ? "Small Business Web Design in Jackson, MS" : `${service.title} in Jackson, MS`;
+  const images = [{ url: "/social-card.png", width: 1200, height: 630, alt: "The Sip Web Studio — Jackson MS Web Design" }];
+  return {
+    title, description: service.description,
+    alternates: { canonical: `/services/${slug}` },
+    openGraph: { type: "website", siteName: "The Sip Web Studio", title, description: service.description, url: `/services/${slug}`, images },
+    twitter: { card: "summary_large_image", title, description: service.description, images: ["/social-card.png"] },
+  };
 }
 
 export default function ServicePage({ slug }) {
@@ -19,7 +26,12 @@ export default function ServicePage({ slug }) {
   return <main id="main-content">
     <section className="section wrap">
       <nav aria-label="Breadcrumb" className="breadcrumb"><Link href="/">Home</Link><span>/</span><Link href="/services">Services</Link><span>/</span><span>{service.title}</span></nav>
-      <div className="service-hero"><div><p className="eyebrow">{service.title} · Jackson, MS</p><h1>{service.tagline}</h1><p className="lead">{service.description}</p><div className="actions"><a className="button" href="#service-contact">Get a free business growth review ↗</a></div></div><aside className="service-price"><p className="eyebrow">Your starting point</p><p className="price">{service.price}</p><p>{service.unit}</p><p>{service.timing}</p><a className="text-link" href="#included">See what’s included ↓</a></aside></div>
+      <div className="service-hero"><div><p className="eyebrow">{service.title} · Jackson, MS</p><h1>{slug === "website-design" ? "Small Business Web Design in Jackson, MS" : `${service.title} in Jackson, MS`}</h1><p>{service.tagline}</p><p className="lead">{service.description}</p><div className="actions"><a className="button" href="#service-contact">Get a free business growth review ↗</a></div></div><aside className="service-price"><p className="eyebrow">Your starting point</p><p className="price">{service.price}</p><p>{service.unit}</p><p>{service.timing}</p><a className="text-link" href="#included">See what’s included ↓</a></aside></div>
+      {slug === "website-design" && <section aria-labelledby="website-process">
+        <div className="case-grid"><h2 id="website-process">A website built around your customers</h2><div><p>We start with your services, service area, existing content, and the action you want visitors to take. That guides the page structure, copy, and contact options before design begins.</p><p>Next, we build mobile-friendly layouts, organize your key services, and review the site with you. Before launch, we check navigation, forms, page metadata, and the experience on smaller screens.</p></div></div>
+        <div className="case-grid"><h2>See a completed project</h2><div><p>Our Magnolia Mergers &amp; Acquisitions project shows how clear service descriptions and a considered design can present a Mississippi advisory business online.</p><Link className="text-link" href="/work/magnolia-mergers-acquisitions">Read the Magnolia website case study ↗</Link></div></div>
+        <div className="case-grid"><h2>Serving the Jackson metro</h2><div><p>We work with businesses in Jackson, Madison, Ridgeland, Brandon, Flowood, Pearl, and Clinton. Tell us where your customers are so your website explains your actual service area.</p><p>Pair your website with <Link href="/services/local-seo">local SEO</Link>, <Link href="/services/google-business-profile">Google Business Profile support</Link>, or <Link href="/services/website-care">website care</Link> when those services fit your needs.</p></div></div>
+      </section>}
       <div className="case-grid"><h2>Is this a good fit?</h2><p>{service.fit}</p></div>
       {slug === "website-care" && <section className="care-plan-comparison" aria-labelledby="care-plans-title">
         <h2 id="care-plans-title">Choose your <em>monthly plan.</em></h2>

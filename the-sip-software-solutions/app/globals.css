@@ -888,3 +888,10 @@ em {
   .service-category { padding: 40px 0; }
   .service-hero { padding-bottom: 30px; }
 }
+
+/* Keyboard access and reduced-motion preferences. */
+:where(a, button, input, select, textarea, summary):focus-visible { outline: 3px solid var(--copper); outline-offset: 4px; }
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; }
+}
