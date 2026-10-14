@@ -1,5 +1,15 @@
 # Search visibility after deployment
 
+## October 13 site improvements
+
+The homepage now introduces website development, AI/business automation, custom software, and reporting dashboards, with direct links to existing service routes. The services hub highlights those four areas without removing the existing catalog or prices. Automation, AI, software, and reporting pages contain distinct project-planning content and related-service links. The Magnolia case study has a descriptive project heading, a deliverables section, and a link to the website-design service; no measured results or new client claims were added.
+
+Each primary page keeps its existing URL and self-canonical. Root structured data uses Organization, with Service offers in its catalog, and no unverified address or phone. The sitemap and robots generator already covered the actual content routes and did not require changes. Cloudflare's prepended robots directives must be checked on the production response separately.
+
+Public service-page contact links now use the same studio address as the homepage. The contact form retains its existing Gmail delivery destination and mailto workflow; it does not send messages automatically. Confirm both business mailboxes before changing delivery configuration.
+
+After deploying, confirm homepage indexing in Search Console, confirm successful sitemap processing, inspect the Magnolia page and priority service routes, and request indexing after the live checks pass. Record query impressions, clicks, and qualified inquiries by service. Business Profile verification does not need to precede these website improvements.
+
 The site targets Jackson, MS web design and development with server-rendered content, unique page titles/descriptions, canonical URLs, social previews, Organization/WebSite structured data, case-study breadcrumbs, robots.txt, and a sitemap. Organization schema is used because a verified street address and business phone were not provided. No address, review rating, or measured portfolio results were invented.
 
 After publishing to https://thesipwebstudio.com:

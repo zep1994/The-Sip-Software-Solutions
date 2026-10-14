@@ -1,11 +1,12 @@
 import Link from "next/link";
 import { services, serviceGroups, serviceHref } from "./data";
+import { primaryServices } from "./search-content";
 
 export const metadata = {
-  title: "Small Business Services & Prices in Jackson, MS",
-  description: "Compare prices for website design, Google Business Profiles, local SEO, lead capture, reviews, booking, CRM integrations, portals, AI, and monthly website care.",
+  title: "Websites, AI Automation & Software Services in Jackson, MS",
+  description: "Explore website development, AI automation, custom software, and reporting dashboards in Jackson, MS. Compare service scopes and starting prices.",
   alternates: { canonical: "/services" },
-  openGraph: { title: "Small Business Services & Prices in Jackson, MS", url: "/services" },
+  openGraph: { title: "Business Technology Services in Jackson, MS", description: "Website development, AI automation, custom software, and reporting dashboards with clear scopes and starting prices.", url: "/services", images: [{ url: "/social-card.png", width: 1200, height: 630, alt: "The Sip Web Studio" }] },
 };
 
 export default function ServicesPage() {
@@ -14,14 +15,15 @@ export default function ServicesPage() {
       <section className="section wrap">
         <div className="case-hero">
           <p className="eyebrow">Small business technology · Jackson, Mississippi</p>
-          <h1>The right help.<br /><em>At the right stage.</em></h1>
-          <p className="lead">Every service. A clear starting price. Explore what is included, then choose the next step that fits your business.</p>
+          <h1>Business technology services<br /><em>in Jackson, MS.</em></h1>
+          <p className="lead">Website design and development, AI and automation, custom software, and reporting dashboards. Explore the deliverables and starting prices, then choose the next step that fits your business.</p>
           <div className="actions">
             <Link className="button" href="/#contact">Get a free business growth review ↗</Link>
             <a className="text-link" href="#service-prices">Compare all services & prices ↓</a>
           </div>
         </div>
         <p className="service-intro">Serving Jackson, Madison, Ridgeland, Brandon, Flowood, Pearl, and Clinton. Work directly with Wes on a defined scope and a clear price. Third-party software, hosting, messaging, and usage are separate unless your proposal includes them. Custom work is quoted after a review of your requirements.</p>
+        <section aria-labelledby="primary-services"><h2 id="primary-services">Four ways to improve<br /><em>your business technology.</em></h2><div className="service-catalog">{primaryServices.map(service => <article key={service.slug}><h3><Link href={serviceHref(service.slug)}>{service.title}</Link></h3><p>{service.description}</p><Link className="text-link" href={serviceHref(service.slug)}>View scope and project details ↗</Link></article>)}</div></section>
         <nav className="service-jump-links" aria-label="Service categories">
           {serviceGroups.map(group => <a key={group.title} href={`#${group.slugs[0]}`}>{group.title} ↓</a>)}
         </nav>

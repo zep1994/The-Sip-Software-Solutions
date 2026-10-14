@@ -3,6 +3,7 @@ import Link from "next/link";
 import ContactForm from "./ContactForm";
 import LeadDemo from "./LeadDemo";
 import { services, serviceGroups, serviceHref } from "./services/data";
+import { primaryServices } from "./services/search-content";
 
 const exampleSites = [
   {
@@ -76,7 +77,15 @@ const packages = [
     ],
   ],
 ];
-export const metadata = { alternates: { canonical: "/" } };
+const homeTitle = "Web Design & Business Automation in Jackson, MS | The Sip Web Studio";
+const homeDescription = "Web design, AI automation, custom software, and reporting dashboards for Jackson, Mississippi businesses. Work directly with Wes on a clearly scoped project.";
+export const metadata = {
+  title: { absolute: homeTitle },
+  description: homeDescription,
+  alternates: { canonical: "/" },
+  openGraph: { type: "website", siteName: "The Sip Web Studio", title: homeTitle, description: homeDescription, url: "/", images: [{ url: "/social-card.png", width: 1200, height: 630, alt: "The Sip Web Studio" }] },
+  twitter: { card: "summary_large_image", title: homeTitle, description: homeDescription, images: ["/social-card.png"] },
+};
 
 export default function Home() {
   return (
@@ -87,17 +96,17 @@ export default function Home() {
             Small business technology · Jackson, Mississippi
           </p>
           <h1>
-            Professional Web Design<br />for <em>Jackson, MS Businesses.</em>
+            Websites, software &amp; automation<br />for <em>Jackson businesses.</em>
           </h1>
           <p className="lead">
-            Custom websites, local SEO, and smart business technology that help Mississippi businesses get found, earn trust, and grow.
+            Website design and development, practical AI tools, custom software, and reporting dashboards built around the way your business works.
           </p>
           <p>
-            From a $299 Google Business Profile setup to a complete website and inquiry system, get practical help that fits your business. Serving Jackson and the surrounding communities with personal attention and clear starting prices.
+            Work directly with Wes to present your services, organize inquiries, or simplify a repeated task. Serving Jackson and the surrounding Mississippi communities with a written scope and clear starting prices.
           </p>
           <div className="actions">
             <a className="button" href="#contact">
-              Get a free business growth review <span>↗</span>
+              Discuss your project <span>↗</span>
             </a>
             <Link className="text-link" href="/services">
               Explore our services ↗
@@ -143,6 +152,16 @@ export default function Home() {
             <span className="spark">✳</span>
           </div>
         </div>
+      </section>
+      <section className="section wrap" aria-labelledby="core-services">
+        <div className="section-heading">
+          <div><p className="eyebrow">Business technology · Jackson, MS</p><h2 id="core-services">Start with the problem.<br /><em>Find the right service.</em></h2></div>
+          <p>A new website, a disconnected workflow, or another manual report: choose the area you want to improve and explore the scope before starting.</p>
+        </div>
+        <div className="service-catalog">
+          {primaryServices.map(service => <article key={service.slug}><h3><Link href={serviceHref(service.slug)}>{service.title}</Link></h3><p>{service.description}</p><Link className="text-link" href={serviceHref(service.slug)}>Explore the service ↗</Link></article>)}
+        </div>
+        <p className="service-intro">For website assistants and internal knowledge tools, explore <Link href="/services/ai-solutions">AI solutions</Link> and <Link href="/services/ai-document-tools">AI document tools</Link>.</p>
       </section>
       <section className="section wrap" aria-labelledby="local-web-design">
         <div className="section-heading">
@@ -306,6 +325,7 @@ export default function Home() {
             Whether you’re starting fresh or ready to improve an existing site,
             we’ll focus on your customers, your goals, and technology that makes your everyday work easier.
           </p>
+          <p>That work can include a customer-facing website, a connection between your business tools, a custom application, or a reporting dashboard. We agree on deliverables, access, testing, and handoff before building so you know what your project includes.</p>
           <a className="text-link" href="#contact">
             Let’s get acquainted ↗
           </a>

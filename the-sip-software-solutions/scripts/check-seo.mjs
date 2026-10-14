@@ -1,6 +1,7 @@
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import { services } from '../app/services/data.js';
+import { primaryServices, serviceSearchContent } from '../app/services/search-content.js';
 const base='https://thesipwebstudio.com';
 const routes=['/','/services',...services.map(s=>`/services/${s.slug}`),'/work/magnolia-mergers-acquisitions'];
 const pages=new Map();
@@ -34,6 +35,12 @@ const {default:sitemap}=await import('../app/sitemap.js');
 assert.deepEqual(sitemap().map(s=>new URL(s.url).pathname).sort(),routes.slice().sort());
 const {default:robots}=await import('../app/robots.js');
 assert.equal(robots().sitemap,base+'/sitemap.xml');
-assert.ok(pages.get('/').includes('Professional Web Design'));
-assert.ok(pages.get('/').includes('"@type":"ProfessionalService"'));
-console.log(`Passed: ${routes.length} generated pages, self canonicals, H1s, metadata, JSON-LD, ${count} internal links/anchors, sitemap coverage, robots sitemap, and local business schema.`);
+assert.ok(pages.get('/').includes('Jackson businesses'));
+assert.ok(pages.get('/').includes('"@type":"Organization"'));
+for (const service of primaryServices) assert.ok(pages.get('/').includes(`href="/services/${service.slug}"`), `Homepage links to ${service.slug}`);
+for (const [slug, content] of Object.entries(serviceSearchContent)) {
+ const html = pages.get(`/services/${slug}`);
+ for (const [heading] of content.sections) assert.ok(html.includes(heading), `${slug}: server-rendered project content`);
+}
+assert.ok(pages.get('/work/magnolia-mergers-acquisitions').includes('href="/services/website-design"'), 'Case study links to website service');
+console.log(`Passed: ${routes.length} generated pages, self canonicals, H1s, metadata, JSON-LD, ${count} internal links/anchors, sitemap coverage, robots sitemap, and organization schema.`);

@@ -5,12 +5,12 @@ export const metadata = {
   metadataBase: new URL("https://thesipwebstudio.com"),
 
   title: {
-    default: "Web Design Jackson MS | The Sip Web Studio",
+    default: "Business Technology in Jackson, MS | The Sip Web Studio",
     template: "%s | The Sip Web Studio",
   },
 
   description:
-    "Professional web design in Jackson, MS for small businesses. Custom websites, local SEO, Google Business Profile optimization, and business automation.",
+    "Website design, AI automation, custom software, and business reporting for Jackson, Mississippi businesses. Work directly with The Sip Web Studio.",
 
 
   openGraph: {
@@ -56,7 +56,7 @@ const schema = {
   "@context": "https://schema.org",
   "@graph": [
     {
-      "@type": "ProfessionalService",
+      "@type": "Organization",
       "@id": "https://thesipwebstudio.com/#studio",
       name: "The Sip Web Studio",
       url: "https://thesipwebstudio.com",
@@ -88,7 +88,8 @@ const schema = {
           "Business workflow automation",
           "AI website assistants",
           "Custom business systems",
-        ].map((name) => ({ "@type": "OfferCatalog", name })),
+          "Reporting and KPI dashboards",
+        ].map((name) => ({ "@type": "Offer", itemOffered: { "@type": "Service", name } })),
       },
     },
     {
@@ -133,7 +134,7 @@ export default function RootLayout({ children }) {
           <Link href="/" className="wordmark">
             the sip<span>WEB STUDIO</span>
           </Link>
-          <p>Web design for Jackson and surrounding Mississippi communities.<br /><Link href="/services/website-design">Website design</Link> · <Link href="/services/local-seo">Local SEO</Link> · <Link href="/services">Explore services</Link> · <Link href="/services/google-business-profile#disclosure">Google profile disclosure</Link></p>
+          <p>Business technology for Jackson and surrounding Mississippi communities.<br /><Link href="/services/website-design">Website design</Link> · <Link href="/services/business-automation">Automation</Link> · <Link href="/services/custom-business-systems">Custom software</Link> · <Link href="/services/reporting-dashboards">Reporting dashboards</Link><br /><Link href="/services">All services</Link> · <Link href="/services/google-business-profile#disclosure">Google profile disclosure</Link></p>
           <p>© {new Date().getFullYear()} The Sip Web Studio</p>
         </footer>
         <script
