@@ -16,6 +16,11 @@ for(const route of routes){
  assert.ok(/<meta name="description" content="[^"]+"/.test(html),`${route}: description`);
  for(const m of html.matchAll(/<script[^>]*type="application\/ld\+json"[^>]*>(.*?)<\/script>/gs)) JSON.parse(m[1]);
  if(route.startsWith('/services/')){
+  const data = [...html.matchAll(/<script[^>]*type="application\/ld\+json"[^>]*>(.*?)<\/script>/gs)].flatMap(m => JSON.parse(m[1]));
+  const breadcrumb = data.find(item => item['@type'] === 'BreadcrumbList');
+  assert.ok(breadcrumb, route + ': breadcrumb schema');
+  assert.deepEqual(breadcrumb.itemListElement.map(item => item.item), [base, base + '/services', base + route], route + ': breadcrumb URLs');
+  assert.equal(data.find(item => item['@type'] === 'Service').description, html.match(/<meta name="description" content="([^"]+)"/)[1].replaceAll('&amp;', '&'), route + ': service schema matches description');
   assert.ok(html.includes('property="og:image"'),`${route}: social image`);
   assert.ok(html.includes('name="twitter:title"'),`${route}: twitter metadata`);
  }
@@ -44,3 +49,6 @@ for (const [slug, content] of Object.entries(serviceSearchContent)) {
 }
 assert.ok(pages.get('/work/magnolia-mergers-acquisitions').includes('href="/services/website-design"'), 'Case study links to website service');
 console.log(`Passed: ${routes.length} generated pages, self canonicals, H1s, metadata, JSON-LD, ${count} internal links/anchors, sitemap coverage, robots sitemap, and organization schema.`);
+
+assert.ok(pages.get('/').includes('<title>Web Design in Jackson, MS | The Sip Web Studio</title>'), 'Homepage targets Jackson web design');
+assert.ok(pages.get('/').includes('href="/services/local-seo"'), 'Homepage links to local SEO');
