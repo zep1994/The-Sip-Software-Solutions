@@ -9,7 +9,7 @@ The Sip Software Solutions provides professional website design, website mainten
 Our goal is simple: build websites that look professional, perform well, rank better in search, and turn visitors into customers.
 
 ---
-
+npx @opennextjs/cloudflare build && npx @opennextjs/cloudflare deploy
 ## 🚀 What We Do
 
 We build modern, responsive websites designed around the needs of local businesses.

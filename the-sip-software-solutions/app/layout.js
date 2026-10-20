@@ -5,38 +5,41 @@ export const metadata = {
   metadataBase: new URL("https://thesipwebstudio.com"),
 
   title: {
-    default: "Business Technology in Jackson, MS | The Sip Web Studio",
+    default: "Web Design & Business Technology in Jackson, MS | The Sip Web Studio",
     template: "%s | The Sip Web Studio",
   },
 
   description:
-    "Website design, AI automation, custom software, and business reporting for Jackson, Mississippi businesses. Work directly with The Sip Web Studio.",
+    "Website design, local SEO, AI automation, custom software, and business reporting for Jackson, Mississippi businesses.",
 
+  alternates: {
+    canonical: "/",
+  },
 
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "/",
+    url: "https://thesipwebstudio.com/",
     siteName: "The Sip Web Studio",
     title: "Web Design in Jackson, MS | The Sip Web Studio",
     description:
-      "Custom websites and local SEO for small businesses in Jackson, Madison, Ridgeland, Brandon, and surrounding Mississippi communities.",
+      "Custom websites, local SEO, and business automation for small businesses in Jackson and surrounding Mississippi communities.",
     images: [
       {
-        url: "/social-card.png",
+        url: "https://thesipwebstudio.com/social-card.png",
         width: 1200,
         height: 630,
-        alt: "The Sip Web Studio — Jackson MS Web Design",
+        alt: "The Sip Web Studio — Web Design and Business Technology",
       },
     ],
   },
 
   twitter: {
     card: "summary_large_image",
-    title: "Web Design Jackson MS | The Sip Web Studio",
+    title: "The Sip Web Studio | Jackson, MS",
     description:
-      "Professional websites and business technology for Mississippi small businesses.",
-    images: ["/social-card.png"],
+      "Web Design, Local SEO, AI Automation & Business Technology.",
+    images: ["https://thesipwebstudio.com/social-card.png"],
   },
 
   icons: {
@@ -52,6 +55,7 @@ export const metadata = {
     follow: true,
   },
 };
+
 const schema = {
   "@context": "https://schema.org",
   "@graph": [
@@ -100,6 +104,24 @@ const schema = {
       publisher: { "@id": "https://thesipwebstudio.com/#studio" },
       inLanguage: "en-US",
     },
+    {
+      "@type": "WebPage",
+      "@id": "https://thesipwebstudio.com/#webpage",
+      url: "https://thesipwebstudio.com/",
+      name: "The Sip Web Studio — Web Design in Jackson, MS",
+      isPartOf: {
+        "@id": "https://thesipwebstudio.com/#website",
+      },
+      about: {
+        "@id": "https://thesipwebstudio.com/#studio",
+      },
+      primaryImageOfPage: {
+        "@type": "ImageObject",
+        url: "https://thesipwebstudio.com/social-card.png",
+        width: 1200,
+        height: 630,
+      },
+    }
   ],
 };
 export default function RootLayout({ children }) {
