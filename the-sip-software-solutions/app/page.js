@@ -77,8 +77,8 @@ const packages = [
     ],
   ],
 ];
-const homeTitle = "Web Design & Business Automation in Jackson, MS | The Sip Web Studio";
-const homeDescription = "Web design, AI automation, custom software, and reporting dashboards for Jackson, Mississippi businesses. Work directly with Wes on a clearly scoped project.";
+const homeTitle = "Web Design in Jackson, MS | The Sip Web Studio";
+const homeDescription = "Small business web design and local SEO in Jackson, Mississippi. Work directly with Wes on your website, with automation and custom software available as you grow.";
 export const metadata = {
   title: { absolute: homeTitle },
   description: homeDescription,
@@ -96,10 +96,10 @@ export default function Home() {
             Small business technology · Jackson, Mississippi
           </p>
           <h1>
-            Websites, software &amp; automation<br />for <em>Jackson businesses.</em>
+            Web design &amp; development<br />for <em>Jackson businesses.</em>
           </h1>
           <p className="lead">
-            Website design and development, practical AI tools, custom software, and reporting dashboards built around the way your business works.
+            Mobile-friendly websites and local SEO for Jackson, Mississippi small businesses, with practical AI tools, custom software, and reporting dashboards available as you grow.
           </p>
           <p>
             Work directly with Wes to present your services, organize inquiries, or simplify a repeated task. Serving Jackson and the surrounding Mississippi communities with a written scope and clear starting prices.

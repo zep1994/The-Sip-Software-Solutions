@@ -7,6 +7,27 @@ export const primaryServices = [
 ];
 
 export const serviceSearchContent = {
+  "website-design": {
+    title: "Website Design in Jackson, MS",
+    description: "Small business website design in Jackson, Mississippi. Mobile-friendly sites with clear service pages, local SEO foundations, and direct support from Wes.",
+    sections: [
+      ["Plan the pages your customers need", "A local service website should answer what you do, where you work, and how to request a quote. We organize your services, real project photos, and contact details into pages customers can use on a phone or desktop. A new website or redesign starts with a review of your existing content and priorities."],
+      ["Build search foundations into the launch", "We plan descriptive page titles, headings, internal links, and service-area copy around the services you actually provide. Launch checks cover crawl access, canonical URLs, the sitemap, and contact paths. These foundations help search engines understand your site; ongoing local SEO is a separate scope."],
+      ["Know the scope before you start", "Professional Presence starts at $1,500 for up to five pages, with a typical two-to-three-week timeline. Your written proposal confirms content responsibilities, revisions, launch requirements, and any separate hosting or support costs. Larger websites and connected systems receive their own scope."],
+    ],
+    links: ["local-seo", "google-business-profile", "website-care"],
+  },
+  "local-seo": {
+    title: "Local SEO Services in Jackson, MS",
+    description: "Local SEO for Jackson, Mississippi businesses. Review search visibility, improve service pages, and align your website with an eligible Google Business Profile.",
+    sections: [
+      ["Start with your actual search visibility", "We review available Google Search Console data, indexed pages, and the searches relevant to your services. A Jackson business serving nearby communities needs accurate service-area information and useful service pages. We prioritize gaps in your existing site before recommending additional pages."],
+      ["Connect your website and local presence", "Your website, eligible Google Business Profile, and genuine directory listings should describe the same business with consistent contact details. We review your services, profile categories, and customer contact paths using information you approve. Serving Madison, Ridgeland, Brandon, Flowood, Pearl, or Clinton does not require a separate storefront or a copied page for each city."],
+      ["Choose one-time setup or ongoing work", "The Local Visibility Boost is a one-time audit and setup service. Local Growth provides ongoing monthly improvements and care under a separate agreement. Your proposal defines the pages, profile work, access, and reporting included so you can choose the level of support your business needs."],
+      ["Measure inquiries as well as rankings", "Search impressions, clicks, and relevant query trends help guide the next improvement. Where tracking is available, we also review qualified inquiries. Organic website results and Google Maps visibility are different surfaces; results vary by search and location, and no position or timeline is guaranteed."],
+    ],
+    links: ["website-design", "google-business-profile", "local-growth"],
+  },
   "business-automation": {
     title: "Business Automation in Jackson, MS",
     description: "Business workflow automation in Jackson, MS. Connect forms, CRM records, scheduling, and notifications with defined approvals and failure handling.",

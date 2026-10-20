@@ -26,7 +26,16 @@ export default function ServicePage({ slug }) {
   const content = serviceSearchContent[slug];
   const group = serviceGroups.find(item => item.slugs.includes(slug));
   const related = services.filter(item => item.slug !== slug && group.slugs.includes(item.slug));
-  const schema = { "@context": "https://schema.org", "@type": "Service", name: service.title, description: service.description, url: `https://thesipwebstudio.com/services/${slug}`, provider: { "@id": "https://thesipwebstudio.com/#studio" }, areaServed: ["Jackson, MS", "Madison, MS", "Ridgeland, MS", "Brandon, MS", "Flowood, MS", "Pearl, MS", "Clinton, MS"] };
+  const schema = { "@context": "https://schema.org", "@type": "Service", name: service.title, description: content?.description || service.description, url: `https://thesipwebstudio.com/services/${slug}`, provider: { "@id": "https://thesipwebstudio.com/#studio" }, areaServed: ["Jackson, MS", "Madison, MS", "Ridgeland, MS", "Brandon, MS", "Flowood, MS", "Pearl, MS", "Clinton, MS"] };
+  const breadcrumbs = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: "https://thesipwebstudio.com" },
+      { "@type": "ListItem", position: 2, name: "Services", item: "https://thesipwebstudio.com/services" },
+      { "@type": "ListItem", position: 3, name: service.title, item: schema.url },
+    ],
+  };
   return <main id="main-content">
     <section className="section wrap">
       <nav aria-label="Breadcrumb" className="breadcrumb"><Link href="/">Home</Link><span>/</span><Link href="/services">Services</Link><span>/</span><span>{service.title}</span></nav>
@@ -56,6 +65,6 @@ export default function ServicePage({ slug }) {
       <div className="service-related"><p className="eyebrow">Keep exploring</p>{related.map(item => <Link className="text-link" key={item.slug} href={`/services/${item.slug}`}>{item.title} ↗</Link>)}<Link className="text-link" href="/services">All services ↗</Link></div>
     </section>
     <section id="service-contact" className="section contact-section"><div className="wrap contact-grid"><div><p className="eyebrow">Let’s find your next step</p><h2>Start with a<br /><em>free growth review.</em></h2><p>Tell me about your business and the problem you want to solve. I’ll review your online presence or workflow and suggest a practical next step, with no obligation to buy.</p><a className="text-link email-link" href="mailto:wes@thesipwebstudio.com">wes@thesipwebstudio.com ↗</a></div><ContactForm initialService={service.title} /></div></section>
-    <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema).replace(/</g, "\\u003c") }} />
+    <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify([schema, breadcrumbs]).replace(/</g, "\\u003c") }} />
   </main>;
 }

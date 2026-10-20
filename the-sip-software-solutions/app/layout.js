@@ -134,7 +134,7 @@ export default function RootLayout({ children }) {
           <Link href="/" className="wordmark">
             the sip<span>WEB STUDIO</span>
           </Link>
-          <p>Business technology for Jackson and surrounding Mississippi communities.<br /><Link href="/services/website-design">Website design</Link> · <Link href="/services/business-automation">Automation</Link> · <Link href="/services/custom-business-systems">Custom software</Link> · <Link href="/services/reporting-dashboards">Reporting dashboards</Link><br /><Link href="/services">All services</Link> · <Link href="/services/google-business-profile#disclosure">Google profile disclosure</Link></p>
+          <p>Business technology for Jackson and surrounding Mississippi communities.<br /><Link href="/services/website-design">Website design</Link> · <Link href="/services/local-seo">Local SEO</Link> · <Link href="/services/business-automation">Automation</Link> · <Link href="/services/custom-business-systems">Custom software</Link> · <Link href="/services/reporting-dashboards">Reporting dashboards</Link><br /><Link href="/services">All services</Link> · <Link href="/services/google-business-profile#disclosure">Google profile disclosure</Link></p>
           <p>© {new Date().getFullYear()} The Sip Web Studio</p>
         </footer>
         <script
