@@ -61,3 +61,49 @@ Google describes local ranking in terms of relevance, distance, and prominence. 
 Validation: ESLint passed for app and scripts. The generated-page SEO audit passed for 22 pages and 631 internal links/anchors, including self-canonicals, one H1 per page, metadata, parseable JSON-LD, breadcrumb URLs, matching Service descriptions, sitemap coverage, robots sitemap, priority content, and homepage links. Git diff whitespace checks passed. The default Turbopack build encountered the local unconfigured Node launcher; a webpack build with the bundled Node compiled and generated all 27 static entries. Full build completion is recorded separately below.
 
 Build limitation: the webpack production build exited with EPERM while copying traced dependencies into .next/standalone/node_modules (including next/router utilities and @webassemblyjs/ast). Compilation and all static-page generation succeeded, but standalone packaging did not complete. Re-run the production and Cloudflare builds in a normally configured local or CI environment before deployment. No build configuration or dependencies were changed to bypass this failure.
+
+## October 23 focused Jackson web design audit
+
+Repository: zep1994/The-Sip-Software-Solutions. Base commit: 48a3a5bbbbeb69102848b7f950a8c93d7eda8f2a (main). Created local branch seo/jackson-web-design before editing; clean base checkout.
+
+The supplied latest query export shows web design jackson ms: 7 impressions, 0 clicks, average position 86; website design jackson ms: 10 impressions, position 71.1. The website-design page has 22 impressions, position 65.82. These observations establish some Google visibility, not complete exclusion. No ranking trend or penalty can be inferred from this small sample.
+
+Live checks on October 23: homepage, website-design, local-seo, robots.txt and sitemap.xml returned 200. Priority pages have self-canonicals and index/follow. Robots allows crawling and advertises the sitemap. Existing sitemap covers all 22 public content routes. The live service audit passed 19 service pages and 613 internal links/anchors. These checks do not establish Google's selected canonical or current index status; that requires the owner's Search Console URL Inspection access.
+
+Findings and changes:
+- Root layout incorrectly emitted the homepage WebPage entity on every route. Moved it into the homepage; service pages now emit their own WebPage identity linked to a stable Service ID. Retained shared Organization/WebSite entities and existing service breadcrumbs.
+- Removed root homepage canonical fallback so future pages must define their own canonical; all current routes retain explicit self-canonicals.
+- Added a direct Web design link to the main navigation, improving access to the priority service page throughout the site.
+- Made the service title explicitly describe web design for Jackson small businesses and added practical redesign guidance about retaining useful URLs, redirect planning, internal links and contact paths. No new offices, client results, ratings or qualifications were claimed.
+- Existing local-SEO content, accurate service-area descriptions, metadata and sitemap already addressed key foundations; preserved them rather than adding duplicate city pages or fabricated last-modified dates.
+- Extended generated-page verification for page-specific WebPage identity, absence of inherited homepage entities, no accidental noindex, rendered redesign content and the navigation link.
+
+Verification: ESLint app/scripts passed; git diff --check passed. Generated-page audit passed all 22 pages and 653 internal links/anchors, including canonicals, H1s, descriptions, JSON-LD parsing, breadcrumbs, Service descriptions, sitemap route coverage and robots sitemap. Dependency installation succeeded at a shorter Windows path; npm reported 16 existing dependency advisories (5 moderate, 10 high, 1 critical). No dependency versions or lockfile changed. Build compilation, TypeScript checks and all 27 static entries succeeded after a local directory creation retry; see delivered report for final packaging status.
+
+After user review and deployment approval: verify live rendered changes and structured data, inspect homepage and website-design in Search Console (crawl allowed, indexing allowed, Google's selected canonical), confirm sitemap processing, and request recrawling of updated URLs. Compare comparable 28-day periods for Jackson design queries and qualified inquiries. Search Console submission and indexing requests were not performed. Keep using Organization unless verified physical business details support a more specific local entity. Sitemap inclusion and structured data do not guarantee indexing or rankings.
+
+References: https://developers.google.com/search/docs/crawling-indexing/consolidate-duplicate-urls ; https://developers.google.com/search/docs/crawling-indexing/sitemaps/overview ; https://developers.google.com/search/docs/appearance/structured-data/local-business
+
+Final build result: standalone packaging failed with Windows EPERM creating traced dependency directories. Full production build did not pass. Re-run the production and Cloudflare builds in a normally configured local/CI environment before deployment. No deploy command was run.
+
+## Expanded second pass
+Reviewed all 19 service definitions and routes, services hub, homepage, case study, shared layout, CSS/navigation breakpoints, contact form and interactive demo, seven Search Console exports, images, deployment settings and SEO scripts.
+
+PASS: all 22 live HTTPS content routes return 200 with the expected canonical and no X-Robots-Tag header. All seven referenced content/social images return 200. Generated HTML from the first commit had unique titles/descriptions, English language, viewport metadata and alt attributes on images; all referenced image files exist. A nonexistent live route returns 404; trailing slash redirects with 308 to the canonical route.
+
+Additional fixes: services hub and Magnolia case study now have their own Twitter title, description and image instead of inheriting homepage values. Both final routes rendered locally with 200 and the intended Twitter metadata. ESLint and whitespace checks passed on the final source. Added scripts/check-indexability.mjs for repeatable metadata/image and live protocol/host checks after a production build.
+
+Infrastructure findings: HTTP homepage and HTTP website-design return 200 rather than redirecting to HTTPS (although their canonical points to HTTPS). The www host failed DNS resolution from this environment. Review Cloudflare HTTPS redirects and www DNS/redirect coverage before making account changes; none were performed. These are consistency gaps, not evidence that Google has excluded the site.
+
+Owner facts to confirm: homepage testimonial credits Chadwick Word while the case study credits Charles Word (possibly separate people/quotes); do not guess a correction. Contact form drafts go to the existing Gmail address while visible links use wes@thesipwebstudio.com. The form clearly discloses that the visitor must send the draft; automatic submission/delivery was not tested or implemented.
+
+Limits: repeated production builds encounter Windows EPERM during directory creation or standalone packaging. Earlier compilation/static-generation and 22-page SEO checks passed for bbc3968. Build retries cleared generated files, so final social-preview edits were verified by local development rendering, not a new successful production build. Search Console ownership, selected canonicals, coverage/exclusions, manual actions, current Business Profile status, Cloudflare account settings and real-user Core Web Vitals remain unverified. No Lighthouse/Core Web Vitals score or external backlink audit is claimed. No indexing request, push, merge or deployment occurred.
+
+## Web design and development content focus
+Updated the homepage to lead with web design and development in Jackson, MS. The opening service cards now explain custom website design, web development, and redesign instead of leading with unrelated technology services. Added concrete page planning, responsive layouts, service-content, form, launch, pricing and FAQ information. The homepage links directly to the website-design service and the existing Mississippi case study. Additional software/automation services remain available farther down the page.
+
+Expanded the website-design page with distinct design, development and service-page planning sections. Added scope-based questions about cost, timeline and mobile layouts using existing offer details. Aligned the services hub, shared metadata, Organization description and footer with the website focus. Kept existing URLs, self-canonicals, sitemap coverage, prices and truthful service-area descriptions. No first-place ranking claim was added.
+
+Validation: ESLint app/scripts and git diff --check passed. A fresh production build in the Development checkout remains blocked by Windows EPERM while creating .next/types/app/services; current copy has not passed a fresh production-rendered audit. Earlier audit results apply to the earlier source version as stated above. No push, commit, merge, deployment or indexing request was performed for this content revision.
+
+Source guidance checked: https://developers.google.com/search/docs/fundamentals/creating-helpful-content and https://developers.google.com/search/docs/appearance/title-link

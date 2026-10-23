@@ -14,6 +14,14 @@ for(const route of routes){
  assert.equal([...html.matchAll(/<h1\b/g)].length,1,`${route}: one H1`);
  assert.ok(/<title>.+?<\/title>/.test(html),`${route}: title`);
  assert.ok(/<meta name="description" content="[^"]+"/.test(html),`${route}: description`);
+ assert.ok(!/<meta name="robots" content="[^"]*noindex/.test(html), `${route}: indexable`);
+ const entities = [...html.matchAll(/<script[^>]*type="application\/ld\+json"[^>]*>(.*?)<\/script>/gs)]
+  .flatMap(m => { const value = JSON.parse(m[1]); return value['@graph'] || value; });
+ const webPages = entities.filter(item => item['@type'] === 'WebPage');
+ if (route === '/' || route.startsWith('/services/')) {
+  assert.equal(webPages.length, 1, `${route}: one page-specific WebPage entity`);
+  assert.equal(new URL(webPages[0].url).pathname, route, `${route}: WebPage identifies current route`);
+ } else assert.equal(webPages.length, 0, `${route}: no inherited homepage entity`);
  for(const m of html.matchAll(/<script[^>]*type="application\/ld\+json"[^>]*>(.*?)<\/script>/gs)) JSON.parse(m[1]);
  if(route.startsWith('/services/')){
   const data = [...html.matchAll(/<script[^>]*type="application\/ld\+json"[^>]*>(.*?)<\/script>/gs)].flatMap(m => JSON.parse(m[1]));
@@ -40,7 +48,7 @@ const {default:sitemap}=await import('../app/sitemap.js');
 assert.deepEqual(sitemap().map(s=>new URL(s.url).pathname).sort(),routes.slice().sort());
 const {default:robots}=await import('../app/robots.js');
 assert.equal(robots().sitemap,base+'/sitemap.xml');
-assert.ok(pages.get('/').includes('Jackson businesses'));
+assert.ok(pages.get('/').includes('Jackson, MS.'));
 assert.ok(pages.get('/').includes('"@type":"Organization"'));
 for (const service of primaryServices) assert.ok(pages.get('/').includes(`href="/services/${service.slug}"`), `Homepage links to ${service.slug}`);
 for (const [slug, content] of Object.entries(serviceSearchContent)) {
@@ -52,3 +60,5 @@ console.log(`Passed: ${routes.length} generated pages, self canonicals, H1s, met
 
 assert.ok(pages.get('/').includes('<title>Web Design in Jackson, MS | The Sip Web Studio</title>'), 'Homepage targets Jackson web design');
 assert.ok(pages.get('/').includes('href="/services/local-seo"'), 'Homepage links to local SEO');
+assert.ok(pages.get('/services/website-design').includes('Redesign without losing useful pages'), 'Redesign guidance is rendered');
+assert.ok(pages.get('/').includes('<a href="/services/website-design">Web design</a>'), 'Direct main navigation link to web design');
