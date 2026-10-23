@@ -5,16 +5,12 @@ export const metadata = {
   metadataBase: new URL("https://thesipwebstudio.com"),
 
   title: {
-    default: "Web Design & Business Technology in Jackson, MS | The Sip Web Studio",
+    default: "Web Design & Development in Jackson, MS | The Sip Web Studio",
     template: "%s | The Sip Web Studio",
   },
 
   description:
-    "Website design, local SEO, AI automation, custom software, and business reporting for Jackson, Mississippi businesses.",
-
-  alternates: {
-    canonical: "/",
-  },
+    "Custom web design and web development for Jackson, Mississippi small businesses. Responsive websites, redesigns, local SEO foundations, and website care.",
 
   openGraph: {
     type: "website",
@@ -23,13 +19,13 @@ export const metadata = {
     siteName: "The Sip Web Studio",
     title: "Web Design in Jackson, MS | The Sip Web Studio",
     description:
-      "Custom websites, local SEO, and business automation for small businesses in Jackson and surrounding Mississippi communities.",
+      "Custom website design, web development, and redesigns for small businesses in Jackson and surrounding Mississippi communities.",
     images: [
       {
         url: "https://thesipwebstudio.com/social-card.png",
         width: 1200,
         height: 630,
-        alt: "The Sip Web Studio — Web Design and Business Technology",
+        alt: "The Sip Web Studio — Web Design and Development",
       },
     ],
   },
@@ -38,7 +34,7 @@ export const metadata = {
     card: "summary_large_image",
     title: "The Sip Web Studio | Jackson, MS",
     description:
-      "Web Design, Local SEO, AI Automation & Business Technology.",
+      "Custom web design, web development, website redesigns, and ongoing website care.",
     images: ["https://thesipwebstudio.com/social-card.png"],
   },
 
@@ -76,7 +72,7 @@ const schema = {
         "Clinton, Mississippi",
       ],
       description:
-        "Independent website and business technology studio serving Jackson and Mississippi businesses.",
+        "Independent web design and development studio serving small businesses in Jackson and surrounding Mississippi communities.",
       hasOfferCatalog: {
         "@type": "OfferCatalog",
         name: "Small business technology services",
@@ -103,24 +99,6 @@ const schema = {
       name: "The Sip Web Studio",
       publisher: { "@id": "https://thesipwebstudio.com/#studio" },
       inLanguage: "en-US",
-    },
-    {
-      "@type": "WebPage",
-      "@id": "https://thesipwebstudio.com/#webpage",
-      url: "https://thesipwebstudio.com/",
-      name: "The Sip Web Studio — Web Design in Jackson, MS",
-      isPartOf: {
-        "@id": "https://thesipwebstudio.com/#website",
-      },
-      about: {
-        "@id": "https://thesipwebstudio.com/#studio",
-      },
-      primaryImageOfPage: {
-        "@type": "ImageObject",
-        url: "https://thesipwebstudio.com/social-card.png",
-        width: 1200,
-        height: 630,
-      },
     }
   ],
 };
@@ -141,6 +119,7 @@ export default function RootLayout({ children }) {
               the sip<span>WEB STUDIO</span>
             </Link>
             <nav aria-label="Main navigation">
+              <Link href="/services/website-design">Web design</Link>
               <Link href="/services">Services</Link>
               <Link href="/#portfolio">Work</Link>
               <Link href="/#about">About</Link>
@@ -156,7 +135,7 @@ export default function RootLayout({ children }) {
           <Link href="/" className="wordmark">
             the sip<span>WEB STUDIO</span>
           </Link>
-          <p>Business technology for Jackson and surrounding Mississippi communities.<br /><Link href="/services/website-design">Website design</Link> · <Link href="/services/local-seo">Local SEO</Link> · <Link href="/services/business-automation">Automation</Link> · <Link href="/services/custom-business-systems">Custom software</Link> · <Link href="/services/reporting-dashboards">Reporting dashboards</Link><br /><Link href="/services">All services</Link> · <Link href="/services/google-business-profile#disclosure">Google profile disclosure</Link></p>
+          <p>Web design and development for Jackson and surrounding Mississippi communities.<br /><Link href="/services/website-design">Website design</Link> · <Link href="/services/local-seo">Local SEO</Link> · <Link href="/services/business-automation">Automation</Link> · <Link href="/services/custom-business-systems">Custom software</Link> · <Link href="/services/reporting-dashboards">Reporting dashboards</Link><br /><Link href="/services">All services</Link> · <Link href="/services/google-business-profile#disclosure">Google profile disclosure</Link></p>
           <p>© {new Date().getFullYear()} The Sip Web Studio</p>
         </footer>
         <script

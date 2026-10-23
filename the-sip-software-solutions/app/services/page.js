@@ -3,10 +3,11 @@ import { services, serviceGroups, serviceHref } from "./data";
 import { primaryServices } from "./search-content";
 
 export const metadata = {
-  title: "Websites, AI Automation & Software Services in Jackson, MS",
-  description: "Explore website development, AI automation, custom software, and reporting dashboards in Jackson, MS. Compare service scopes and starting prices.",
+  title: "Website Design, Development & Support Services in Jackson, MS",
+  description: "Compare web design, web development, redesign, local SEO, and website care services for Jackson, MS businesses, plus scoped automation and software projects.",
   alternates: { canonical: "/services" },
-  openGraph: { title: "Business Technology Services in Jackson, MS", description: "Website development, AI automation, custom software, and reporting dashboards with clear scopes and starting prices.", url: "/services", images: [{ url: "/social-card.png", width: 1200, height: 630, alt: "The Sip Web Studio" }] },
+  twitter: { card: "summary_large_image", title: "Website Design, Development & Support Services", description: "Compare website projects, local SEO, and care plans for Jackson businesses, with additional software services available.", images: ["/social-card.png"] },
+  openGraph: { title: "Website Design, Development & Support Services", description: "Compare website projects, local SEO, and care plans for Jackson businesses, with additional software services available.", url: "/services", images: [{ url: "/social-card.png", width: 1200, height: 630, alt: "The Sip Web Studio" }] },
 };
 
 export default function ServicesPage() {
@@ -14,9 +15,9 @@ export default function ServicesPage() {
     <main id="main-content">
       <section className="section wrap">
         <div className="case-hero">
-          <p className="eyebrow">Small business technology · Jackson, Mississippi</p>
-          <h1>Business technology services<br /><em>in Jackson, MS.</em></h1>
-          <p className="lead">Website design and development, AI and automation, custom software, and reporting dashboards. Explore the deliverables and starting prices, then choose the next step that fits your business.</p>
+          <p className="eyebrow">Website projects &amp; ongoing support</p>
+          <h1>Website design &amp; development services<br /><em>for Jackson, MS businesses.</em></h1>
+          <p className="lead">Plan a new business website, redesign an existing site, or arrange local SEO and website care after launch. Compare deliverables and starting prices below. Automation, integrations, and custom software are available when your project needs additional functionality.</p>
           <div className="actions">
             <Link className="button" href="/#contact">Get a free business growth review ↗</Link>
             <a className="text-link" href="#service-prices">Compare all services & prices ↓</a>

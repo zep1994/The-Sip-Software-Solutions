@@ -36,6 +36,15 @@ export default function ServicePage({ slug }) {
       { "@type": "ListItem", position: 3, name: service.title, item: schema.url },
     ],
   };
+  const webpage = {
+    "@context": "https://schema.org", "@type": "WebPage",
+    "@id": `${schema.url}#webpage`, url: schema.url,
+    name: content?.title || `${service.title} in Jackson, MS`, description: schema.description,
+    isPartOf: { "@id": "https://thesipwebstudio.com/#website" },
+    about: { "@id": "https://thesipwebstudio.com/#studio" },
+    mainEntity: { "@id": `${schema.url}#service` },
+  };
+  schema["@id"] = `${schema.url}#service`;
   return <main id="main-content">
     <section className="section wrap">
       <nav aria-label="Breadcrumb" className="breadcrumb"><Link href="/">Home</Link><span>/</span><Link href="/services">Services</Link><span>/</span><span>{service.title}</span></nav>
@@ -65,6 +74,6 @@ export default function ServicePage({ slug }) {
       <div className="service-related"><p className="eyebrow">Keep exploring</p>{related.map(item => <Link className="text-link" key={item.slug} href={`/services/${item.slug}`}>{item.title} ↗</Link>)}<Link className="text-link" href="/services">All services ↗</Link></div>
     </section>
     <section id="service-contact" className="section contact-section"><div className="wrap contact-grid"><div><p className="eyebrow">Let’s find your next step</p><h2>Start with a<br /><em>free growth review.</em></h2><p>Tell me about your business and the problem you want to solve. I’ll review your online presence or workflow and suggest a practical next step, with no obligation to buy.</p><a className="text-link email-link" href="mailto:wes@thesipwebstudio.com">wes@thesipwebstudio.com ↗</a></div><ContactForm initialService={service.title} /></div></section>
-    <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify([schema, breadcrumbs]).replace(/</g, "\\u003c") }} />
+    <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify([schema, breadcrumbs, webpage]).replace(/</g, "\\u003c") }} />
   </main>;
 }

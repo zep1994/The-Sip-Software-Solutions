@@ -3,7 +3,6 @@ import Link from "next/link";
 import ContactForm from "./ContactForm";
 import LeadDemo from "./LeadDemo";
 import { services, serviceGroups, serviceHref } from "./services/data";
-import { primaryServices } from "./services/search-content";
 
 const exampleSites = [
   {
@@ -78,7 +77,12 @@ const packages = [
   ],
 ];
 const homeTitle = "Web Design in Jackson, MS | The Sip Web Studio";
-const homeDescription = "Small business web design and local SEO in Jackson, Mississippi. Work directly with Wes on your website, with automation and custom software available as you grow.";
+const homeDescription = "Custom web design and web development for Jackson, MS small businesses. Mobile-friendly websites, redesigns, and SEO foundations. Projects start at $1,500.";
+const websiteServices = [
+  ["Custom website design", "Plan your pages, navigation, typography, and images around your services. Give visitors a clear explanation of your business and an easy path to request an estimate.", "See website design details", "#website-process"],
+  ["Web development", "Turn the design into a working website with responsive layouts, service pages, and contact forms. Review page delivery, navigation, and the inquiry process before launch.", "Explore web development", "#included"],
+  ["Website redesign", "Improve an existing website’s layout, content, and mobile experience. Review useful pages and current URLs before deciding what to keep, rebuild, or redirect.", "Plan your website redesign", "#website-process"],
+];
 export const metadata = {
   title: { absolute: homeTitle },
   description: homeDescription,
@@ -90,26 +94,33 @@ export const metadata = {
 export default function Home() {
   return (
     <main id="main-content">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        "@context": "https://schema.org", "@type": "WebPage",
+        "@id": "https://thesipwebstudio.com/#webpage", url: "https://thesipwebstudio.com",
+        name: homeTitle, description: homeDescription,
+        isPartOf: { "@id": "https://thesipwebstudio.com/#website" },
+        about: { "@id": "https://thesipwebstudio.com/#studio" },
+      }).replace(/</g, "\\u003c") }} />
       <section className="hero wrap">
         <div className="hero-copy">
           <p className="eyebrow">
-            Small business technology · Jackson, Mississippi
+            Custom websites · Jackson, Mississippi
           </p>
           <h1>
-            Web design &amp; development<br />for <em>Jackson businesses.</em>
+            Web design &amp; development<br />in <em>Jackson, MS.</em>
           </h1>
           <p className="lead">
-            Mobile-friendly websites and local SEO for Jackson, Mississippi small businesses, with practical AI tools, custom software, and reporting dashboards available as you grow.
+            Custom website design, web development, and website redesign for Jackson small businesses. Give customers clear service information, a mobile-friendly experience, and a straightforward way to contact you.
           </p>
           <p>
-            Work directly with Wes to present your services, organize inquiries, or simplify a repeated task. Serving Jackson and the surrounding Mississippi communities with a written scope and clear starting prices.
+            Work directly with Wes from page planning and design through development and launch. Website projects start at $1,500 for up to five pages, with a written scope covering content, revisions, and handoff.
           </p>
           <div className="actions">
             <a className="button" href="#contact">
-              Discuss your project <span>↗</span>
+              Discuss your website <span>↗</span>
             </a>
-            <Link className="text-link" href="/services">
-              Explore our services ↗
+            <Link className="text-link" href="/services/website-design">
+              Web design services &amp; pricing ↗
             </Link>
           </div>
           <div className="hero-note">
@@ -155,21 +166,21 @@ export default function Home() {
       </section>
       <section className="section wrap" aria-labelledby="core-services">
         <div className="section-heading">
-          <div><p className="eyebrow">Business technology · Jackson, MS</p><h2 id="core-services">Start with the problem.<br /><em>Find the right service.</em></h2></div>
-          <p>A new website, a disconnected workflow, or another manual report: choose the area you want to improve and explore the scope before starting.</p>
+          <div><p className="eyebrow">Website design &amp; development</p><h2 id="core-services">A new website.<br /><em>Or a better one.</em></h2></div>
+          <p>Start with a custom website or improve the site you already have. Design shapes how your business looks and communicates; development makes the pages, forms, and navigation work.</p>
         </div>
         <div className="service-catalog">
-          {primaryServices.map(service => <article key={service.slug}><h3><Link href={serviceHref(service.slug)}>{service.title}</Link></h3><p>{service.description}</p><Link className="text-link" href={serviceHref(service.slug)}>Explore the service ↗</Link></article>)}
+          {websiteServices.map(([title, description, label, anchor]) => <article key={title}><h3><Link href={`/services/website-design${anchor}`}>{title}</Link></h3><p>{description}</p><Link className="text-link" href={`/services/website-design${anchor}`}>{label} ↗</Link></article>)}
         </div>
-        <p className="service-intro">For website assistants and internal knowledge tools, explore <Link href="/services/ai-solutions">AI solutions</Link> and <Link href="/services/ai-document-tools">AI document tools</Link>.</p>
+        <p className="service-intro">Support your website after launch with <Link href="/services/local-seo">local SEO</Link> and <Link href="/services/website-care">website maintenance</Link>. For a connected website and inquiry workflow, explore the <Link href="/services/business-growth-system">Business Growth System</Link>.</p>
       </section>
       <section className="section wrap" aria-labelledby="local-web-design">
         <div className="section-heading">
-          <div><p className="eyebrow">Jackson, Mississippi Web Design</p><h2 id="local-web-design">Websites built for<br /><em>local business growth.</em></h2></div>
+          <div><p className="eyebrow">Serving the Jackson metro</p><h2 id="local-web-design">Small business websites.<br /><em>Built around your services.</em></h2></div>
           <p>The Sip Web Studio designs professional, mobile-friendly websites for small businesses in Jackson, Madison, Ridgeland, Brandon, Flowood, Pearl, Clinton, and surrounding Mississippi communities.</p>
         </div>
-        <p>Whether you are starting your first website or updating an outdated one, we create an online presence that clearly explains your services and makes it easier for customers to contact you.</p>
-        <Link className="text-link" href="/services/website-design">Explore website design services ↗</Link>
+        <p>A contractor’s website needs to explain the work offered, show real project photos, and help homeowners request an estimate. A professional services website needs clear service descriptions and a direct consultation path. We plan the pages around your customers, your actual service area, and the information they need before getting in touch.</p>
+        <Link className="text-link" href="/work/magnolia-mergers-acquisitions">See our Mississippi website design case study ↗</Link>
       </section>
 
       <div className="service-strip">
@@ -181,15 +192,15 @@ export default function Home() {
       <section id="services" className="section wrap">
         <div className="section-heading">
           <div>
-            <p className="eyebrow">What I do</p>
+            <p className="eyebrow">Website services &amp; additional support</p>
             <h2>
-              Smart solutions.
+              Start with your website.
               <br />
-              <em>Real business growth.</em>
+              <em>Connect what comes next.</em>
             </h2>
           </div>
           <p>
-            Get a professional presence, make customer inquiries easier to manage, and simplify the work behind the scenes. Start small or build a connected system.
+            Explore website design, local search support, and care plans. When your project needs more than a website, we can scope inquiry workflows, integrations, or custom software separately.
           </p>
         </div>
         <div className="services-grid">
@@ -316,14 +327,14 @@ export default function Home() {
             Hey, I’m Wes. I’m the developer behind The Sip Web Studio.
           </p>
           <p>
-            I help Mississippi businesses turn what makes them special into a
-            clear, professional online presence. You work directly with the
-            person planning and building your solution, from the first
-            conversation to the finishing touches.
+            I design and develop websites for Mississippi small businesses.
+            You work directly with me on the page structure, visual design,
+            service content, development, and launch review, from the first
+            conversation through the handoff.
           </p>
           <p>
             Whether you’re starting fresh or ready to improve an existing site,
-            we’ll focus on your customers, your goals, and technology that makes your everyday work easier.
+            we’ll focus on what visitors need to know: your services, where you work, examples of your work, and how to contact you.
           </p>
           <p>That work can include a customer-facing website, a connection between your business tools, a custom application, or a reporting dashboard. We agree on deliverables, access, testing, and handoff before building so you know what your project includes.</p>
           <a className="text-link" href="#contact">
@@ -445,19 +456,27 @@ export default function Home() {
         <div>
           <p className="eyebrow">Made for Mississippi businesses</p>
           <h2>
-            Your technology partner
+            Web design for businesses
             <br />
             in <em>Jackson, MS.</em>
           </h2>
           <p>
             Serving Jackson and the surrounding metro, including Ridgeland,
             Madison, Brandon, Flowood, Pearl, and Clinton. From professional
-            services to local small businesses, I build websites and workflows that make your expertise easier to find and your customer inquiries easier to manage.
+            services to local trades, I design and build websites that explain what you offer and help customers request an estimate or consultation.
           </p>
         </div>
         <div className="faq">
           <h3>A few good questions</h3>
           {[
+            [
+              "What is included in a $1,500 website?",
+              "Professional Presence starts at $1,500 for up to five custom pages with responsive layouts, service content, a contact form, and basic SEO setup. The written proposal confirms your page list, content responsibilities, and revisions. Hosting, domain registration, and ongoing care are separate unless included.",
+            ],
+            [
+              "What is the difference between web design and web development?",
+              "Web design covers the page layout, visual style, navigation, and presentation of your content. Web development builds those designs into working pages and forms. The Sip Web Studio handles both within the agreed website scope.",
+            ],
             [
               "Can you redesign my existing website?",
               "Yes. We can review your current website, keep what serves your business, and improve the design, content, mobile experience, and SEO foundation.",
@@ -487,12 +506,12 @@ export default function Home() {
           <div>
             <p className="eyebrow">Let’s make something good</p>
             <h2>
-              Your next chapter
+              Tell me about
               <br />
-              <em>starts here.</em>
+              <em>your website.</em>
             </h2>
             <p>
-              Get a free business growth review. Share your website or the task that is slowing you down. I’ll suggest a practical next step and the service that fits, with no obligation to buy.
+              Planning a new business website or a redesign? Share your current website, services, service area, and the pages or features you need. I’ll suggest a practical web design and development scope with no obligation to buy.
             </p>
             <a
               className="text-link email-link"

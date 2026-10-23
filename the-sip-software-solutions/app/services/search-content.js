@@ -1,6 +1,6 @@
 // Focused content for existing commercial routes; examples are not client results.
 export const primaryServices = [
-  { slug: "website-design", title: "Website design & development", description: "Present your services clearly, show your work, and give customers a straightforward way to get in touch." },
+  { slug: "website-design", title: "Website design & development", description: "Custom business websites and redesigns with responsive layouts, clear service pages, contact forms, and a defined launch process." },
   { slug: "business-automation", title: "AI & business automation", description: "Connect your tools, reduce repeated data entry, and use approved AI tools where they fit the task." },
   { slug: "custom-business-systems", title: "Custom software development", description: "Build applications and customer portals around the work your existing software does not handle well." },
   { slug: "reporting-dashboards", title: "Reporting & KPI dashboards", description: "Bring available business data into useful reports, dashboards, and scheduled summaries." },
@@ -8,11 +8,14 @@ export const primaryServices = [
 
 export const serviceSearchContent = {
   "website-design": {
-    title: "Website Design in Jackson, MS",
-    description: "Small business website design in Jackson, Mississippi. Mobile-friendly sites with clear service pages, local SEO foundations, and direct support from Wes.",
+    title: "Web Design & Development in Jackson, MS",
+    description: "Custom website design, web development, and redesigns for Jackson, MS small businesses. Responsive sites with SEO foundations. Projects start at $1,500.",
     sections: [
-      ["Plan the pages your customers need", "A local service website should answer what you do, where you work, and how to request a quote. We organize your services, real project photos, and contact details into pages customers can use on a phone or desktop. A new website or redesign starts with a review of your existing content and priorities."],
+      ["Custom website design for your business", "Your website design should make your services easy to understand before a visitor picks up the phone. We plan the page layout, navigation, typography, colors, and use of your real images around your business. The page list can include a homepage, service pages, an about page, project examples, and contact information, with the final scope agreed before design begins."],
+      ["Web development that turns the design into working pages", "Development brings the approved design and content together in a responsive website. We build layouts for phones and larger screens, connect the agreed contact form, organize internal links, and configure page metadata. Before launch, we review navigation, image delivery, form behavior, and the customer’s path from reading a service page to making an inquiry. Portals, booking tools, and software integrations require their own defined scope."],
+      ["Service pages that answer customer questions", "A useful service page explains the work you take on, where you provide it, what a customer should expect, and how to request the next step. A home services website may need project photos and an estimate request, while an advisory business may need a clear explanation of its process and a consultation link. We organize the content around your actual services rather than copying the same text across city pages."],
       ["Build search foundations into the launch", "We plan descriptive page titles, headings, internal links, and service-area copy around the services you actually provide. Launch checks cover crawl access, canonical URLs, the sitemap, and contact paths. These foundations help search engines understand your site; ongoing local SEO is a separate scope."],
+      ["Redesign without losing useful pages", "For an existing website, we review the current URLs, service content, and available Search Console data before planning changes. Useful pages can keep their addresses; if a URL must change, the scope should include a permanent redirect and updates to internal links and the sitemap. We also review contact paths so customers can still reach you after launch."],
       ["Know the scope before you start", "Professional Presence starts at $1,500 for up to five pages, with a typical two-to-three-week timeline. Your written proposal confirms content responsibilities, revisions, launch requirements, and any separate hosting or support costs. Larger websites and connected systems receive their own scope."],
     ],
     links: ["local-seo", "google-business-profile", "website-care"],
