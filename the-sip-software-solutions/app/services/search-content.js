@@ -8,7 +8,8 @@ export const primaryServices = [
 
 export const serviceSearchContent = {
   "website-design": {
-    title: "Web Design & Development in Jackson, MS",
+    title: "Website Development in Jackson, MS | Custom Sites & Redesigns",
+    heading: "Website development & design in Jackson, MS",
     description: "Custom website design, web development, and redesigns for Jackson, MS small businesses. Responsive sites with SEO foundations. Projects start at $1,500.",
     sections: [
       ["Custom website design for your business", "Your website design should make your services easy to understand before a visitor picks up the phone. We plan the page layout, navigation, typography, colors, and use of your real images around your business. The page list can include a homepage, service pages, an about page, project examples, and contact information, with the final scope agreed before design begins."],
@@ -21,8 +22,9 @@ export const serviceSearchContent = {
     links: ["local-seo", "google-business-profile", "website-care"],
   },
   "local-seo": {
-    title: "Local SEO Services in Jackson, MS",
-    description: "Local SEO for Jackson, Mississippi businesses. Review search visibility, improve service pages, and align your website with an eligible Google Business Profile.",
+    title: "SEO Jackson, MS | Local SEO & Google Maps Services",
+    heading: "SEO services in Jackson, MS",
+    description: "Local SEO in Jackson, MS for small businesses. Review search visibility, improve service pages, and align your website with an eligible Google Business Profile.",
     sections: [
       ["Start with your actual search visibility", "We review available Google Search Console data, indexed pages, and the searches relevant to your services. A Jackson business serving nearby communities needs accurate service-area information and useful service pages. We prioritize gaps in your existing site before recommending additional pages."],
       ["Connect your website and local presence", "Your website, eligible Google Business Profile, and genuine directory listings should describe the same business with consistent contact details. We review your services, profile categories, and customer contact paths using information you approve. Serving Madison, Ridgeland, Brandon, Flowood, Pearl, or Clinton does not require a separate storefront or a copied page for each city."],

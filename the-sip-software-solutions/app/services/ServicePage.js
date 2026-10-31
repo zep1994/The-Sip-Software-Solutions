@@ -1,3 +1,5 @@
+import BusinessContact from "../BusinessContact";
+import FaqJsonLd from "../FaqJsonLd";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import ContactForm from "../ContactForm";
@@ -46,9 +48,10 @@ export default function ServicePage({ slug }) {
   };
   schema["@id"] = `${schema.url}#service`;
   return <main id="main-content">
+    <FaqJsonLd faqs={service.faqs} />
     <section className="section wrap">
       <nav aria-label="Breadcrumb" className="breadcrumb"><Link href="/">Home</Link><span>/</span><Link href="/services">Services</Link><span>/</span><span>{service.title}</span></nav>
-      <div className="service-hero"><div><p className="eyebrow">{service.title} · Jackson, MS</p><h1>{content?.title || (slug === "website-design" ? "Small Business Web Design in Jackson, MS" : `${service.title} in Jackson, MS`)}</h1><p>{service.tagline}</p><p className="lead">{content?.description || service.description}</p><div className="actions"><a className="button" href="#service-contact">Discuss your project ↗</a></div></div><aside className="service-price"><p className="eyebrow">Your starting point</p><p className="price">{service.price}</p><p>{service.unit}</p><p>{service.timing}</p><a className="text-link" href="#included">See what’s included ↓</a></aside></div>
+      <div className="service-hero"><div><p className="eyebrow">{service.title} · Jackson, MS</p><h1>{content?.heading || content?.title || (slug === "website-design" ? "Small Business Web Design in Jackson, MS" : `${service.title} in Jackson, MS`)}</h1><p>{service.tagline}</p><p className="lead">{content?.description || service.description}</p><div className="actions"><a className="button" href="#service-contact">Discuss your project ↗</a></div></div><aside className="service-price"><p className="eyebrow">Your starting point</p><p className="price">{service.price}</p><p>{service.unit}</p><p>{service.timing}</p><a className="text-link" href="#included">See what’s included ↓</a></aside></div>
       {content && <section aria-label="Project approach">{content.sections.map(([heading, text]) => <div className="case-grid" key={heading}><h2>{heading}</h2><p>{text}</p></div>)}<div className="case-grid"><h2>Work directly with your developer</h2><div><p>Work with Wes at The Sip Web Studio, serving Jackson and surrounding Mississippi communities. Start with your current process and the outcome you need; your proposal defines the work, costs, testing, and handoff.</p><p>Related services: {content.links.map((relatedSlug, index) => <span key={relatedSlug}>{index > 0 && " · "}<Link href={serviceHref(relatedSlug)}>{services.find(item => item.slug === relatedSlug).title}</Link></span>)}</p></div></div></section>}
       {slug === "website-design" && <section aria-labelledby="website-process">
         <div className="case-grid"><h2 id="website-process">A website built around your customers</h2><div><p>We start with your services, service area, existing content, and the action you want visitors to take. That guides the page structure, copy, and contact options before design begins.</p><p>Next, we build mobile-friendly layouts, organize your key services, and review the site with you. Before launch, we check navigation, forms, page metadata, and the experience on smaller screens.</p></div></div>
@@ -73,7 +76,7 @@ export default function ServicePage({ slug }) {
       <div className="case-grid"><h2>A few good questions</h2><div className="faq">{service.faqs.map(([q,a]) => <details key={q}><summary>{q}</summary><p>{a}</p></details>)}</div></div>
       <div className="service-related"><p className="eyebrow">Keep exploring</p>{related.map(item => <Link className="text-link" key={item.slug} href={`/services/${item.slug}`}>{item.title} ↗</Link>)}<Link className="text-link" href="/services">All services ↗</Link></div>
     </section>
-    <section id="service-contact" className="section contact-section"><div className="wrap contact-grid"><div><p className="eyebrow">Let’s find your next step</p><h2>Start with a<br /><em>free growth review.</em></h2><p>Tell me about your business and the problem you want to solve. I’ll review your online presence or workflow and suggest a practical next step, with no obligation to buy.</p><a className="text-link email-link" href="mailto:wes@thesipwebstudio.com">wes@thesipwebstudio.com ↗</a></div><ContactForm initialService={service.title} /></div></section>
+    <section id="service-contact" className="section contact-section"><div className="wrap contact-grid"><div><p className="eyebrow">Let’s find your next step</p><h2>Start with a<br /><em>free growth review.</em></h2><p>Tell me about your business and the problem you want to solve. I’ll review your online presence or workflow and suggest a practical next step, with no obligation to buy.</p><a className="text-link email-link" href="mailto:wes@thesipwebstudio.com">wes@thesipwebstudio.com ↗</a><BusinessContact /></div><ContactForm initialService={service.title} /></div></section>
     <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify([schema, breadcrumbs, webpage]).replace(/</g, "\\u003c") }} />
   </main>;
 }

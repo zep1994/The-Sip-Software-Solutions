@@ -1,3 +1,5 @@
+import BusinessContact from "./BusinessContact";
+import FaqJsonLd from "./FaqJsonLd";
 import Image from "next/image";
 import Link from "next/link";
 import ContactForm from "./ContactForm";
@@ -76,10 +78,36 @@ const packages = [
     ],
   ],
 ];
-const homeTitle = "Web Design in Jackson, MS | The Sip Web Studio";
+const homeFaqs = [
+            [
+              "What is included in a $1,500 website?",
+              "Professional Presence starts at $1,500 for up to five custom pages with responsive layouts, service content, a contact form, and basic SEO setup. The written proposal confirms your page list, content responsibilities, and revisions. Hosting, domain registration, and ongoing care are separate unless included.",
+            ],
+            [
+              "What is the difference between web design and web development?",
+              "Web design covers the page layout, visual style, navigation, and presentation of your content. Web development builds those designs into working pages and forms. The Sip Web Studio handles both within the agreed website scope.",
+            ],
+            [
+              "Can you redesign my existing website?",
+              "Yes. We can review your current website, keep what serves your business, and improve the design, content, mobile experience, and SEO foundation.",
+            ],
+            [
+              "What does SEO setup include?",
+              "Page titles and descriptions, a clear heading structure, crawlable content, a sitemap, and performance considerations. Ongoing SEO can build on that foundation with useful content and search performance reviews.",
+            ],
+            [
+              "Can you guarantee a top Google ranking?",
+              "No. Search rankings depend on competition, relevance, and many factors beyond a website’s design. I focus on a sound foundation and useful content, with ongoing improvements guided by results.",
+            ],
+            [
+              "Do you offer support after launch?",
+              "Yes. Monthly care plans are available for hosting, maintenance, content updates, and ongoing SEO support depending on the plan.",
+            ],
+          ];
+const homeTitle = "Web Design Jackson, MS | Websites from $1,500 | The Sip Web Studio";
 const homeDescription = "Custom web design and web development for Jackson, MS small businesses. Mobile-friendly websites, redesigns, and SEO foundations. Projects start at $1,500.";
 const websiteServices = [
-  ["Custom website design", "Plan your pages, navigation, typography, and images around your services. Give visitors a clear explanation of your business and an easy path to request an estimate.", "See website design details", "#website-process"],
+  ["Custom website design", "Plan your pages, navigation, typography, and images around your services. Give visitors a clear explanation of your business and an easy path to request an estimate.", "Website development in Jackson, MS", "#website-process"],
   ["Web development", "Turn the design into a working website with responsive layouts, service pages, and contact forms. Review page delivery, navigation, and the inquiry process before launch.", "Explore web development", "#included"],
   ["Website redesign", "Improve an existing website’s layout, content, and mobile experience. Review useful pages and current URLs before deciding what to keep, rebuild, or redirect.", "Plan your website redesign", "#website-process"],
 ];
@@ -94,6 +122,7 @@ export const metadata = {
 export default function Home() {
   return (
     <main id="main-content">
+      <FaqJsonLd faqs={homeFaqs} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
         "@context": "https://schema.org", "@type": "WebPage",
         "@id": "https://thesipwebstudio.com/#webpage", url: "https://thesipwebstudio.com",
@@ -107,7 +136,7 @@ export default function Home() {
             Custom websites · Jackson, Mississippi
           </p>
           <h1>
-            Web design &amp; development<br />in <em>Jackson, MS.</em>
+            Web design<br />in <em>Jackson, MS.</em>
           </h1>
           <p className="lead">
             Custom website design, web development, and website redesign for Jackson small businesses. Give customers clear service information, a mobile-friendly experience, and a straightforward way to contact you.
@@ -468,32 +497,7 @@ export default function Home() {
         </div>
         <div className="faq">
           <h3>A few good questions</h3>
-          {[
-            [
-              "What is included in a $1,500 website?",
-              "Professional Presence starts at $1,500 for up to five custom pages with responsive layouts, service content, a contact form, and basic SEO setup. The written proposal confirms your page list, content responsibilities, and revisions. Hosting, domain registration, and ongoing care are separate unless included.",
-            ],
-            [
-              "What is the difference between web design and web development?",
-              "Web design covers the page layout, visual style, navigation, and presentation of your content. Web development builds those designs into working pages and forms. The Sip Web Studio handles both within the agreed website scope.",
-            ],
-            [
-              "Can you redesign my existing website?",
-              "Yes. We can review your current website, keep what serves your business, and improve the design, content, mobile experience, and SEO foundation.",
-            ],
-            [
-              "What does SEO setup include?",
-              "Page titles and descriptions, a clear heading structure, crawlable content, a sitemap, and performance considerations. Ongoing SEO can build on that foundation with useful content and search performance reviews.",
-            ],
-            [
-              "Can you guarantee a top Google ranking?",
-              "No. Search rankings depend on competition, relevance, and many factors beyond a website’s design. I focus on a sound foundation and useful content, with ongoing improvements guided by results.",
-            ],
-            [
-              "Do you offer support after launch?",
-              "Yes. Monthly care plans are available for hosting, maintenance, content updates, and ongoing SEO support depending on the plan.",
-            ],
-          ].map(([q, a]) => (
+          {homeFaqs.map(([q, a]) => (
             <details key={q}>
               <summary>{q}</summary>
               <p>{a}</p>
@@ -519,6 +523,7 @@ export default function Home() {
             >
               wes@thesipwebstudio.com ↗
             </a>
+            <BusinessContact />
             <p className="small">Serving Jackson, Mississippi & beyond.</p>
           </div>
           <ContactForm />

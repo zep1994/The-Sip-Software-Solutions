@@ -1,3 +1,4 @@
+import BusinessContact from "./BusinessContact";
 import "./globals.css";
 import Link from "next/link";
 
@@ -56,12 +57,17 @@ const schema = {
   "@context": "https://schema.org",
   "@graph": [
     {
-      "@type": "Organization",
+      "@type": "ProfessionalService",
       "@id": "https://thesipwebstudio.com/#studio",
       name: "The Sip Web Studio",
       url: "https://thesipwebstudio.com",
       image: "https://thesipwebstudio.com/social-card.png",
       email: "wes@thesipwebstudio.com",
+      telephone: "+1-601-812-8079",
+      address: { "@type": "PostalAddress", addressLocality: "Jackson", addressRegion: "MS", postalCode: "39216", addressCountry: "US" },
+      logo: "https://thesipwebstudio.com/studio-icon.svg",
+      priceRange: "$1,500+",
+      founder: { "@id": "https://thesipwebstudio.com/about#wes" },
       areaServed: [
         "Jackson, Mississippi",
         "Ridgeland, Mississippi",
@@ -122,9 +128,9 @@ export default function RootLayout({ children }) {
               <Link href="/services/website-design">Web design</Link>
               <Link href="/services">Services</Link>
               <Link href="/#portfolio">Work</Link>
-              <Link href="/#about">About</Link>
+              <Link href="/about">About</Link>
               <Link href="/#pricing">Pricing</Link>
-              <Link className="nav-cta" href="/#contact">
+              <Link className="nav-cta" href="/contact">
                 Free growth review ↗
               </Link>
             </nav>
@@ -135,7 +141,8 @@ export default function RootLayout({ children }) {
           <Link href="/" className="wordmark">
             the sip<span>WEB STUDIO</span>
           </Link>
-          <p>Web design and development for Jackson and surrounding Mississippi communities.<br /><Link href="/services/website-design">Website design</Link> · <Link href="/services/local-seo">Local SEO</Link> · <Link href="/services/business-automation">Automation</Link> · <Link href="/services/custom-business-systems">Custom software</Link> · <Link href="/services/reporting-dashboards">Reporting dashboards</Link><br /><Link href="/services">All services</Link> · <Link href="/services/google-business-profile#disclosure">Google profile disclosure</Link></p>
+          <p>Web design and development for Jackson and surrounding Mississippi communities.<br /><Link href="/services/website-design">Website design</Link> · <Link href="/services/local-seo">Local SEO</Link> · <Link href="/services/business-automation">Automation</Link> · <Link href="/services/custom-business-systems">Custom software</Link> · <Link href="/services/reporting-dashboards">Reporting dashboards</Link><br /><Link href="/about">About Wes</Link> · <Link href="/contact">Contact</Link> · <Link href="/web-design-ridgeland-ms">Ridgeland web design</Link><br /><Link href="/services">All services</Link> · <Link href="/services/google-business-profile#disclosure">Google profile disclosure</Link></p>
+          <BusinessContact />
           <p>© {new Date().getFullYear()} The Sip Web Studio</p>
         </footer>
         <script
