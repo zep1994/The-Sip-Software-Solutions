@@ -9,6 +9,9 @@ The Sip Software Solutions provides professional website design, website mainten
 Our goal is simple: build websites that look professional, perform well, rank better in search, and turn visitors into customers.
 
 ---
+cd C:\Users\matlo\Development\SipSoftwareSolutions\the-sip-software-solutions
+
+Remove-Item -LiteralPath ".open-next" -Recurse -Force
 npx @opennextjs/cloudflare build && npx @opennextjs/cloudflare deploy
 ## 🚀 What We Do
 

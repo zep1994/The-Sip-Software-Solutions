@@ -136,7 +136,7 @@ export default function Home() {
             Custom websites · Jackson, Mississippi
           </p>
           <h1>
-            Web design<br />in <em>Jackson, MS.</em>
+            Web Design &amp; Development<br />in <em>Jackson, MS</em>
           </h1>
           <p className="lead">
             Custom website design, web development, and website redesign for Jackson small businesses. Give customers clear service information, a mobile-friendly experience, and a straightforward way to contact you.
