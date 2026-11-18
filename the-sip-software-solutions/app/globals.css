@@ -832,7 +832,7 @@ em {
 .service-hero h1 { font-size: clamp(44px, 5vw, 68px); margin-bottom: 25px; }
 .service-hero .lead { color: var(--muted); }
 .service-price { background: #e4e8dc; padding: 36px; border-top: 3px solid var(--copper); }
-.service-price .price { font: 40px Georgia, serif; overflow-wrap: anywhere; }
+.service-price .price { font: 40px/1.2 Georgia, serif; overflow-wrap: break-word; }
 .service-price .text-link { display: inline-block; margin-top: 28px; }
 .deliverables { margin: 0; padding-left: 22px; color: var(--muted); }
 .deliverables li { padding: 8px 0; }
@@ -864,7 +864,7 @@ em {
 .price-directory li { border-bottom: 1px solid var(--line); }
 .price-directory li a { display: grid; grid-template-columns: 1fr auto; gap: 18px; padding: 16px 0; font-size: 14px; }
 .price-directory li a > span:last-child { text-align: right; max-width: 165px; }
-.price-directory strong { font-size: 17px; white-space: nowrap; }
+.price-directory strong { font-size: 17px; }
 .price-directory small { display: block; font-size: 11px; color: var(--muted); }
 .service-catalog article > .catalog-price { margin: 20px 0 0; color: var(--ink); }
 .catalog-price strong { display: block; font: 34px Georgia, serif; }

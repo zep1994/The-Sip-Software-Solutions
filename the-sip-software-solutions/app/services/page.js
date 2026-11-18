@@ -2,12 +2,16 @@ import Link from "next/link";
 import { services, serviceGroups, serviceHref } from "./data";
 import { primaryServices } from "./search-content";
 
+const servicesTitle = "Design & Development Services in Jackson, MS | The Sip Web Studio";
+const servicesDescription = "Compare web design, web development, redesign, local SEO, and website care services for Jackson, MS businesses, plus scoped automation and software projects.";
+const servicesSocialDescription = "Compare website projects, local SEO, and care plans for Jackson businesses, with additional software services available.";
+
 export const metadata = {
-  title: "Website Design, Development & Support Services in Jackson, MS",
-  description: "Compare web design, web development, redesign, local SEO, and website care services for Jackson, MS businesses, plus scoped automation and software projects.",
+  title: { absolute: servicesTitle },
+  description: servicesDescription,
   alternates: { canonical: "/services" },
-  twitter: { card: "summary_large_image", title: "Website Design, Development & Support Services", description: "Compare website projects, local SEO, and care plans for Jackson businesses, with additional software services available.", images: ["/social-card.png"] },
-  openGraph: { title: "Website Design, Development & Support Services", description: "Compare website projects, local SEO, and care plans for Jackson businesses, with additional software services available.", url: "/services", images: [{ url: "/social-card.png", width: 1200, height: 630, alt: "The Sip Web Studio" }] },
+  twitter: { card: "summary_large_image", title: servicesTitle, description: servicesSocialDescription, images: ["/social-card.png"] },
+  openGraph: { type: "website", siteName: "The Sip Web Studio", title: servicesTitle, description: servicesSocialDescription, url: "/services", images: [{ url: "/social-card.png", width: 1200, height: 630, alt: "The Sip Web Studio" }] },
 };
 
 export default function ServicesPage() {

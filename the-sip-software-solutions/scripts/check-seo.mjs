@@ -3,8 +3,10 @@ import fs from 'node:fs';
 import { services } from '../app/services/data.js';
 import { primaryServices, serviceSearchContent } from '../app/services/search-content.js';
 const base='https://thesipwebstudio.com';
-const routes=['/','/services',...services.map(s=>`/services/${s.slug}`),'/work/magnolia-mergers-acquisitions'];
+const routes=['/','/about','/contact','/web-design-ridgeland-ms','/services',...services.map(s=>`/services/${s.slug}`),'/work/magnolia-mergers-acquisitions'];
+const decode = value => value.replaceAll('&amp;','&').replaceAll('&quot;','"').replaceAll('&#x27;',"'").replaceAll('&#39;',"'").replaceAll('&apos;',"'");
 const pages=new Map();
+const ogTitles=new Map();
 for(const route of routes){
  const file=`.next/server/app/${route==='/'?'index':route.slice(1)}.html`;
  const html=fs.readFileSync(file,'utf8'); pages.set(route,html);
@@ -12,7 +14,17 @@ for(const route of routes){
  assert.equal(canonicals.length,1,`${route}: one canonical`);
  assert.ok(canonicals[0][0].includes(`href="${base}${route==='/'?'':route}"`),`${route}: self canonical`);
  assert.equal([...html.matchAll(/<h1\b/g)].length,1,`${route}: one H1`);
- assert.ok(/<title>.+?<\/title>/.test(html),`${route}: title`);
+ const title = decode(html.match(/<title>(.*?)<\/title>/s)?.[1] || '');
+ assert.ok(title,`${route}: title`);
+ assert.ok(title.length <= 70, `${route}: title is ${title.length} characters (${title})`);
+ const ogUrl = html.match(/<meta property="og:url" content="([^"]+)"/);
+ assert.ok(ogUrl, `${route}: og:url`);
+ assert.equal(new URL(ogUrl[1]).pathname.replace(/\/$/, '') || '/', route, `${route}: og:url ${ogUrl[1]}`);
+ const ogTitle = decode(html.match(/<meta property="og:title" content="([^"]+)"/)?.[1] || '');
+ assert.ok(ogTitle, `${route}: og:title`);
+ ogTitles.set(route, ogTitle);
+ const ogDescription = html.match(/<meta property="og:description" content="([^"]+)"/)?.[1];
+ assert.ok(ogDescription, `${route}: og:description`);
  assert.ok(/<meta name="description" content="[^"]+"/.test(html),`${route}: description`);
  assert.ok(!/<meta name="robots" content="[^"]*noindex/.test(html), `${route}: indexable`);
  const entities = [...html.matchAll(/<script[^>]*type="application\/ld\+json"[^>]*>(.*?)<\/script>/gs)]
@@ -49,7 +61,19 @@ assert.deepEqual(sitemap().map(s=>new URL(s.url).pathname).sort(),routes.slice()
 const {default:robots}=await import('../app/robots.js');
 assert.equal(robots().sitemap,base+'/sitemap.xml');
 assert.ok(pages.get('/').includes('Jackson, MS.'));
-assert.ok(pages.get('/').includes('"@type":"Organization"'));
+assert.ok(pages.get('/').includes('"@type":"ProfessionalService"'));
+const homeOgTitle = ogTitles.get('/');
+for (const [route, ogTitle] of ogTitles) {
+ if (route !== '/') assert.notEqual(ogTitle, homeOgTitle, `${route}: og:title must not repeat the homepage`);
+}
+const crmMain = pages.get('/services/crm-integrations').match(/<main[\s\S]*?<\/main>/)[0]
+ .replace(/<script[\s\S]*?<\/script>/g, ' ')
+ .replace(/<[^>]+>/g, ' ')
+ .replace(/&amp;/g, '&');
+const crmWords = crmMain.trim().split(/\s+/).filter(Boolean);
+assert.ok(crmWords.length >= 1000, `CRM page has ${crmWords.length} words`);
+assert.ok(pages.get('/').includes('>CRM integration services in Jackson, MS<'), 'Homepage promotes CRM integrations');
+assert.ok(pages.get('/services/crm-integrations').includes('Starting at $750'), 'CRM pricing is visible');
 for (const service of primaryServices) assert.ok(pages.get('/').includes(`href="/services/${service.slug}"`), `Homepage links to ${service.slug}`);
 for (const [slug, content] of Object.entries(serviceSearchContent)) {
  const html = pages.get(`/services/${slug}`);
@@ -58,7 +82,7 @@ for (const [slug, content] of Object.entries(serviceSearchContent)) {
 assert.ok(pages.get('/work/magnolia-mergers-acquisitions').includes('href="/services/website-design"'), 'Case study links to website service');
 console.log(`Passed: ${routes.length} generated pages, self canonicals, H1s, metadata, JSON-LD, ${count} internal links/anchors, sitemap coverage, robots sitemap, and organization schema.`);
 
-assert.ok(pages.get('/').includes('<title>Web Design in Jackson, MS | The Sip Web Studio</title>'), 'Homepage targets Jackson web design');
+assert.ok(pages.get('/').includes('<title>Web Design Jackson, MS | Websites from $1,500 | The Sip Web Studio</title>'), 'Homepage targets Jackson web design');
 assert.ok(pages.get('/').includes('href="/services/local-seo"'), 'Homepage links to local SEO');
 assert.ok(pages.get('/services/website-design').includes('Redesign without losing useful pages'), 'Redesign guidance is rendered');
 assert.ok(pages.get('/').includes('<a href="/services/website-design">Web design</a>'), 'Direct main navigation link to web design');

@@ -8,7 +8,7 @@ export const primaryServices = [
 
 export const serviceSearchContent = {
   "website-design": {
-    title: "Website Development in Jackson, MS | Custom Sites & Redesigns",
+    title: "Website Development in Jackson, MS",
     heading: "Website development & design in Jackson, MS",
     description: "Custom website design, web development, and redesigns for Jackson, MS small businesses. Responsive sites with SEO foundations. Projects start at $1,500.",
     sections: [
@@ -22,7 +22,7 @@ export const serviceSearchContent = {
     links: ["local-seo", "google-business-profile", "website-care"],
   },
   "local-seo": {
-    title: "SEO Jackson, MS | Local SEO & Google Maps Services",
+    title: "Local SEO & Google Maps in Jackson, MS",
     heading: "SEO services in Jackson, MS",
     description: "Local SEO in Jackson, MS for small businesses. Review search visibility, improve service pages, and align your website with an eligible Google Business Profile.",
     sections: [
@@ -64,7 +64,8 @@ export const serviceSearchContent = {
     links: ["customer-portals", "crm-integrations", "reporting-dashboards"],
   },
   "reporting-dashboards": {
-    title: "Business Reporting & KPI Dashboards in Jackson, MS",
+    title: "Reporting Dashboards in Jackson, MS",
+    heading: "Business reporting and KPI dashboards in Jackson, MS",
     description: "Custom business reporting and KPI dashboards in Jackson, MS. Connect available data, define meaningful metrics, and automate agreed reports and notifications.",
     sections: [
       ["Start with the question, then the metric", "What needs attention this week? Which inquiries still need a response? We identify the decisions you want to make and define the metrics with you, including what each number counts, its reporting period, and the records behind it."],
@@ -72,5 +73,41 @@ export const serviceSearchContent = {
       ["A report your team can rely on", "A dashboard, scheduled summary, or event notification is built around the agreed workflow. We check totals against source records and explain refresh timing and limitations. Additional sources and future reporting changes can be planned as separate work."],
     ],
     links: ["business-automation", "crm-integrations", "custom-business-systems"],
+  },
+  "crm-integrations": {
+    title: "CRM Integration Services in Jackson, MS",
+    heading: "CRM integration services in Jackson, MS",
+    description: "CRM integration services in Jackson, MS. Connect inquiries to the CRM you already use. Starting at $750 flat. Larger Salesforce or API work is quoted after a free consult.",
+    sections: [
+      ["A connection for the CRM you already use", [
+        "Small businesses in Jackson, Ridgeland, Madison, Flowood, Brandon, Pearl, and Clinton often take an estimate on the website and then retype the same details into a customer record. CRM integration services in Jackson, MS close that gap for the CRM or scheduling platform you already use.",
+        "A website estimate request can create or update a customer record and notify the right staff member. When an appointment and the customer record need to match, a scheduling connection can be part of the same scope. The proposal names the platforms, the fields, and the timeline after a free consult call.",
+        "You work directly with Wes at The Sip Web Studio, from the compatibility review through testing and handoff. The project does not guarantee new leads or a search ranking. It gives your team a tested path from the inquiry into the system you already use.",
+      ]],
+      ["Which systems a project can include", [
+        "The starting point is your current CRM or scheduling platform, plus the website form or booking path that collects the inquiry. We do not keep a public menu of every product name. A connection depends on the account you have and on whether that tool supports the transfer.",
+        "Before any build, we verify that the tools support a suitable integration and that your account has the required access. The written scope then names the platforms and the customer fields that will move. If a tool cannot support the transfer, we say so before you commit.",
+        "Salesforce is handled as larger custom or multi-system work. API syncs that move records between more than one system are handled the same way. That work gets a flat quote after a free consult call. It is not automatically included in the starting CRM setup.",
+        "An older customer list can be reviewed for migration only after we see the records, the format, and the permissions. Migration is scoped separately from the setup that keeps new inquiries in sync.",
+      ]],
+      ["How a CRM integration proceeds", [
+        "The sequence follows the deliverables on this page. You see the scope, including deliverables, account access, revisions, and payment milestones, before work begins. You keep ownership of your domain and business accounts.",
+        [
+          "Free consult call. We review the inquiry path, the system your team treats as the customer record, and whether you need a CRM setup or larger multi-system work.",
+          "Compatibility review of your existing tools, including the account access those tools require.",
+          "Mapping of the customer fields you agree to move, and which value wins if a record is already there.",
+          "The scoped form, CRM, or scheduling connection described in the proposal.",
+          "Duplicate handling and approval rules where the platform supports them, so a person still confirms the steps that should not run on their own.",
+          "Testing of a successful transfer and a failed transfer, including what your team does when a record does not go through.",
+          "Documentation and a team handoff so the people who answer inquiries can operate the workflow.",
+        ],
+      ]],
+      ["How pricing works", [
+        "Starting at $750 for a flat CRM setup. That starting project follows the scope on this page: the compatibility review, the agreed field mapping, the form, CRM, or scheduling connection, duplicate handling and approval rules where the platform supports them, testing of successful and failed transfers, and the handoff.",
+        "Larger custom or multi-system work, including Salesforce and API syncs, gets a flat quote after a free consult call. The quote is a single project price for the systems and fields we agree on. Subscriptions, API usage, data migration, and ongoing monitoring are separate unless the written agreement includes them.",
+        "The consult call is free, and it does not obligate you to buy. Bring the tools you use today, a sample of the inquiry you want to capture, and the person who should be notified when a record is created or updated.",
+      ]],
+    ],
+    links: ["lead-capture", "appointment-automation", "business-automation", "custom-business-systems"],
   },
 };

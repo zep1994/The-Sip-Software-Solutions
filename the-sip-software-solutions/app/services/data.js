@@ -45,15 +45,20 @@ export const carePlans = [
 
 const additionalServices = [
   {
-    slug: "crm-integrations", title: "CRM & Software Integrations", price: "Custom quote", unit: "based on tools and connections",
+    slug: "crm-integrations", title: "CRM & Software Integrations", price: "Starting at $750", unit: "flat CRM setup",
     tagline: "Connect your tools. Keep your team in sync.",
     description: "Connect website inquiries, scheduling tools, and customer records so your team can spend less time retyping information.",
     fit: "For teams already using a CRM or scheduling platform that need customer information to move reliably between supported tools.",
     includes: ["Compatibility review of your existing tools", "Mapping of the agreed customer fields", "Scoped form, CRM, or scheduling connections", "Duplicate handling and approval rules where supported", "Testing of successful and failed transfers", "Documentation and team handoff"],
     example: "A website estimate request creates or updates a customer record in your CRM and notifies the right staff member.",
-    timing: "After discovery, your proposal defines the supported platforms, data fields, and timeline.",
-    scope: "Integration price depends on platform access, available APIs, fields, and workflow complexity. Subscriptions, API usage, migrations, and ongoing monitoring are separate. We verify compatibility before committing to a connection.",
-    faqs: [["Can you connect any software?", "We first verify whether your tools support a suitable integration and whether your account has the required access."], ["Can you move my old customer data?", "Data migration can be scoped separately after reviewing the records, formats, and permissions."]],
+    timing: "A free consult call comes first. Your proposal then names the platforms, fields, and timeline.",
+    scope: "Starting at $750 for a flat CRM setup. Larger custom or multi-system work, including Salesforce and API syncs, gets a flat quote after a free consult call. Subscriptions, API usage, migrations, and ongoing monitoring are separate. We verify compatibility before committing to a connection.",
+    faqs: [
+      ["How much does CRM integration cost?", "Starting at $750 for a flat CRM setup. Larger custom or multi-system work, including Salesforce and API syncs, gets a flat quote after a free consult call. Subscriptions, API usage, data migration, and ongoing monitoring are separate unless your written agreement includes them."],
+      ["Can you connect any software?", "We first verify whether your tools support a suitable integration and whether your account has the required access. The written scope names the platforms included. If a tool cannot support the transfer, we say so before you commit."],
+      ["Can you move my old customer data?", "Data migration can be scoped separately after reviewing the records, formats, and permissions."],
+      ["Do you integrate Salesforce?", "Salesforce connections are larger custom or multi-system work, as are API syncs between systems. That work gets a flat quote after a free consult call, once we review account access and the fields that need to move."],
+    ],
   },
   {
     slug: "customer-portals", title: "Customer Portals & Dashboards", price: "Custom quote", unit: "based on features and access requirements",
