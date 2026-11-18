@@ -3,7 +3,7 @@ export const serviceGroups = [
   { title: "Google presence & local SEO", description: "Help nearby customers understand what you do, where you work, and how to reach you.", slugs: ["google-business-profile", "local-seo"] },
   { title: "Lead capture & customer follow-up", description: "Give every inquiry a place to land and make the next step clear for your team.", slugs: ["lead-capture", "review-request-system"] },
   { title: "Business automation", description: "Connect bookings, customer records, and everyday tasks so you spend less time moving information around.", slugs: ["appointment-automation", "business-automation", "crm-integrations", "customer-portals", "reporting-dashboards"] },
-  { title: "Practical AI solutions", description: "Answer common questions and support your team with tools built around approved business information.", slugs: ["ai-solutions", "ai-document-tools"] },
+  { title: "Practical AI solutions", description: "Answer customers, catch missed calls, and follow up while you are on the job.", slugs: ["ai-automation", "ai-solutions", "ai-document-tools"] },
   { title: "Website care & performance", description: "Keep your online presence useful, current, and ready for customers after launch.", slugs: ["website-care", "essential-care", "business-care", "local-growth", "hosting-performance"] },
 ];
 
@@ -45,15 +45,20 @@ export const carePlans = [
 
 const additionalServices = [
   {
-    slug: "crm-integrations", title: "CRM & Software Integrations", price: "Custom quote", unit: "based on tools and connections",
+    slug: "crm-integrations", title: "CRM & Software Integrations", price: "Starting at $750", unit: "flat CRM setup",
     tagline: "Connect your tools. Keep your team in sync.",
     description: "Connect website inquiries, scheduling tools, and customer records so your team can spend less time retyping information.",
     fit: "For teams already using a CRM or scheduling platform that need customer information to move reliably between supported tools.",
     includes: ["Compatibility review of your existing tools", "Mapping of the agreed customer fields", "Scoped form, CRM, or scheduling connections", "Duplicate handling and approval rules where supported", "Testing of successful and failed transfers", "Documentation and team handoff"],
     example: "A website estimate request creates or updates a customer record in your CRM and notifies the right staff member.",
-    timing: "After discovery, your proposal defines the supported platforms, data fields, and timeline.",
-    scope: "Integration price depends on platform access, available APIs, fields, and workflow complexity. Subscriptions, API usage, migrations, and ongoing monitoring are separate. We verify compatibility before committing to a connection.",
-    faqs: [["Can you connect any software?", "We first verify whether your tools support a suitable integration and whether your account has the required access."], ["Can you move my old customer data?", "Data migration can be scoped separately after reviewing the records, formats, and permissions."]],
+    timing: "A free consult call comes first. Your proposal then names the platforms, fields, and timeline.",
+    scope: "Starting at $750 for a flat CRM setup. Larger custom or multi-system work, including Salesforce and API syncs, gets a flat quote after a free consult call. Subscriptions, API usage, migrations, and ongoing monitoring are separate. We verify compatibility before committing to a connection.",
+    faqs: [
+      ["How much does CRM integration cost?", "Starting at $750 for a flat CRM setup. Larger custom or multi-system work, including Salesforce and API syncs, gets a flat quote after a free consult call. Subscriptions, API usage, data migration, and ongoing monitoring are separate unless your written agreement includes them."],
+      ["Can you connect any software?", "We first verify whether your tools support a suitable integration and whether your account has the required access. The written scope names the platforms included. If a tool cannot support the transfer, we say so before you commit."],
+      ["Can you move my old customer data?", "Data migration can be scoped separately after reviewing the records, formats, and permissions."],
+      ["Do you integrate Salesforce?", "Salesforce connections are larger custom or multi-system work, as are API syncs between systems. That work gets a flat quote after a free consult call, once we review account access and the fields that need to move."],
+    ],
   },
   {
     slug: "customer-portals", title: "Customer Portals & Dashboards", price: "Custom quote", unit: "based on features and access requirements",
@@ -87,6 +92,22 @@ const additionalServices = [
     timing: "We assess the documents, permissions, and desired workflow before quoting a build and test period.",
     scope: "Priced separately from the $799 website FAQ assistant. AI subscriptions, usage, document preparation, integrations, and ongoing maintenance are extra unless specified. Outputs require review; the tool does not replace professional judgment.",
     faqs: [["Does this use private documents automatically?", "No. We agree on approved materials, access, and handling before connecting business information."], ["Can it send answers without review?", "We define human approval and handoff steps based on the task. Important decisions remain with your team."]],
+  },
+  {
+    slug: "ai-automation", title: "AI Automation for Small Businesses", price: "Flat-price setup", unit: "quoted after a free 15-minute call",
+    tagline: "Answer the customer. Catch the missed call. Follow up while you work.",
+    description: "AI setups for Jackson, MS small businesses: a website assistant, missed-call text-back, lead follow-up, review requests, and hands-on owner training.",
+    fit: "For an owner who is on the job when customers call, and who wants common questions, missed calls, and follow-up handled without learning a new technical trade.",
+    includes: ["Website chat assistant using your services, hours, and FAQs", "Appointment offers within the booking rules you approve", "Missed-call answer or text-back that captures the job", "Instant text or email follow-up for new leads, plus appointment reminders", "A simple CRM log of those conversations", "Google review request after each completed job you mark ready", "AI-drafted review replies for you to approve", "ChatGPT or Claude set up with the documents you approve", "Hands-on training to write quotes, emails, and posts"],
+    example: "A customer asks the website whether you serve their neighborhood and what tomorrow looks like. The assistant answers from your hours and services and offers an open appointment. If they had called while you were on another job, the text-back is waiting in the same customer record.",
+    timing: "A free 15-minute call comes first. Your quote then names which setups are included.",
+    scope: "Flat-price setup, quoted after a free 15-minute call. The quote names which of the setups are included, what you will review before anything talks to a customer, and how handoff works. There is no obligation to continue. No lead count, ranking, or review total is promised.",
+    faqs: [
+      ["Do I need to be tech-savvy?", "No. Wes sets up the tools and shows you how to use them on your own jobs. You provide your services, hours, common questions, and the documents you want used. You do not install anything yourself or manage a technical project."],
+      ["Will it sound like a robot?", "It answers from your services, hours, and the way you want customers spoken to. You read sample answers before it goes live, and you can change them when your work changes. Questions you have not approved, including special pricing and complaints, go to a person."],
+      ["Does it work with my current website?", "Often, yes. On the call we look at the site, the phone line, and the booking path you already use. If the current site cannot hold the chat or the form, the quote says so before any work starts."],
+      ["What does it cost?", "Flat-price setup, quoted after a free 15-minute call. The quote lists which setups are included. You do not have to buy anything on the call."],
+    ],
   },
 ];
 

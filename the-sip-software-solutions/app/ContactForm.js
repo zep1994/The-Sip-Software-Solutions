@@ -1,5 +1,6 @@
 "use client";
 import { useState } from "react";
+import { trackLead } from "./Analytics";
 import { services } from "./services/data";
 export default function ContactForm({ initialService = "Not sure — free growth review" }) {
   const [opened, setOpened] = useState(false);
@@ -12,6 +13,7 @@ export default function ContactForm({ initialService = "Not sure — free growth
     const body = encodeURIComponent(
       `Hello The Sip Web Studio,\n\nName: ${data.get("name")}\nEmail: ${data.get("email")}\nBusiness: ${data.get("business")}\nService: ${data.get("service")}\nWebsite: ${data.get("website")}\n\nProject details:\n${data.get("message")}`,
     );
+    trackLead("contact_form_submit", { method: "mailto_draft" });
     window.location.href = `mailto:thesipsoftwaresolutions@gmail.com?subject=${subject}&body=${body}`;
     setOpened(true);
   }

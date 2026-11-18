@@ -1,7 +1,7 @@
 import { services } from "./services/data.js";
 export default function sitemap() {
   const base = "https://thesipwebstudio.com";
-  const lastModified = "2026-10-31";
+  const lastModified = "2026-11-18";
   return [
     ...["/about", "/contact", "/web-design-ridgeland-ms"].map(path => ({ url: `${base}${path}`, lastModified })),
     { url: base, changeFrequency: "monthly", priority: 1 },

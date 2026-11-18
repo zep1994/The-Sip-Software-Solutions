@@ -1,3 +1,4 @@
+import Analytics from "./Analytics";
 import BusinessContact from "./BusinessContact";
 import "./globals.css";
 import Link from "next/link";
@@ -151,6 +152,7 @@ export default function RootLayout({ children }) {
             __html: JSON.stringify(schema).replace(/</g, "\\u003c"),
           }}
         />
+        <Analytics />
       </body>
     </html>
   );
