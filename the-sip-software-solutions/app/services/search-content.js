@@ -110,4 +110,47 @@ export const serviceSearchContent = {
     ],
     links: ["lead-capture", "appointment-automation", "business-automation", "custom-business-systems"],
   },
+  "ai-automation": {
+    title: "AI Automation for Small Businesses in Jackson, MS",
+    heading: "AI automation for small businesses in Jackson, MS",
+    description: "AI automation for small businesses in Jackson, MS. A website assistant answers questions and books appointments from your services, hours, and FAQs. Missed-call text-back, lead follow-up, review requests, and owner training can be part of the same quote. Flat-price setup, quoted after a free 15-minute call.",
+    sections: [
+      ["Start with the website assistant", [
+        "The first setup most owners ask about is a chat assistant on the website. A customer can open it in the evening, on a Saturday, or while you are on another job, and ask the questions you already answer every week. Do you serve their part of Jackson, Ridgeland, Madison, Flowood, Brandon, Pearl, or Clinton? What does the job include? Can they get on the schedule?",
+        "The assistant is built from your services, your hours, and your FAQs. It is not a generic bot that guesses. Before it ever talks to a customer, you read sample answers and mark what is right, what is wrong, and what should always come to you. Special pricing, complaints, and anything you have not approved go to a person.",
+        "It can offer an appointment 24/7 only inside the rules you set. You decide which jobs can be booked, which times are open, and which requests need a call from you first. If the calendar or booking path you already use can accept that booking, the assistant uses it. If it cannot, the assistant collects the request and tells the customer you will confirm the time.",
+        "When your hours change, or you stop offering a service, you tell Wes and the answers change with the business. You are not left maintaining a technical project. The point of the assistant is that a customer gets a clear next step instead of a dead end.",
+      ]],
+      ["Catch the call you could not take", [
+        "The second setup is for the phone, not the website. You are with a customer, in the truck, or on a roof. The call rings through, the customer hangs up, and the next company on the list gets the job. An AI receptionist is there for that moment.",
+        "It can answer the caller or text them back, depending on what your phone line can do and what you want customers to experience. The text asks what they need and gathers the details that matter for the trade: the neighborhood, the kind of job, and how to reach them. The goal is simple. Capture the job so it is waiting when you are free, instead of losing it to voicemail.",
+        "You decide the words. A plumbing company and a bookkeeping office should not sound the same, and the message should sound like your shop, not like a script from another industry. On the call we look at how the phone works today and the quote says whether the setup is a text-back, an answer, or both.",
+      ]],
+      ["Reply while the lead is still warm", [
+        "A new inquiry should not sit until the next morning. Speed-to-lead follow-up sends a text or an email as soon as a chat, a form, or a missed call comes in. The message confirms you received the request and tells the customer what happens next. Before an appointment, a reminder can go out so fewer visits are missed because someone forgot.",
+        "Those texts and emails are not a pile of separate threads. They are logged in a simple CRM, with the customer, the request, and the appointment in one place. You can see who still needs a call without scrolling three apps.",
+        {
+          before: "If the customer record should live in the CRM you already use, that connection is scoped with our ",
+          href: "/services/crm-integrations",
+          label: "CRM integration services in Jackson, MS",
+          after: ". The quote says whether the follow-up log is a simple record we set up or a connection to the system your team already opens every day.",
+        },
+      ]],
+      ["Ask for the review when the job is done", [
+        "Happy customers mean to leave a Google review and then the day gets away from them. The review setup sends the request after each completed job you mark ready. It goes to the customers you finished, not only the ones you expect will be glowing. You are not buying reviews, and you are not sorting people out because you think they might be unhappy.",
+        "When a review comes in, you get a drafted reply written from the tone you approved. Drafted means you still read it and you still post it. The assistant does not publish a public reply on its own. You stay the owner of the Google profile and of every word that goes out under your name.",
+      ]],
+      ["Learn ChatGPT or Claude on your own work", [
+        "AI Jumpstart is for you, not for the customer on the website. Wes sets up ChatGPT or Claude with the documents you choose: a price sheet, a few past quotes, service descriptions, and emails you are willing to reuse as examples. Nothing is added that you have not handed over.",
+        "Then you practice together. You write a quote, a customer email, and a post you might put on your Google profile or social page, with Wes beside you. The training is hands-on, on your jobs, so the tool is something you can open on Monday. The assistant can draft. You still decide what gets sent and what gets posted.",
+        "This is not a lecture about artificial intelligence. It is a working session for an owner who wants quotes, emails, and posts to take less time, and who wants to see the tool used on real material before the session ends.",
+      ]],
+      ["What the 15-minute call is for", [
+        "You do not need to pick a package before we talk. The free call is 15 minutes. Tell Wes which part is slipping: questions on the website, calls you cannot answer, follow-up that waits too long, reviews that never get requested, or writing that piles up at night.",
+        "Flat-price setup, quoted after a free 15-minute call. The quote names which of these setups are included, what you will review before a customer sees it, and how the handoff works. You do not have to buy anything on the call. Accounts for your website, your phone, or a writing tool stay in your name.",
+        "Wes at The Sip Web Studio does this work for small businesses in Jackson and the surrounding Mississippi communities, including Ridgeland, Madison, Flowood, Brandon, Pearl, and Clinton. You work with the person who sets the tools up and who sits with you for the training. The setup does not promise a number of leads, a search ranking, or a stack of new reviews. It puts a clear next step in front of the customer and a record in front of you.",
+      ]],
+    ],
+    links: ["crm-integrations", "appointment-automation", "review-request-system"],
+  },
 };

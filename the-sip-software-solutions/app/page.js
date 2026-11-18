@@ -229,7 +229,7 @@ export default function Home() {
             </h2>
           </div>
           <p>
-            Explore website design, local search support, and care plans. If a website inquiry should create a customer record instead of another copy-and-paste task, see our <Link href="/services/crm-integrations">CRM integration services in Jackson, MS</Link>.
+            Explore website design, local search support, and care plans. If a website inquiry should create a customer record instead of another copy-and-paste task, see our <Link href="/services/crm-integrations">CRM integration services in Jackson, MS</Link>. For after-hours questions, missed calls, and follow-up, see <Link href="/services/ai-automation">AI automation for small businesses in Jackson, MS</Link>.
           </p>
         </div>
         <div className="services-grid">

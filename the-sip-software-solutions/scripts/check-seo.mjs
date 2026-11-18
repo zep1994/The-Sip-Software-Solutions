@@ -74,6 +74,16 @@ const crmWords = crmMain.trim().split(/\s+/).filter(Boolean);
 assert.ok(crmWords.length >= 1000, `CRM page has ${crmWords.length} words`);
 assert.ok(pages.get('/').includes('>CRM integration services in Jackson, MS<'), 'Homepage promotes CRM integrations');
 assert.ok(pages.get('/services/crm-integrations').includes('Starting at $750'), 'CRM pricing is visible');
+const aiMain = pages.get('/services/ai-automation').match(/<main[\s\S]*?<\/main>/)[0]
+ .replace(/<script[\s\S]*?<\/script>/g, ' ')
+ .replace(/<[^>]+>/g, ' ')
+ .replace(/&amp;/g, '&');
+const aiWords = aiMain.trim().split(/\s+/).filter(Boolean);
+assert.ok(aiWords.length >= 900, `AI automation page has ${aiWords.length} words`);
+assert.ok(!/\$\d/.test(aiMain), 'AI automation page has no dollar prices');
+assert.ok(aiMain.includes('Flat-price setup, quoted after a free 15-minute call'), 'AI pricing line is present');
+assert.ok(pages.get('/').includes('href="/services/ai-automation"'), 'Homepage links to AI automation');
+assert.ok(pages.get('/services').includes('href="/services/ai-automation"'), 'Services listing links to AI automation');
 for (const service of primaryServices) assert.ok(pages.get('/').includes(`href="/services/${service.slug}"`), `Homepage links to ${service.slug}`);
 for (const [slug, content] of Object.entries(serviceSearchContent)) {
  const html = pages.get(`/services/${slug}`);

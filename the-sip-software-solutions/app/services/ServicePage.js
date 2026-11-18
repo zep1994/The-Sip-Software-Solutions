@@ -15,9 +15,15 @@ const metadataTitles = {
 
 function renderCopy(text) {
   const parts = Array.isArray(text) ? text : [text];
-  return parts.map((part, index) => Array.isArray(part)
-    ? <ol className="deliverables" key={index}>{part.map((item) => <li key={item}>{item}</li>)}</ol>
-    : <p key={index}>{part}</p>);
+  return parts.map((part, index) => {
+    if (Array.isArray(part)) {
+      return <ol className="deliverables" key={index}>{part.map((item) => <li key={item}>{item}</li>)}</ol>;
+    }
+    if (part && typeof part === "object") {
+      return <p key={index}>{part.before}<Link href={part.href}>{part.label}</Link>{part.after}</p>;
+    }
+    return <p key={index}>{part}</p>;
+  });
 }
 
 export function serviceMetadata(slug) {
@@ -64,7 +70,7 @@ export default function ServicePage({ slug }) {
     <FaqJsonLd faqs={service.faqs} />
     <section className="section wrap">
       <nav aria-label="Breadcrumb" className="breadcrumb"><Link href="/">Home</Link><span>/</span><Link href="/services">Services</Link><span>/</span><span>{service.title}</span></nav>
-      <div className="service-hero"><div><p className="eyebrow">{service.title} · Jackson, MS</p><h1>{content?.heading || content?.title || (slug === "website-design" ? "Small Business Web Design in Jackson, MS" : `${service.title} in Jackson, MS`)}</h1><p>{service.tagline}</p><p className="lead">{content?.description || service.description}</p><div className="actions"><a className="button" href="#service-contact">Discuss your project ↗</a></div></div><aside className="service-price"><p className="eyebrow">Your starting point</p><p className="price">{service.price}</p><p>{service.unit}</p><p>{service.timing}</p><a className="text-link" href="#included">See what’s included ↓</a></aside></div>
+      <div className="service-hero"><div><p className="eyebrow">{service.title} · Jackson, MS</p><h1>{content?.heading || content?.title || (slug === "website-design" ? "Small Business Web Design in Jackson, MS" : `${service.title} in Jackson, MS`)}</h1><p>{service.tagline}</p><p className="lead">{content?.description || service.description}</p><div className="actions"><a className="button" href="#service-contact">{slug === "ai-automation" ? "Book a free 15-minute call ↗" : "Discuss your project ↗"}</a></div></div><aside className="service-price"><p className="eyebrow">{slug === "ai-automation" ? "Pricing" : "Your starting point"}</p><p className="price">{service.price}</p><p>{service.unit}</p><p>{service.timing}</p><a className="text-link" href="#included">See what’s included ↓</a></aside></div>
       {content && <section aria-label="Project approach">{content.sections.map(([heading, text]) => <div className="case-grid" key={heading}><h2>{heading}</h2><div>{renderCopy(text)}</div></div>)}<div className="case-grid"><h2>Work directly with your developer</h2><div><p>Work with Wes at The Sip Web Studio, serving Jackson and surrounding Mississippi communities. Start with your current process and the outcome you need; your proposal defines the work, costs, testing, and handoff.</p><p>Related services: {content.links.map((relatedSlug, index) => <span key={relatedSlug}>{index > 0 && " · "}<Link href={serviceHref(relatedSlug)}>{services.find(item => item.slug === relatedSlug).title}</Link></span>)}</p></div></div></section>}
       {slug === "website-design" && <section aria-labelledby="website-process">
         <div className="case-grid"><h2 id="website-process">A website built around your customers</h2><div><p>We start with your services, service area, existing content, and the action you want visitors to take. That guides the page structure, copy, and contact options before design begins.</p><p>Next, we build mobile-friendly layouts, organize your key services, and review the site with you. Before launch, we check navigation, forms, page metadata, and the experience on smaller screens.</p></div></div>
