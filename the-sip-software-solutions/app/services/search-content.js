@@ -8,7 +8,7 @@ export const primaryServices = [
 
 export const serviceSearchContent = {
   "website-design": {
-    title: "Website Development in Jackson, MS | Custom Sites & Redesigns",
+    title: "Website Development in Jackson, MS",
     heading: "Website development & design in Jackson, MS",
     description: "Custom website design, web development, and redesigns for Jackson, MS small businesses. Responsive sites with SEO foundations. Projects start at $1,500.",
     sections: [
@@ -22,7 +22,7 @@ export const serviceSearchContent = {
     links: ["local-seo", "google-business-profile", "website-care"],
   },
   "local-seo": {
-    title: "SEO Jackson, MS | Local SEO & Google Maps Services",
+    title: "Local SEO & Google Maps in Jackson, MS",
     heading: "SEO services in Jackson, MS",
     description: "Local SEO in Jackson, MS for small businesses. Review search visibility, improve service pages, and align your website with an eligible Google Business Profile.",
     sections: [
@@ -64,7 +64,8 @@ export const serviceSearchContent = {
     links: ["customer-portals", "crm-integrations", "reporting-dashboards"],
   },
   "reporting-dashboards": {
-    title: "Business Reporting & KPI Dashboards in Jackson, MS",
+    title: "Reporting Dashboards in Jackson, MS",
+    heading: "Business reporting and KPI dashboards in Jackson, MS",
     description: "Custom business reporting and KPI dashboards in Jackson, MS. Connect available data, define meaningful metrics, and automate agreed reports and notifications.",
     sections: [
       ["Start with the question, then the metric", "What needs attention this week? Which inquiries still need a response? We identify the decisions you want to make and define the metrics with you, including what each number counts, its reporting period, and the records behind it."],
@@ -72,5 +73,84 @@ export const serviceSearchContent = {
       ["A report your team can rely on", "A dashboard, scheduled summary, or event notification is built around the agreed workflow. We check totals against source records and explain refresh timing and limitations. Additional sources and future reporting changes can be planned as separate work."],
     ],
     links: ["business-automation", "crm-integrations", "custom-business-systems"],
+  },
+  "crm-integrations": {
+    title: "CRM Integration Services in Jackson, MS",
+    heading: "CRM integration services in Jackson, MS",
+    description: "CRM integration services in Jackson, MS. Connect inquiries to the CRM you already use. Starting at $750 flat. Larger Salesforce or API work is quoted after a free consult.",
+    sections: [
+      ["A connection for the CRM you already use", [
+        "Small businesses in Jackson, Ridgeland, Madison, Flowood, Brandon, Pearl, and Clinton often take an estimate on the website and then retype the same details into a customer record. CRM integration services in Jackson, MS close that gap for the CRM or scheduling platform you already use.",
+        "A website estimate request can create or update a customer record and notify the right staff member. When an appointment and the customer record need to match, a scheduling connection can be part of the same scope. The proposal names the platforms, the fields, and the timeline after a free consult call.",
+        "You work directly with Wes at The Sip Web Studio, from the compatibility review through testing and handoff. The project does not guarantee new leads or a search ranking. It gives your team a tested path from the inquiry into the system you already use.",
+      ]],
+      ["Which systems a project can include", [
+        "The starting point is your current CRM or scheduling platform, plus the website form or booking path that collects the inquiry. We do not keep a public menu of every product name. A connection depends on the account you have and on whether that tool supports the transfer.",
+        "Before any build, we verify that the tools support a suitable integration and that your account has the required access. The written scope then names the platforms and the customer fields that will move. If a tool cannot support the transfer, we say so before you commit.",
+        "Salesforce is handled as larger custom or multi-system work. API syncs that move records between more than one system are handled the same way. That work gets a flat quote after a free consult call. It is not automatically included in the starting CRM setup.",
+        "An older customer list can be reviewed for migration only after we see the records, the format, and the permissions. Migration is scoped separately from the setup that keeps new inquiries in sync.",
+      ]],
+      ["How a CRM integration proceeds", [
+        "The sequence follows the deliverables on this page. You see the scope, including deliverables, account access, revisions, and payment milestones, before work begins. You keep ownership of your domain and business accounts.",
+        [
+          "Free consult call. We review the inquiry path, the system your team treats as the customer record, and whether you need a CRM setup or larger multi-system work.",
+          "Compatibility review of your existing tools, including the account access those tools require.",
+          "Mapping of the customer fields you agree to move, and which value wins if a record is already there.",
+          "The scoped form, CRM, or scheduling connection described in the proposal.",
+          "Duplicate handling and approval rules where the platform supports them, so a person still confirms the steps that should not run on their own.",
+          "Testing of a successful transfer and a failed transfer, including what your team does when a record does not go through.",
+          "Documentation and a team handoff so the people who answer inquiries can operate the workflow.",
+        ],
+      ]],
+      ["How pricing works", [
+        "Starting at $750 for a flat CRM setup. That starting project follows the scope on this page: the compatibility review, the agreed field mapping, the form, CRM, or scheduling connection, duplicate handling and approval rules where the platform supports them, testing of successful and failed transfers, and the handoff.",
+        "Larger custom or multi-system work, including Salesforce and API syncs, gets a flat quote after a free consult call. The quote is a single project price for the systems and fields we agree on. Subscriptions, API usage, data migration, and ongoing monitoring are separate unless the written agreement includes them.",
+        "The consult call is free, and it does not obligate you to buy. Bring the tools you use today, a sample of the inquiry you want to capture, and the person who should be notified when a record is created or updated.",
+      ]],
+    ],
+    links: ["lead-capture", "appointment-automation", "business-automation", "custom-business-systems"],
+  },
+  "ai-automation": {
+    title: "AI Automation for Small Businesses in Jackson, MS",
+    heading: "AI automation for small businesses in Jackson, MS",
+    description: "AI automation for small businesses in Jackson, MS. A website assistant answers questions and books appointments from your services, hours, and FAQs. Missed-call text-back, lead follow-up, review requests, and owner training can be part of the same quote. Flat-price setup, quoted after a free 15-minute call.",
+    sections: [
+      ["Start with the website assistant", [
+        "The first setup most owners ask about is a chat assistant on the website. A customer can open it in the evening, on a Saturday, or while you are on another job, and ask the questions you already answer every week. Do you serve their part of Jackson, Ridgeland, Madison, Flowood, Brandon, Pearl, or Clinton? What does the job include? Can they get on the schedule?",
+        "The assistant is built from your services, your hours, and your FAQs. It is not a generic bot that guesses. Before it ever talks to a customer, you read sample answers and mark what is right, what is wrong, and what should always come to you. Special pricing, complaints, and anything you have not approved go to a person.",
+        "It can offer an appointment 24/7 only inside the rules you set. You decide which jobs can be booked, which times are open, and which requests need a call from you first. If the calendar or booking path you already use can accept that booking, the assistant uses it. If it cannot, the assistant collects the request and tells the customer you will confirm the time.",
+        "When your hours change, or you stop offering a service, you tell Wes and the answers change with the business. You are not left maintaining a technical project. The point of the assistant is that a customer gets a clear next step instead of a dead end.",
+      ]],
+      ["Catch the call you could not take", [
+        "The second setup is for the phone, not the website. You are with a customer, in the truck, or on a roof. The call rings through, the customer hangs up, and the next company on the list gets the job. An AI receptionist is there for that moment.",
+        "It can answer the caller or text them back, depending on what your phone line can do and what you want customers to experience. The text asks what they need and gathers the details that matter for the trade: the neighborhood, the kind of job, and how to reach them. The goal is simple. Capture the job so it is waiting when you are free, instead of losing it to voicemail.",
+        "You decide the words. A plumbing company and a bookkeeping office should not sound the same, and the message should sound like your shop, not like a script from another industry. On the call we look at how the phone works today and the quote says whether the setup is a text-back, an answer, or both.",
+      ]],
+      ["Reply while the lead is still warm", [
+        "A new inquiry should not sit until the next morning. Speed-to-lead follow-up sends a text or an email as soon as a chat, a form, or a missed call comes in. The message confirms you received the request and tells the customer what happens next. Before an appointment, a reminder can go out so fewer visits are missed because someone forgot.",
+        "Those texts and emails are not a pile of separate threads. They are logged in a simple CRM, with the customer, the request, and the appointment in one place. You can see who still needs a call without scrolling three apps.",
+        {
+          before: "If the customer record should live in the CRM you already use, that connection is scoped with our ",
+          href: "/services/crm-integrations",
+          label: "CRM integration services in Jackson, MS",
+          after: ". The quote says whether the follow-up log is a simple record we set up or a connection to the system your team already opens every day.",
+        },
+      ]],
+      ["Ask for the review when the job is done", [
+        "Happy customers mean to leave a Google review and then the day gets away from them. The review setup sends the request after each completed job you mark ready. It goes to the customers you finished, not only the ones you expect will be glowing. You are not buying reviews, and you are not sorting people out because you think they might be unhappy.",
+        "When a review comes in, you get a drafted reply written from the tone you approved. Drafted means you still read it and you still post it. The assistant does not publish a public reply on its own. You stay the owner of the Google profile and of every word that goes out under your name.",
+      ]],
+      ["Learn ChatGPT or Claude on your own work", [
+        "AI Jumpstart is for you, not for the customer on the website. Wes sets up ChatGPT or Claude with the documents you choose: a price sheet, a few past quotes, service descriptions, and emails you are willing to reuse as examples. Nothing is added that you have not handed over.",
+        "Then you practice together. You write a quote, a customer email, and a post you might put on your Google profile or social page, with Wes beside you. The training is hands-on, on your jobs, so the tool is something you can open on Monday. The assistant can draft. You still decide what gets sent and what gets posted.",
+        "This is not a lecture about artificial intelligence. It is a working session for an owner who wants quotes, emails, and posts to take less time, and who wants to see the tool used on real material before the session ends.",
+      ]],
+      ["What the 15-minute call is for", [
+        "You do not need to pick a package before we talk. The free call is 15 minutes. Tell Wes which part is slipping: questions on the website, calls you cannot answer, follow-up that waits too long, reviews that never get requested, or writing that piles up at night.",
+        "Flat-price setup, quoted after a free 15-minute call. The quote names which of these setups are included, what you will review before a customer sees it, and how the handoff works. You do not have to buy anything on the call. Accounts for your website, your phone, or a writing tool stay in your name.",
+        "Wes at The Sip Web Studio does this work for small businesses in Jackson and the surrounding Mississippi communities, including Ridgeland, Madison, Flowood, Brandon, Pearl, and Clinton. You work with the person who sets the tools up and who sits with you for the training. The setup does not promise a number of leads, a search ranking, or a stack of new reviews. It puts a clear next step in front of the customer and a record in front of you.",
+      ]],
+    ],
+    links: ["crm-integrations", "appointment-automation", "review-request-system"],
   },
 };
