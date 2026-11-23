@@ -20,7 +20,7 @@ export default function ServicesPage() {
       <section className="section wrap">
         <div className="case-hero">
           <p className="eyebrow">Website projects &amp; ongoing support</p>
-          <h1>Website design &amp; development services<br /><em>for Jackson, MS businesses.</em></h1>
+          <h1>Website design &amp; development services <br /><em>for Jackson, MS businesses.</em></h1>
           <p className="lead">Plan a new business website, redesign an existing site, or arrange local SEO and website care after launch. Compare deliverables and starting prices below. Automation, integrations, and custom software are available when your project needs additional functionality.</p>
           <div className="actions">
             <Link className="button" href="/#contact">Get a free business growth review ↗</Link>

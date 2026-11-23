@@ -8,8 +8,8 @@ export const primaryServices = [
 
 export const serviceSearchContent = {
   "website-design": {
-    title: "Website Development in Jackson, MS",
-    heading: "Website development & design in Jackson, MS",
+    title: "Website Design in Jackson, MS | Web Development",
+    heading: "Website design & development in Jackson, MS",
     description: "Custom website design, web development, and redesigns for Jackson, MS small businesses. Responsive sites with SEO foundations. Projects start at $1,500.",
     sections: [
       ["Custom website design for your business", "Your website design should make your services easy to understand before a visitor picks up the phone. We plan the page layout, navigation, typography, colors, and use of your real images around your business. The page list can include a homepage, service pages, an about page, project examples, and contact information, with the final scope agreed before design begins."],
@@ -22,7 +22,7 @@ export const serviceSearchContent = {
     links: ["local-seo", "google-business-profile", "website-care"],
   },
   "local-seo": {
-    title: "Local SEO & Google Maps in Jackson, MS",
+    title: "SEO Jackson, MS | Local SEO & Google Maps",
     heading: "SEO services in Jackson, MS",
     description: "Local SEO in Jackson, MS for small businesses. Review search visibility, improve service pages, and align your website with an eligible Google Business Profile.",
     sections: [
@@ -30,6 +30,11 @@ export const serviceSearchContent = {
       ["Connect your website and local presence", "Your website, eligible Google Business Profile, and genuine directory listings should describe the same business with consistent contact details. We review your services, profile categories, and customer contact paths using information you approve. Serving Madison, Ridgeland, Brandon, Flowood, Pearl, or Clinton does not require a separate storefront or a copied page for each city."],
       ["Choose one-time setup or ongoing work", "The Local Visibility Boost is a one-time audit and setup service. Local Growth provides ongoing monthly improvements and care under a separate agreement. Your proposal defines the pages, profile work, access, and reporting included so you can choose the level of support your business needs."],
       ["Measure inquiries as well as rankings", "Search impressions, clicks, and relevant query trends help guide the next improvement. Where tracking is available, we also review qualified inquiries. Organic website results and Google Maps visibility are different surfaces; results vary by search and location, and no position or timeline is guaranteed."],
+      ["Ridgeland and Madison businesses", [
+        "A business based in Ridgeland or Madison often serves customers across Madison County and into Jackson. The local SEO work uses that real service area. We review the website pages that name your services and the communities you cover, and we compare them with an eligible Google Business Profile.",
+        "The goal is consistent information: the same services, the same way to request a quote, and the same description of where you work. We do not publish a separate city page for Ridgeland and another identical page for Madison. If a page would only repeat the same offer with a new city name, it does not belong in the scope.",
+        "Search Console, when you can share it, shows which queries already reach the site. That review guides which existing page to improve first. It does not promise a position on Google or on Maps.",
+      ]],
     ],
     links: ["website-design", "google-business-profile", "local-growth"],
   },
@@ -106,6 +111,11 @@ export const serviceSearchContent = {
         "Starting at $750 for a flat CRM setup. That starting project follows the scope on this page: the compatibility review, the agreed field mapping, the form, CRM, or scheduling connection, duplicate handling and approval rules where the platform supports them, testing of successful and failed transfers, and the handoff.",
         "Larger custom or multi-system work, including Salesforce and API syncs, gets a flat quote after a free consult call. The quote is a single project price for the systems and fields we agree on. Subscriptions, API usage, data migration, and ongoing monitoring are separate unless the written agreement includes them.",
         "The consult call is free, and it does not obligate you to buy. Bring the tools you use today, a sample of the inquiry you want to capture, and the person who should be notified when a record is created or updated.",
+      ]],
+      ["B2B CRM integration in Mississippi", [
+        "Some Mississippi businesses sell to other businesses. An advisor, a consultant, or a service company may take an inquiry from a website form or a scheduled call and then retype it into the CRM the sales process already uses. B2B CRM integration connects that path so the record is created or updated and the right person is notified.",
+        "The tools are still the ones you already use. We verify that the CRM or scheduling platform supports the connection and that your account has the required access before we commit. Salesforce and API syncs between more than one system remain larger custom work, quoted after a free consult. A straightforward CRM setup is still a flat project starting at $750.",
+        "The written scope names the platforms, the customer fields, and how duplicates are handled when the platform allows it. You keep ownership of the CRM account. The integration does not promise a number of new accounts or a search ranking.",
       ]],
     ],
     links: ["lead-capture", "appointment-automation", "business-automation", "custom-business-systems"],
