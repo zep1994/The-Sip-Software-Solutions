@@ -67,7 +67,7 @@ const schema = {
       telephone: "+1-601-812-8079",
       address: { "@type": "PostalAddress", addressLocality: "Jackson", addressRegion: "MS", postalCode: "39216", addressCountry: "US" },
       logo: "https://thesipwebstudio.com/studio-icon.svg",
-      priceRange: "$1,500+",
+      priceRange: "$750+",
       founder: { "@id": "https://thesipwebstudio.com/about#wes" },
       areaServed: [
         "Jackson, Mississippi",

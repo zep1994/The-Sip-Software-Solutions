@@ -4,7 +4,7 @@ import { socialMetadata } from "../socialMetadata";
 
 const description = "Custom website design and development for Ridgeland, MS small businesses. Work directly with Wes on responsive websites, redesigns, and clear inquiry paths.";
 const faqs = [
-  ["How much does a Ridgeland small business website cost?", "The starting website package is $1,500 for up to five custom pages, with responsive layouts, a contact form, and basic SEO setup. Your proposal confirms the page list, content responsibilities, and revisions. Hosting, domain registration, and ongoing care are separate unless the agreement includes them."],
+  ["How much does a Ridgeland small business website cost?", "The starting website package is $750 for up to five custom pages, with responsive layouts, a contact form, and basic SEO setup. Your proposal confirms the page list, content responsibilities, and revisions. Hosting, domain registration, and ongoing care are separate unless the agreement includes them."],
   ["Do I need a Ridgeland storefront?", "No. The website explains the communities you actually serve. You work directly with Wes, and the scope is agreed in writing. A Ridgeland business does not need a public storefront for the site to say where it works."],
   ["Can the site cover Madison County and Jackson?", "Yes. Many Ridgeland businesses also serve Madison, Jackson, and nearby communities such as Flowood, Brandon, Pearl, and Clinton. We write the service area around the places you name, rather than copying one page for each city."],
   ["Does this include local SEO?", "Basic page titles, descriptions, and a clear heading structure are part of the starting website. Ongoing local SEO, including a review of search visibility and an eligible Google Business Profile, is a separate scope."],
@@ -12,7 +12,7 @@ const faqs = [
 
 export const metadata = socialMetadata({
   path: "/web-design-ridgeland-ms",
-  title: "Web Design in Ridgeland, MS | From $1,500 | The Sip Web Studio",
+  title: "Web Design in Ridgeland, MS | From $750 | The Sip Web Studio",
   description,
 });
 
@@ -31,7 +31,7 @@ export default function Ridgeland() {
       <nav aria-label="Breadcrumb" className="breadcrumb"><Link href="/">Home</Link><span>/</span><span>Web design in Ridgeland, MS</span></nav>
       <p className="eyebrow">Serving the Jackson metro</p>
       <h1>Web design for <br /><em>Ridgeland, MS businesses.</em></h1>
-      <p className="lead">Give customers a clear view of your services and a straightforward way to reach you. Work directly with Wes on a custom website or redesign, starting at $1,500 for up to five pages.</p>
+      <p className="lead">Give customers a clear view of your services and a straightforward way to reach you. Work directly with Wes on a custom website or redesign, starting at $750 for up to five pages.</p>
       <div className="case-grid">
         <h2>Explain where you work</h2>
         <div>
@@ -51,7 +51,7 @@ export default function Ridgeland() {
       <div className="case-grid">
         <h2>What the starting website includes</h2>
         <div>
-          <p>The $1,500 starting package covers up to five custom pages. That includes responsive layouts, service descriptions, service-area content, a contact form, click-to-call, page titles and descriptions, and a basic on-page SEO setup. Before launch we check navigation, the form, and how the agreed pages read on a smaller screen.</p>
+          <p>The $750 starting package covers up to five custom pages. That includes responsive layouts, service descriptions, service-area content, a contact form, click-to-call, page titles and descriptions, and a basic on-page SEO setup. Before launch we check navigation, the form, and how the agreed pages read on a smaller screen.</p>
           <p>You receive a launch review, training, and a handoff. You keep ownership of your domain and of your business accounts. If you want someone to make later updates, monthly care can be discussed separately. It is not assumed in the starting website price.</p>
           <p>If you already have a website, we look at the current addresses and the pages that still help customers. Useful URLs can stay. When an address has to change, the scope includes a permanent redirect and updates to the internal links, so people who already have the old page can still reach you.</p>
         </div>
