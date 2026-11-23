@@ -12,7 +12,10 @@ for(const route of routes){
  const html=fs.readFileSync(file,'utf8'); pages.set(route,html);
  const canonicals=[...html.matchAll(/<link\b[^>]*rel="canonical"[^>]*>/g)];
  assert.equal(canonicals.length,1,`${route}: one canonical`);
- assert.ok(canonicals[0][0].includes(`href="${base}${route==='/'?'':route}"`),`${route}: self canonical`);
+ const expectedCanonical = route === '/' ? `${base}/` : `${base}${route}`;
+ assert.ok(canonicals[0][0].includes(`href="${expectedCanonical}"`),`${route}: self canonical`);
+ const h1 = html.match(/<h1\b[^>]*>([\s\S]*?)<\/h1>/);
+ if (h1 && /<br\s*\/?>/i.test(h1[1])) assert.ok(/ <br\s*\/?>/i.test(h1[1]), `${route}: space before h1 line break`);
  assert.equal([...html.matchAll(/<h1\b/g)].length,1,`${route}: one H1`);
  const title = decode(html.match(/<title>(.*?)<\/title>/s)?.[1] || '');
  assert.ok(title,`${route}: title`);
@@ -96,3 +99,13 @@ assert.ok(pages.get('/').includes('<title>Web Design Jackson, MS | Websites from
 assert.ok(pages.get('/').includes('href="/services/local-seo"'), 'Homepage links to local SEO');
 assert.ok(pages.get('/services/website-design').includes('Redesign without losing useful pages'), 'Redesign guidance is rendered');
 assert.ok(pages.get('/').includes('<a href="/services/website-design">Web design</a>'), 'Direct main navigation link to web design');
+assert.ok(pages.get('/services/website-design').includes('<title>Website Design in Jackson, MS | Web Development | The Sip Web Studio</title>'), 'Website design title leads with Jackson');
+assert.ok(pages.get('/services/website-design').includes('Website design &amp; development in Jackson, MS') || pages.get('/services/website-design').includes('Website design & development in Jackson, MS'), 'Website design H1');
+assert.ok(pages.get('/services/website-design').includes('Do you offer website development in Jackson, MS?'), 'Website development FAQ');
+assert.ok(pages.get('/services/local-seo').includes('<title>SEO Jackson, MS | Local SEO &amp; Google Maps | The Sip Web Studio</title>') || pages.get('/services/local-seo').includes('<title>SEO Jackson, MS | Local SEO & Google Maps | The Sip Web Studio</title>'), 'Local SEO title leads with SEO Jackson, MS');
+assert.ok(pages.get('/services/crm-integrations').includes('B2B CRM integration in Mississippi'), 'CRM B2B section');
+assert.ok(pages.get('/').includes('Do you do website development in Jackson, MS?'), 'Homepage development FAQ');
+const ridgelandMain = pages.get('/web-design-ridgeland-ms').match(/<main[\s\S]*?<\/main>/)[0].replace(/<script[\s\S]*?<\/script>/g, ' ').replace(/<[^>]+>/g, ' ');
+const ridgelandWords = ridgelandMain.trim().split(/\s+/).filter(Boolean);
+assert.ok(ridgelandWords.length >= 700, `Ridgeland page has ${ridgelandWords.length} words`);
+assert.equal([...pages.get('/web-design-ridgeland-ms').matchAll(/<h2\b/g)].length, 4, 'Ridgeland has four H2s');

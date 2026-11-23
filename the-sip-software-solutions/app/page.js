@@ -88,6 +88,10 @@ const homeFaqs = [
               "Web design covers the page layout, visual style, navigation, and presentation of your content. Web development builds those designs into working pages and forms. The Sip Web Studio handles both within the agreed website scope.",
             ],
             [
+              "Do you do website development in Jackson, MS?",
+              "Yes. Web design plans the layout, navigation, and how your services are presented. Web development builds that plan into working pages, forms, and links. Both are part of a Jackson website project. The starting package is $1,500 for up to five pages, with the page list confirmed in your proposal.",
+            ],
+            [
               "Can you redesign my existing website?",
               "Yes. We can review your current website, keep what serves your business, and improve the design, content, mobile experience, and SEO foundation.",
             ],
@@ -114,18 +118,19 @@ const websiteServices = [
 export const metadata = {
   title: { absolute: homeTitle },
   description: homeDescription,
-  alternates: { canonical: "/" },
-  openGraph: { type: "website", siteName: "The Sip Web Studio", title: homeTitle, description: homeDescription, url: "/", images: [{ url: "/social-card.png", width: 1200, height: 630, alt: "The Sip Web Studio" }] },
+  openGraph: { type: "website", siteName: "The Sip Web Studio", title: homeTitle, description: homeDescription, images: [{ url: "/social-card.png", width: 1200, height: 630, alt: "The Sip Web Studio" }] },
   twitter: { card: "summary_large_image", title: homeTitle, description: homeDescription, images: ["/social-card.png"] },
 };
 
 export default function Home() {
   return (
     <main id="main-content">
+      <link rel="canonical" href="https://thesipwebstudio.com/" />
+      <meta property="og:url" content="https://thesipwebstudio.com/" />
       <FaqJsonLd faqs={homeFaqs} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
         "@context": "https://schema.org", "@type": "WebPage",
-        "@id": "https://thesipwebstudio.com/#webpage", url: "https://thesipwebstudio.com",
+        "@id": "https://thesipwebstudio.com/#webpage", url: "https://thesipwebstudio.com/",
         name: homeTitle, description: homeDescription,
         isPartOf: { "@id": "https://thesipwebstudio.com/#website" },
         about: { "@id": "https://thesipwebstudio.com/#studio" },
@@ -136,7 +141,7 @@ export default function Home() {
             Custom websites · Jackson, Mississippi
           </p>
           <h1>
-            Web Design &amp; Development<br />in <em>Jackson, MS</em>
+            Web Design &amp; Development <br />in <em>Jackson, MS</em>
           </h1>
           <p className="lead">
             Custom website design, web development, and website redesign for Jackson small businesses. Give customers clear service information, a mobile-friendly experience, and a straightforward way to contact you.
