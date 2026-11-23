@@ -95,7 +95,7 @@ for (const [slug, content] of Object.entries(serviceSearchContent)) {
 assert.ok(pages.get('/work/magnolia-mergers-acquisitions').includes('href="/services/website-design"'), 'Case study links to website service');
 console.log(`Passed: ${routes.length} generated pages, self canonicals, H1s, metadata, JSON-LD, ${count} internal links/anchors, sitemap coverage, robots sitemap, and organization schema.`);
 
-assert.ok(pages.get('/').includes('<title>Web Design Jackson, MS | Websites from $1,500 | The Sip Web Studio</title>'), 'Homepage targets Jackson web design');
+assert.ok(pages.get('/').includes('<title>Web Design Jackson, MS | Websites from $750 | The Sip Web Studio</title>'), 'Homepage targets Jackson web design');
 assert.ok(pages.get('/').includes('href="/services/local-seo"'), 'Homepage links to local SEO');
 assert.ok(pages.get('/services/website-design').includes('Redesign without losing useful pages'), 'Redesign guidance is rendered');
 assert.ok(pages.get('/').includes('<a href="/services/website-design">Web design</a>'), 'Direct main navigation link to web design');

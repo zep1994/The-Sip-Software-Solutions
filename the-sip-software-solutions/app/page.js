@@ -42,7 +42,7 @@ const exampleSites = [
 const packages = [
   [
     "Professional Presence",
-    "$1,500",
+    "$750",
     "A considered first step online.",
     [
       "Professional website design",
@@ -54,7 +54,7 @@ const packages = [
   ],
   [
     "Business Growth System",
-    "$2,750",
+    "$1,500",
     "A website with a better inquiry process.",
     [
       "Everything in Professional Presence",
@@ -80,8 +80,8 @@ const packages = [
 ];
 const homeFaqs = [
             [
-              "What is included in a $1,500 website?",
-              "Professional Presence starts at $1,500 for up to five custom pages with responsive layouts, service content, a contact form, and basic SEO setup. The written proposal confirms your page list, content responsibilities, and revisions. Hosting, domain registration, and ongoing care are separate unless included.",
+              "What is included in a $750 website?",
+              "Professional Presence starts at $750 for up to five custom pages with responsive layouts, service content, a contact form, and basic SEO setup. The written proposal confirms your page list, content responsibilities, and revisions. Hosting, domain registration, and ongoing care are separate unless included.",
             ],
             [
               "What is the difference between web design and web development?",
@@ -89,7 +89,7 @@ const homeFaqs = [
             ],
             [
               "Do you do website development in Jackson, MS?",
-              "Yes. Web design plans the layout, navigation, and how your services are presented. Web development builds that plan into working pages, forms, and links. Both are part of a Jackson website project. The starting package is $1,500 for up to five pages, with the page list confirmed in your proposal.",
+              "Yes. Web design plans the layout, navigation, and how your services are presented. Web development builds that plan into working pages, forms, and links. Both are part of a Jackson website project. The starting package is $750 for up to five pages, with the page list confirmed in your proposal.",
             ],
             [
               "Can you redesign my existing website?",
@@ -108,8 +108,8 @@ const homeFaqs = [
               "Yes. Monthly care plans are available for hosting, maintenance, content updates, and ongoing SEO support depending on the plan.",
             ],
           ];
-const homeTitle = "Web Design Jackson, MS | Websites from $1,500 | The Sip Web Studio";
-const homeDescription = "Custom web design and web development for Jackson, MS small businesses. Mobile-friendly websites, redesigns, and SEO foundations. Projects start at $1,500.";
+const homeTitle = "Web Design Jackson, MS | Websites from $750 | The Sip Web Studio";
+const homeDescription = "Custom web design and web development for Jackson, MS small businesses. Mobile-friendly websites, redesigns, and SEO foundations. Projects start at $750.";
 const websiteServices = [
   ["Custom website design", "Plan your pages, navigation, typography, and images around your services. Give visitors a clear explanation of your business and an easy path to request an estimate.", "Website development in Jackson, MS", "#website-process"],
   ["Web development", "Turn the design into a working website with responsive layouts, service pages, and contact forms. Review page delivery, navigation, and the inquiry process before launch.", "Explore web development", "#included"],
@@ -147,7 +147,7 @@ export default function Home() {
             Custom website design, web development, and website redesign for Jackson small businesses. Give customers clear service information, a mobile-friendly experience, and a straightforward way to contact you.
           </p>
           <p>
-            Work directly with Wes from page planning and design through development and launch. Website projects start at $1,500 for up to five pages, with a written scope covering content, revisions, and handoff.
+            Work directly with Wes from page planning and design through development and launch. Website projects start at $750 for up to five pages, with a written scope covering content, revisions, and handoff.
           </p>
           <div className="actions">
             <a className="button" href="#contact">
